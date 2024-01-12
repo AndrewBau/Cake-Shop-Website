@@ -46,7 +46,7 @@
                            <a href="product.php?product_id='.$product_id.'">
                            <a href="product.php?product_id='.$product_id.'" class=""><i class="bx bxs-cart-add bx-tada-hover featured__new_cart"></i></a>
                            <a href="product.php?product_id='.$product_id.'">
-                               <img src=" '.$row['boritokep'].' "  class="featured__img avoid__clicks" 
+                               <img src="Assets/images/products/'.$row['boritokep'].' "  class="featured__img avoid__clicks" 
                                style="
                                    object-fit: cover;
                                    width:  232px;
