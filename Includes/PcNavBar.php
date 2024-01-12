@@ -26,7 +26,7 @@
         <ul class="animate__animated animate__backInDown">
             <li><a href="index.php" class="<?php if($page == 'index'){echo 'active';}?>">KEZDŐOLDAL</a></li>
             <li><a href="products.php" class="<?php if($page == 'products'){echo 'active';}?>">TERMÉKEK</a></li>
-            <li><a href="makeyourcake.php" class="<?php if($page == 'makeyourcake'){echo 'active';}?>">HOZD LÉTRE A TERMÉKED</a></li>
+            <li><a href="makeyourcake.php" class="<?php if($page == 'makeyourcake'){echo 'active';}?>">KÉSZÍTSD EL A SAJÁT BAKELITED</a></li>
             <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">RÓLUNK</a></li>
             <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">KAPCSOLATFELVÉTEL</a></li>
             <li><a href="<?php echo $cartHref;?>" class="<?php if($page == 'cart'){echo 'active';}?>"><i class="bx bx-cart nav__cart"></i></a>

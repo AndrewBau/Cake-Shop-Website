@@ -11,7 +11,7 @@
             <p class="newsletter__description">Légy az első, aki értesül a legjobb ajánlatainkról!</p>
             
             <form id="newsletterForm" class="newsletter__form" method="POST" action="validateNewsletterInput.php">
-                <input id="mail" class="newsletter__input" name="mail" required type="mail" placeholder="Enter your mail"/>
+                <input id="mail" class="newsletter__input" name="mail" required type="mail" placeholder="Add meg az Email címedet"/>
                 
                 <div class="subscribe-button-container">
                     <span><button id="subscribe" class="subscribe-button" name="subscribe" type="submit">FELÍRATKOZOM</button></span>
