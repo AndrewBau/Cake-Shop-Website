@@ -1,11 +1,11 @@
-// JavaScript for disabling form submissions if there are invalid fields
+// JavaScript hogy ne menjenek be olyan kérések, amik érvénytelen mezőket tartalmaznak
 (function () {
   'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  // Fetcheljük a formokat amire custom Bootstrap stlye vlidációt szeretnénk
   var forms = document.querySelectorAll('.needs-validation');
 
-  // Loop over them and prevent submission
+  // Loop, hogy megelőzzük az érvénytelen beküldést
   Array.prototype.slice.call(forms)
     .forEach(function (form) {
       form.addEventListener('submit', function (event) {
