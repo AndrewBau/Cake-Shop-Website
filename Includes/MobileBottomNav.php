@@ -26,7 +26,7 @@
         </a>
         <a href="cart.php" class="bottom-nav-link">
             <i class="fas fa-shopping-cart"></i>
-            <span class="bottom-nav-text">My Cart</span>
+            <span class="bottom-nav-text">Bevásárlókosár</span>
         </a> 
     </nav>
 </div>

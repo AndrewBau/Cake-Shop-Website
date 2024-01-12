@@ -4,7 +4,7 @@
     <div class="footer">
         <div class="footer-container">
             <div class="logo">
-                <span class="logo-name">MALAKO</span>
+                <span class="logo-name">VINYLMASTER</span>
             </div>
         
             <div class="social-media">
@@ -28,16 +28,16 @@
 
         <div class="contact-links">
             <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
-            <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
+            <span class="address">Eger, Eszterházy tér 1, 3300 Magyarország</span>
         </div>
 
         <div class="legal-links">
-            <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
-            <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
+            <span class="privacy-policy"><b><a href=#>ADATVÉDELMI SZABÁLYZAT</a></b></span>
+            <span class="term-of-use"><b><a href=#>FELHASZNÁLÁSI FELTÉTELEK</a></b></span>
         </div>
 
         <div class="copyright">
-            <span class="copyright-text">&#169; <?php echo date("Y"); ?> Design by Atish & Sanjana</span>
+            <span class="copyright-text">&#169; <?php echo date("Y"); ?> Design by EKKE Team</span>
         </div>
     </div>  
 </footer>
