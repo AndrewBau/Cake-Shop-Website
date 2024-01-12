@@ -253,8 +253,8 @@
 
                 <!-- TOTAL -->
             <li class="list-group-item d-flex justify-content-between total-row">
-              <span>Total (Rs)</span>
-              <strong class="price-tag">Rs <?php echo number_format($_SESSION['total_price'], 2); ?></strong>
+              <span>Total (Ft)</span>
+              <strong class="price-tag">Ft <?php echo number_format($_SESSION['total_price'], 2); ?></strong>
             </li>
           </ul>
 

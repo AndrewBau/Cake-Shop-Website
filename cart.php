@@ -132,7 +132,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                     </div>
                    
                     <div class="cart-title-4">
-                        <h4 class="section-all my-0 py-0 hide-wave">Total Price (Rs)</h4>
+                        <h4 class="section-all my-0 py-0 hide-wave">Összesen (Ft)</h4>
                     </div>
                     <div class="cart-title-5">
                         <h4 class="section-all my-0 py-0 hide-wave">Remove</h4>
@@ -189,7 +189,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                         <div class="product-name">
                             <div class="product-name-det">
                                 <h6><?php echo $product['name'];?></h6>
-                                <h6>Rs <?php echo number_format($product['price'], 2);?> / unit</h6>
+                                <h6>Ft <?php echo number_format($product['price'], 2);?> / unit</h6>
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                         </div>
                         
                         <div class="col">
-                            <h4 class="subtitle">Rs <?php echo number_format($total, 2); ?></h4>
+                            <h4 class="subtitle">Ft <?php echo number_format($total, 2); ?></h4>
                         </div>
                     </div>
                     <!-- delivery -->
@@ -250,7 +250,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                         </div>
                         
                         <div class="col">
-                            <h4 class="subtitle">Rs 0.00</h4>
+                            <h4 class="subtitle"> 0.00 Ft</h4>
                         </div>
                     </div>
                     <!-- total -->
@@ -260,7 +260,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                         </div>
                         
                         <div class="col">
-                           <h4 class="subtitle">Rs <?php echo number_format($total, 2); ?></h4>
+                           <h4 class="subtitle">Ft <?php echo number_format($total, 2); ?></h4>
                         </div>
                     </div>
                     
