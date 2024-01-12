@@ -27,12 +27,12 @@
             $phoneOK = false;
 
             if (empty($_POST["fname"])) {
-                $fnameCriteria = "First name is required";
+                $fnameCriteria = "Add meg a keresztneved!";
             } else {
                 $fname = test_input($_POST["fname"]);
-                // check if name only contains letters and whitespace
+                // leellenőrzi, hogy csak betűket és space-t tartalmaz
                 if (!preg_match("/^[a-zA-Z-' ]*$/", $fname)) {
-                    $fnameCriteria = "Only letters and white space allowed";
+                    $fnameCriteria = "Csak betűk és szóközök engedélyezettek";
                 }
                 else
                 {
@@ -41,12 +41,12 @@
             }
 
             if (empty($_POST["lname"])) {
-                $lnameCriteria = "Last name is required";
+                $lnameCriteria = "Add meg a vezetékneved!";
             } else {
                 $lname = test_input($_POST["lname"]);
-                // check if name only contains letters and whitespace
+                // leellenőrzi, hogy csak betűket és space-t tartalmaz
                 if (!preg_match("/^[a-zA-Z-' ]*$/", $lname)) {
-                    $lnameCriteria = "Only letters and white space allowed";
+                    $lnameCriteria = "Csak betűk és szóközök engedélyezettek";
                 }
                 else
                 {
@@ -55,19 +55,19 @@
             }
 
             if (empty($_POST["address"])) {
-                $addressCriteria = "Address is required";
+                $addressCriteria = "Add meg a címed!";
             } else {
                 $address = test_input($_POST["address"]);
                 $addressOK = true;
             }
 
             if (empty($_POST["phone"])) {
-                $phoneCriteria = "Phone number is required";
+                $phoneCriteria = "Add meg a telefonszámod!";
             } else {
                 $phone = test_input($_POST["phone"]);
 
                 if (!preg_match("/^([0-9]{8}|[0-9]{7})*$/", $phone)) {
-                    $phoneCriteria = "Enter a valid phone number";
+                    $phoneCriteria = "Kérem, adjon meg egy érvényes telefonszámot";
                 }
                 else
                 {
@@ -85,10 +85,10 @@
 
                 if(mysqli_query($conn, $sql))
                 {
-                    $updateMessage = '<i class="fas fa-check-square"></i>&nbsp&nbspRecord Updated!';
+                    $updateMessage = '<i class="fas fa-check-square"></i>&nbsp&nbspElem frissítve!';
                 }
                 else {
-                    $updateMessage = "Error Updating Records. Please try again later.";
+                    $updateMessage = "Hiba az elem frissítésekor. Kérem próbálja újra később.";
                 }
             }
         } else if(isset($_POST['revertProfile'])){
@@ -96,7 +96,7 @@
 
         } else if(isset($_POST['updatePassword'])){
             if (empty($_POST["currentPassword"])) {
-                $currentPasswordCriteria = "Current password empty!";
+                $currentPasswordCriteria = "Üres a jelszó-mező!";
             } else {
                 $currentPassword = test_input($_POST["currentPassword"]);
 
@@ -106,10 +106,10 @@
                     $confirmPassword = $_POST['confirmPassword'];
 
                     if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $newPassword)) {
-                        $newPasswordCriteria = 'Password does not meet requirements!';
+                        $newPasswordCriteria = 'A jelszó nem megfelelő';
                     } else if (!($newPassword == $confirmPassword))
                     {
-                        $confirmPasswordCriteria = 'Passwords do not match';
+                        $confirmPasswordCriteria = 'A jelszavak nem egyeznek';
                     } else {
                         $passHash = password_hash($newPassword, PASSWORD_BCRYPT);
 
@@ -123,7 +123,7 @@
                 }
                 else
                 {
-                    $currentPasswordCriteria = "Current Password Incorrect!";
+                    $currentPasswordCriteria = "A jelenlegi jelszó nem megfelelő!";
                 }
             }
         } else if(isset($_POST['clearPassword'])){
@@ -133,7 +133,7 @@
 
         } else if(isset($_POST['deleteAccount'])){
             if (empty($_POST["delPassword"])) {
-                $delPasswordCriteria = "Current password empty!";
+                $delPasswordCriteria = "Üres a jelszó-mező!";
             } else {
                 $delPassword = test_input($_POST["delPassword"]);
 
@@ -147,7 +147,7 @@
                 }
                 else
                 {
-                    $delPasswordCriteria = "Password Incorrect";
+                    $delPasswordCriteria = "Helytelen jelszó";
                 }
             }
         }
