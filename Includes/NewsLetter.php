@@ -14,7 +14,7 @@
                 <input id="mail" class="newsletter__input" name="mail" required type="mail" placeholder="Enter your mail"/>
                 
                 <div class="subscribe-button-container">
-                    <span><button id="subscribe" class="subscribe-button" name="subscribe" type="submit">FELÍRATKOZOM</button></span>
+                    <span><button id="subscribe" class="subscribe-button" name="subscribe" type="submit">FELIRATKOZOM</button></span>
                 </div>
             </form>
             
