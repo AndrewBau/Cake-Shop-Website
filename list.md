@@ -2,3 +2,9 @@ checkout
 login.php
 logout.php
 passwordResetPage.php
+AdditionalPHP
+Includes
+Javascript
+about.php
+accountInvalidPage.php
+accountVerifiedPAge.php
