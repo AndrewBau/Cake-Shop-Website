@@ -1,6 +1,6 @@
-drop database vinyl;
-create database if not exists vinyl;
-use vinyl;
+drop database if exists cakeshop;
+create database if not exists cakeshop;
+use cakeshop;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
