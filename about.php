@@ -7,43 +7,43 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | ABOUT US</title>
+        <title>VINYLMASTER | RÓLUNK</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Atish.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-        <!--BOXICONS-->
+        <!--BOXICONOK-->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Animate CSS -->
+        <!-- Animált CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
 
     <body>
         <?php $page = 'about';?>
 
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
 
-        <!--Start Page Header-->
+        <!--Start Fejléc-->
         <div class="about-us-header">
             <div class="banner-group">
                 <div class="banner"></div>
             </div>
             
             <div class="about-us-subtitle">
-                <span>ABOUT US</span>
+                <span>RÓLUNK</span>
             </div>
         </div>
-        <!--End Page Header-->
+        <!--End Fejléc-->
 
 
         <!--Start Baker Info-->
@@ -51,15 +51,15 @@
             <div class="baker-info-container">
                 <div class="baker-info-text">
                     <div class="baker-info-title">
-                        <span>Our Baker</span>
+                        <span>Mesterünk</span>
                     </div>
         
                     <div class="baker-name">
-                        <span>Ms. Sarah Connor</span>
+                        <span>Sára Konner</span>
                     </div>
         
                     <div class="baker-description">
-                        <p>“Soufflé danish gummi bears tart. Pie wafer icing. Gummies jelly beans powder. Chocolate bar pudding macaroon candy canes chocolate apple pie chocolate cake. Sweet caramels sesame snaps halvah bear claw wafer. Sweet roll soufflé muffin topping muffin brownie…”</p>
+                        <p>“Madonna - Erotica, The Rolling Stones - Promotional, Rolling Stones - Their Satanic Majesties Request, Dark - Dark Round The Edges, The Bread And Beer - LP, The Quarrymen,Sex Pistols - God Save The Queen. Ez csak pár lemez, a legsikeresebbek közül.”</p>
                     </div>
         
                     <div class="baker-signature">
@@ -67,7 +67,7 @@
                     </div>
         
                     <div class="baker-position">
-                        <span>CEO - Malako Bakery Shop</span>
+                        <span>CEO - VINYLMASTER Bakelit Lemezbolt</span>
                     </div>
                 </div>
                 
@@ -82,11 +82,11 @@
         <!--Start Awards-->
         <div class="award-section">
             <div class="award-title">
-                <span>Our Rewards</span>
+                <span>Kitüntetéseink</span>
             </div>
 
             <div class="subtitle">
-                <h2>WINNER AWARDS</h2>
+                <h2>DÍJNYERTES</h2>
             </div>
 
             <div class="award-badge-container">
@@ -97,9 +97,9 @@
                         </div>
                         
                         <div class="badge-info">
-                            <span class="badge-title">BAKERY OF THE MONTH</span>
-                            <span class="badge-date">2010-2012</span>
-                            <p class="badge-description">Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes chocolate cake sesame snaps</p>
+                            <span class="badge-title">A ÉV LEMEZBOLTJA</span>
+                            <span class="badge-date">2010-2011</span>
+                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez egész Magyarországon!</p>
                         </div>
                     </div>
                 </div>
@@ -111,9 +111,9 @@
                         </div>
                         
                         <div class="badge-info">
-                            <span class="badge-title">BAKERY OF THE MONTH</span>
-                            <span class="badge-date">2010-2012</span>
-                            <p class="badge-description">Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes chocolate cake sesame snaps</p>
+                            <span class="badge-title">A ÉV LEMEZBOLTJA</span>
+                            <span class="badge-date">2015-2016</span>
+                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez egész Magyarországon!</p>
                         </div>
                     </div>
                 </div>
@@ -125,9 +125,9 @@
                         </div>
                         
                         <div class="badge-info">
-                            <span class="badge-title">BAKERY OF THE MONTH</span>
-                            <span class="badge-date">2010-2012</span>
-                            <p class="badge-description">Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes chocolate cake sesame snaps</p>
+                            <span class="badge-title">AZ ÉV BAKELIT LEMEZ KÉSZÍTŐJE</span>
+                            <span class="badge-date">2019-2020</span>
+                            <p class="badge-description">Legtöbb minőségi bakelit lemez elkészítését és forgalomba helyezését végezte Magyarországon 2019.-ben!</p>
                         </div>
                     </div>
                 </div>
@@ -138,11 +138,11 @@
         <!--Start Team Info-->
         <div class="team-section">
             <div class="team-title">
-                <span>Golden Hand</span>
+                <span>Aranykezű Mestereink</span>
             </div>
 
             <div class="subtitle">
-                <h2>OUR TEAM</h2>
+                <h2>CSAPATUNK</h2>
             </div>
 
             
@@ -154,9 +154,9 @@
                         </div>
 
                         <div class = "helper-more-about">
-                            <p class="name"><b>JUAN OLSON</b></p>
-                            <p class="hierarchy">CO-FOUNDER</p>
-                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            <p class="name"><b>LAKATOS OLAJOS</b></p>
+                            <p class="hierarchy">TÁRSALAPÍTÓ</p>
+                            <p class="description">A Rolling Stones albumai mindig ámulatba ejtenek...</p>
                         </div>
         
                         <div class="helper-social-media">
@@ -185,9 +185,9 @@
                         </div>
 
                         <div class = "helper-more-about">
-                            <p class="name"><b>AGNES BUCHANAN</b></p>
-                            <p class="hierarchy">Master Baker</p>
-                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            <p class="name"><b>BANÁNOS ÁGNES</b></p>
+                            <p class="hierarchy">Lemezkészítő</p>
+                            <p class="description">Amikor megszólal Elvis Presley a lemezen, megszűnika világ.</p>
                         </div>
         
                         <div class="helper-social-media">

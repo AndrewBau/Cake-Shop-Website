@@ -116,7 +116,7 @@
                     <div class="change-password-container">
                         <div class="change-password-subtitle">
                             <h3>Change Password</h3>
-                            <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspA jelszó frissítése után újra be kell jelentkeznie.</p>
+                            <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspA jelszó frissítése után újra be kell jelentkezned.</p>
                         </div>
                     </div>
 
@@ -178,7 +178,7 @@
                             <div class="change-password-container">
                                 <div class="change-password-subtitle">
                                     <h3>Delete Account</h3>
-                                    <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspFigyelmeztetés: A fiókja <b>véglegesen törölve</b> lesz. Kérjük, legyen biztos benne.</p>
+                                    <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspFigyelmeztetés: A fiókod <b>véglegesen törölve</b> lesz. Kérjük, legyél biztos benne.</p>
                                 </div>
                             </div>
 
