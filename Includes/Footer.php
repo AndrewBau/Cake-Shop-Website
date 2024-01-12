@@ -32,8 +32,8 @@
         </div>
 
         <div class="legal-links">
-            <span class="privacy-policy"><b><a href=#>ADATVÉDELMI SZABÁLYZAT</a></b></span>
-            <span class="term-of-use"><b><a href=#>FELHASZNÁLÁSI FELTÉTELEK</a></b></span>
+            <span class="privacy-policy"><b><a href=#>ADATKEZELÉSI TÁJÉKOZTATÓ</a></b></span>
+            <span class="term-of-use"><b><a href=#>FELHASZNÁLÓI FELTÉTELEK</a></b></span>
         </div>
 
         <div class="copyright">
