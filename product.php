@@ -235,7 +235,7 @@ function pre_r($array){
                 //declare variables for all column headers
                 $p_name = $row_product['albumcim'];
                 $p_desc = $row_product['p_desc'];
-                $p_img = $row_product['p_img'];
+                $p_img = $row_product['boritokep'];
                 $p_price = $row_product['ar'];
                 $typeID = $row_type_id['typeID'];
                 $categoryID = $row_cat_id['categoryID'];             

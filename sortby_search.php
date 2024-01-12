@@ -36,7 +36,7 @@
                        <div class="featured__new">NEW</div>
                        <div class=""><a href="product.php?product_id='.$product_id.' "><i class="bx bxs-cart-add bx-tada-hover featured__new_cart"></i></a></div>
                        <a href="product.php?product_id='.$product_id.'" >
-                           <img src="'.$row_product['p_img'].'" alt="" class="featured__img avoid__clicks"
+                           <img src="'.$row_product['boritokep'].'" alt="" class="featured__img avoid__clicks"
                            style="
                                object-fit: cover;
                                width:  232px;
