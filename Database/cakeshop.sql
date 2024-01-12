@@ -79,16 +79,18 @@ CREATE TABLE `orderitem`
 
 CREATE TABLE `products`
 (
-    `productID` bigint(20)   NOT NULL ,
+    `productID` bigint(20)   NOT NULL AUTO_INCREMENT,
     albumcim    varchar(255) not null,
     eloado      varchar(255) not null,
     leiras      text         not null,
     allapot     varchar(255) not null,
     kategoria   varchar(255) not null,
     ar          int          not null,
-    boritokep   varchar(255) null
+    boritokep   varchar(255) null,
+    PRIMARY KEY (`productID`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
+
 
 --
 -- Dumping data for table `products`
