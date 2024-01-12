@@ -13,7 +13,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | CHECK YOU EMAIL</title>
+        <title>VINYLMASTER | ELLENŐRIZZE EMAILJEIT!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
@@ -46,10 +46,10 @@
                 </div>
 
                 <div class="mail-sent-text">
-                    <h1>Check your email!</h1>
-                    <span class="message">Hooray! We sent you an email with your new password. Please change your password as soon as you login.</span>
+                    <h1>Ellenőrizze email fiókját!</h1>
+                    <span class="message">Hurrá! Elküldtünk neked egy e-mailt az új jelszavaddal. Kérjük, változtasd meg a jelszavadat azonnal, amikor bejelentkezel."</span>
                     <br><br>
-                    <span class="tip">Tip: If you have not received the email, please check your Spam or Trash folder.</span>
+                    <span class="tip">Ha nem kaptad meg az e-mailt, kérjük, ellenőrizd a spam mappádat.</span>
                 </div>
             </div>
         </div>
