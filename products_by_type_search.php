@@ -62,7 +62,7 @@
                            <h4 class="product__name" id="product__name">'.$row['albumcim'].'</h4>
                            </a> ';
                            
-                        echo '<span class="featured__price">Rs '.$row['p_price'].'</span>
+                        echo '<span class="featured__price">Rs '.$row['ar'].'</span>
                            
                        </div>
                    </div> ';

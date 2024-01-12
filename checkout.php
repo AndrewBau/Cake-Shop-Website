@@ -240,7 +240,7 @@
                   <h6 class="my-0"><?php echo $product_row['p_name']; ?></h6>
                   <small class="text-muted">x <?php echo $product['quantity']; ?> unit(s)</small>
                 </div>
-                <span class="text-muted price-tag">Rs <?php echo number_format(($product['quantity']  * $product_row['p_price']),2); ?></span>
+                <span class="text-muted price-tag">Rs <?php echo number_format(($product['quantity']  * $product_row['ar']),2); ?></span>
               </li>
             
             <?php
