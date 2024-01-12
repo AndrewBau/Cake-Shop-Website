@@ -170,7 +170,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                                 ?>
                                 <!-- prints image from database of corresponding id -->
                                 <div class="cart_img">
-                                    <img src="Assets\\images\\products\\<?php  echo $product_row['boritokep']; ?>" class="img-fluid">
+                                    <img src="<?php  echo $product_row['boritokep']; ?>" class="img-fluid">
                                 </div>
 
                                 <?php

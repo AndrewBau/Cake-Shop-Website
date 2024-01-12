@@ -46,7 +46,7 @@
                            <a href="product.php?product_id='.$product_id.'">
                            <a href="product.php?product_id='.$product_id.'" class=""><i class="bx bxs-cart-add bx-tada-hover featured__new_cart"></i></a>
                            <a href="product.php?product_id='.$product_id.'">
-                               <img src="Assets\\images\\products\\'.$row['boritokep'].' "  class="featured__img avoid__clicks" 
+                               <img src="'.$row['boritokep'].' "  class="featured__img avoid__clicks" 
                                style="
                                    object-fit: cover;
                                    width:  232px;
@@ -79,7 +79,7 @@
             if($check>0){
                 while($new_row = mysqli_fetch_assoc($result_new)){
             echo '  <div class="new__box">
-                        <img src="Assets\\images\\products\\'.$new_row['boritokep'] .' " class="new__img" />
+                        <img src="'.$new_row['boritokep'] .' " class="new__img" />
 
                         <div class="new__link">
                             <a href="product.php?product_id='.$new_row['productID'] .'" class="button"> VIEW PRODUCT</a>
