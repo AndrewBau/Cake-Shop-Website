@@ -8,3 +8,4 @@ Javascript
 about.php
 accountInvalidPage.php
 accountVerifiedPAge.php
+adminPanel.php
