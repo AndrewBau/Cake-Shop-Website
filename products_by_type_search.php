@@ -59,7 +59,7 @@
                            $product_id = $row['productID'];
                           
                         echo'<a href="product.php?product_id='.$product_id.'" style="text-decoration: none;">
-                           <h4 class="product__name" id="product__name">'.$row['p_name'].'</h4>
+                           <h4 class="product__name" id="product__name">'.$row['albumcim'].'</h4>
                            </a> ';
                            
                         echo '<span class="featured__price">Rs '.$row['p_price'].'</span>

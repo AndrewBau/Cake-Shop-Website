@@ -150,7 +150,7 @@
 
                                     <div class="featured__data">
                                         <?php $product_id = $row_product['productID']; ?>
-                                        <a href="product.php?product_id=<?php echo $product_id; ?>" class="product__name" id="product__name"style="text-decoration: none;"><?php echo $row_product['p_name']; ?></a></br>
+                                        <a href="product.php?product_id=<?php echo $product_id; ?>" class="product__name" id="product__name"style="text-decoration: none;"><?php echo $row_product['albumcim']; ?></a></br>
                                         <span class="featured__price">Rs <?php echo $row_product['p_price']; ?></span>
                                        
                                     </div>
