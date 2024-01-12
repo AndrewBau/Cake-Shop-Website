@@ -7,16 +7,16 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <title>MALAKO | Details</title>
+    <title>VINYLMASTER | Adatok</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
+    <!--========== PHP KAPCSOLÓDÁS AZ ADATBÁZISHOZ: VINYLMASTER ==========-->
     <?php 
         include_once 'connection.php';
         include_once 'numOfItemsInCart.php';
     ?>
 
-    <!--========== CSS FILES ==========-->
+    <!--========== CSS FÁJLOK ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="Sanjana.css">
 
@@ -27,25 +27,25 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-    <!-- Animate CSS -->
+    <!-- ANIMÁLT CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!--========== BOXICONS ==========-->
+    <!--========== BOXICONOK ==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     </head>
 
     <body>
         
-          <!--========== PHP QUERIES ==========-->
+          <!--========== PHP LEKÉRDEZÉSEK ==========-->
           <?php 
             
-            $Q_fetch_featured = "SELECT * FROM products WHERE typeID = 2 ; ";//selects featured products
-            $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//selects new products
-            $Q_fetch_product_details =  "SELECT * FROM products WHERE productID = 1 ; ";//selects product with id =1
-            $Q_fetch_categories = "SELECT * FROM product_categories;"; //selects all categories
-            $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //sort all products by price low to high
-            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //sort all products by price high to low
+            $Q_fetch_featured = "SELECT * FROM products WHERE typeID = 2 ; ";//Kiválasztott termékek megjelenítése
+            $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//Új termékek kiválasztása
+            $Q_fetch_product_details =  "SELECT * FROM products WHERE productID = 1 ; ";//Termék kiválasztása azonosítóval (id) = 1
+            $Q_fetch_categories = "SELECT * FROM product_categories;"; //Minden kategória kiválasztása
+            $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //Minden termék rendezése ár alapján, alacsonytól kezdve.
+            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //Minden termék rendezése ár alapján, magastól kezdve.
             
             
         
@@ -68,9 +68,9 @@
         
         <section class="featured section" id="featured">
 
-            <!--========== TITLE BANNER ==========-->
+            <!--========== CIM BANNER ==========-->
             <?php 
-                //FETCH PRODUCT BY CATEGORY
+                //TERMÉK FETCHELÉSE KATEGÓRIÁNKÉNT
                 $result_cat = mysqli_query($conn, $Q_fetch_categories);
 
             ?>
@@ -80,19 +80,19 @@
                     <h2 class="category-name " id="big_title"></h2>
                 </div>
 
-                <!--========== SORT BY BUTTON ==========-->
+                <!--========== GOMBOK SZERINTI RENDEZÉS ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Sort by &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Rendezés &nbsp<i class='bx bxs-down-arrow drop-arrow'></i> szerint</button>
                     <div class="dropdown-content">
-                        <a href="#" onclick="sortby_products(1)">price low to high</a>
-                        <a href="#" onclick="sortby_products(2)">price high to low</a>
+                        <a href="#" onclick="sortby_products(1)">árszerint növekvő</a>
+                        <a href="#" onclick="sortby_products(2)">árszerint csökkenő</a>
                          
                     </div>
                 </div>
 
-                <!--========== CATEGORIES BUTTON ==========-->
+                <!--========== KATEGÓRIA GOMBOK ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Kategóriák &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
@@ -111,8 +111,8 @@
             </div>
 
             <div id="result" class="featured__container bd-grid mt-4">
-                <!-- PRODUCTS BY CATEGORY  -->
-                <!-- SORTED PRODUCTS  -->
+                <!-- TERMÉKEK KATEGÓRIA SZERINT  -->
+                <!-- RENDEZETT TERMÉKEK  -->
                 
             </div>
 
@@ -121,10 +121,10 @@
 
         </section>
 
-            <!-- IMPLEMENTING AJAX WITH JAVASCRIPT -->
+            <!-- AJAX IMPLEMENTÁLÁSA JAVASCRIPTEL -->
             <script>
 
-                //CATEGORIES FUNCTION - DISPLAY WITHOUT LOAD
+                //KATEGÓRIA FÜGGVÉNY - TÖLTÉS NÉLKÜL ELÉRHETŐ
                 function display_products_by_cat_id(cat_id, cat_name){
                     var xhttp;
                    
@@ -141,13 +141,13 @@
                     xhttp.send();   
                     console.log('sent');
 
-                    //CHANGES TITLE
+                    //CÍM VÁLTOZTATÁSA
                     document.getElementById('small_title').innerHTML = 'CATEGORY';
                     document.getElementById('big_title').innerHTML = cat_name;
                     
                 }
 
-                //SORT BY FUNCTION - DISPLAY WITHOUT LOAD
+                //FUNKCIÓ SZERINTI RENDEZÉS - TÖLTÉS NÉLKÜL ELÉRHETŐ
                 function sortby_products(sort_num){
                     var xhttp;
                       //AJAX
@@ -163,7 +163,7 @@
                     xhttp.send();   
                     console.log('sent sortby');
 
-                    //CHANGES TITLE
+                    //CÍMEK VÁLTOZTATÁSA
                     document.getElementById('small_title').innerHTML = 'SORT BY PRICE';
 
                     if(sort_num == 1){
@@ -176,7 +176,7 @@
                 }
 
 
-                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT
+                //TERMÉKEK TÍPUSA FUNCTION - TÖLTÉS NÉLKÜL ELÉRHETŐ AHOL ID = RESULT
                 function display_products_by_type(p_type){
                     var xhttp;
                    
@@ -193,7 +193,7 @@
                     xhttp.send();   
                     console.log('sent');
 
-                    //CHANGES TITLE
+                    //CÍMEK VÁLTOZTATÁSA
 
                     if(p_type==1){
                         document.getElementById('small_title').innerHTML = 'new';
@@ -208,13 +208,13 @@
                         document.getElementById('small_title').innerHTML = 'best-seller';
                     }
 
-                    //BIG TITLE
+                    //NAGY CÍM
                     document.getElementById('big_title').innerHTML = 'PRODUCTS';
                     
                 }
 
                 
-                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT
+                //TERMÉKEK TÍPUSA FUNCTION - TÖLTÉS NÉLKÜL ELÉRHETŐ WHERE ID = RESULT
                 function display_products_by_type_second(p_type){
                     var xhttp;
                    
@@ -231,7 +231,7 @@
                     xhttp.send();   
                     console.log('sent');
 
-                    //CHANGES TITLE
+                    //CÍM VÁLTOZÁSA
 
                     if(p_type==1){
                         document.getElementById('small_title').innerHTML = 'new';
@@ -246,13 +246,13 @@
                         document.getElementById('small_title').innerHTML = 'best-seller';
                     }
 
-                    //BIG TITLE
+                    //NAGY CÍM
                     document.getElementById('big_title').innerHTML = 'PRODUCTS';
                     
                 }
 
-                //LAUNCHING FEATURED PRODUCTS FUNCTION
-                display_products_by_type(2); // 2 --> featured
+                //KIEMELT TERMÉKEK INDÍTÁSA FUNCTION
+                display_products_by_type(2); // 2 --> kiemelt
             </script>
         
 
