@@ -9,3 +9,4 @@ about.php
 accountInvalidPage.php
 accountVerifiedPAge.php
 adminPanel.php
+ajax_test.php
