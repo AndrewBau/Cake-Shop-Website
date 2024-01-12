@@ -47,7 +47,7 @@
                    <div class="featured__data">
                     
                        <a href="product.php?product_id='.$product_id.'" class="product__name" id="product__name"style="text-decoration: none;">'.$row_product['albumcim'].'</a></br>
-                       <span class="featured__price">Rs '.$row_product['ar'].'</span>
+                       <span class="featured__price">'.$row_product['ar'].' Ft</span>
                       
                    </div>
                </div> ';
