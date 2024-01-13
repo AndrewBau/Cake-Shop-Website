@@ -1,8 +1,8 @@
 
-/*========== OFFER ========== */
+/*========== AJÁNLAT ========== */
 
 
-/* ========== IMAGES USED IN CSS =========== */
+/* ========== KÉP A CSSBEN =========== */
 
 :root{
     --header-height: 3rem;
@@ -10,14 +10,14 @@
     --font-bold: 700;
 }
 
-/* ========== IMAGES USED IN CSS =========== */
+/* ========== KÉP A CSSBEN =========== */
 
 :root{
     --offer-1: url("Assets/images/products/cupcake_bg2_cropped.jpg");
     --offer-2: url("Assets/images/products/christmas_2.jpg");
 }
 
-/* ========== COLOURS =========== */
+/* ========== SZÍNEK =========== */
 
 :root {
     --first-color: #FF7380FF;
@@ -30,7 +30,7 @@
     --grey-color: #d0d0d0;
 }
 
-/* ========== FONTS AND TYPOGRAPHY =========== */
+/* ========== FONTOK ÉS TIPOGRÁFIA =========== */
 
 :root {
     --body-font: 'Open Sans', sans-serif;
@@ -55,7 +55,7 @@
 
 }
 
-/* ========== MARGINS =========== */
+/* ========== MARGINOK =========== */
 :root {
     --mb-1: .5rem;
     --mb-half: .75rem;
@@ -80,9 +80,9 @@
 
 .offer__bg {
     background-image: var(--offer-1);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center; /* kép középrehelyezése */
+    background-repeat: no-repeat; /* ne ismétlődjön a kép */
+    background-size: cover; /* átméretezi a képet, hogy fedje a konténert */
     text-align: center;
 }
 
@@ -90,9 +90,9 @@
     width: 100%;
     height: auto;
     background-image: var(--offer-2);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center; /* kép középrehelyezése */
+    background-repeat: no-repeat; /* ne ismétlődjön a kép */
+    background-size: cover; /* átméretezi a képet, hogy fedje a konténert */
     text-align: center;
 }
 
@@ -119,11 +119,11 @@
     padding-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
-  /*  mask-image: linear-gradient(to bottom, transparent 10%, black);*/
+  /*  mask-image: linear-gradient(lentre, transparent 10%, black);*/
 }
 
 
-/*========== BUTTONS ========== */
+/*========== GOMBOK ========== */
 .button{
     display: inline-block;
     background-color: var(--first-color) !important;
@@ -148,14 +148,14 @@
 }
 .continue-shop{
     display: inline-block;
-    /* background-color: rgba(148, 148, 148, 0.479) !important; */
+    /* background-color: rgba(148, 148, 148, 0.479) !fontos; */
     color: grey !important;
     padding: .8rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
     font-family: var(--body-font);
     font-size: var(--small-font-size);
-    /* font-weight: var(--font-semi) !important; */
+    /* font-weight: var(--font-semi) !fontos; */
     transition: .3s !important;
     text-decoration: none !important;
     border: 1px solid grey !important;
@@ -178,7 +178,7 @@
 }
 
 
-/*========== MEDIA QUERIES BY SANJANA ========== */
+/*========== MEDIA QUERIEK ========== */
 @media screen and (min-width: 768px){
     
     .offer__data{
