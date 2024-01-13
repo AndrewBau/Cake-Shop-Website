@@ -57,7 +57,7 @@
         $cityErr = "Érvénytelen város";
         }
 
-        //ZIP VALIDÁLÁSA
+        //IRÁNYÍTÓSZÁM VALIDÁLÁSA
         $zip = test_input($_POST["zip"]);
         // ellenőrzi, hogy az irányítószám pontosan 5 számjegyet tartalmaz.
         if (!preg_match("^[0-9]{5}",$zip)) {
@@ -94,7 +94,7 @@
 
         //HITELKÁRTYA LEJÁRATI DÁTUM VALIDÁLÁSA
         if (empty($_POST["ccexp_m"]) || empty($_POST["ccexp_y"])) {
-        $ccexpErr = "Kérlek add meg a lejárati dátumot.";
+        $ccexpErr = "Kérlek add meg a lejárati dátumot";
         } 
         else {
             $ccexp_m = test_input($_POST["ccexp_m"]);
