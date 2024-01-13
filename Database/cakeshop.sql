@@ -1,6 +1,6 @@
-drop database if exists cakeshop;
-create database if not exists cakeshop;
-use cakeshop;
+drop database if exists `cakeshop`;
+create database if not exists `cakeshop`;
+use `cakeshop`;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -11,8 +11,7 @@ CREATE TABLE `cart`
 (
     `cartID` bigint(20) NOT NULL,
     `userID` bigint(20) NOT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+);
 
 
 CREATE TABLE `cartitem`
@@ -23,8 +22,7 @@ CREATE TABLE `cartitem`
     `price`      float       NOT NULL,
     `quantity`   smallint(6) NOT NULL,
     `createDate` timestamp   NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+);
 
 
 
@@ -33,14 +31,10 @@ CREATE TABLE `categories`
     `categoryID` bigint(20)  NOT NULL,
     `p_cat_name` varchar(30) NOT NULL,
     `p_cat_desc` text        NOT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+);
 
---
--- Dumping data for table `categories`
---
 
-INSERT INTO categories (`categoryID`, `p_cat_name`, `p_cat_desc`)
+INSERT INTO `categories` (`categoryID`, `p_cat_name`, `p_cat_desc`)
 VALUES (1, 'Jazz',
         'A jazz egy amerikai eredetű műfaj, amely a 20. század elején alakult ki. Jellemzően improvizatív jellegű, és gyakran használ swing ritmusokat, valamint hangsúlyos szólóka'),
        (2, 'Blues',
@@ -58,12 +52,6 @@ VALUES (1, 'Jazz',
        (8, 'Pop',
         'A popzene széles körben elterjedt és sokféle zenei stílust foglal magában. Fő jellemzője a könnyen emészthető, gyakran slágeres jelleg');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `orderitem`
---
-
 CREATE TABLE `orderitem`
 (
     `orderItemID` bigint(20)  NOT NULL,
@@ -72,108 +60,149 @@ CREATE TABLE `orderitem`
     `price`       float       NOT NULL,
     `quantity`    smallint(6) NOT NULL,
     `createDate`  timestamp   NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
-
-
+);
 
 CREATE TABLE `products`
 (
     `productID` bigint(20)   NOT NULL AUTO_INCREMENT,
-    albumcim    varchar(255) not null,
-    eloado      varchar(255) not null,
-    leiras      text         not null,
-    allapot     varchar(255) not null,
-    kategoria   varchar(255) not null,
-    ar          int          not null,
-    boritokep   varchar(255) null,
+    `albumcim`    varchar(255) not null,
+    `eloado`      varchar(255) not null,
+    `leiras`      text         not null,
+    `allapot`     varchar(255) not null,
+    `kategoria`   varchar(255) not null,
+    `ar`          int          not null,
+    `boritokep`   varchar(255) null,
     PRIMARY KEY (`productID`)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+);
+
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('A Love Supreme', 'John Coltrane',
+        'John Coltrane ''A Love Supreme'' című albuma a spirituális jazz zene csúcspontja. Ez az alkotás ötvözi a mély érzelmi tartalmat a zenei újítással, amelynek eredménye egy felejthetetlen zenei élmény.',
+        'Új', 'Jazz', 8500, 'Assets\\images\\products\\alovesupreme.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Time Out', 'Dave Brubeck Quartet',
+        'A ''Time Out'' az innovatív jazz ritmusokat hozza el hallgatóinak, a Dave Brubeck Quartet előadásában. Az albumon található ''Take Five'' című szám a jazz zene egyik legismertebb darabja lett.',
+        'Új', 'Jazz', 7900, 'Assets\\images\\products\\timeout.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Texas Flood', 'Stevie Ray Vaughan',
+        'Stevie Ray Vaughan ''Texas Flood'' című albuma a blues zene egyik kiemelkedő alkotása. Vaughan erőteljes gitárjátéka és érzelmekkel teli előadása új életet lehelt a blues műfajba',
+        'Új', 'Blues', 8100, 'Assets\\images\\products\\texasflood.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Born Under a Bad Sign', 'Albert King',
+        'Albert King ''Born Under a Bad Sign'' albuma a blues zene klasszikusai közé tartozik. King egyedi gitárstílusa és mély, érzelmekkel átitatott előadása az album minden számát emlékezetessé teszi.',
+        'Új', 'Blues', 7600, 'Assets\\images\\products\\bornunderabadsign.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Elvis Presley', 'Elvis Presley',
+        'Az ''Elvis Presley'' album a rock ''n'' roll királyának, Elvis Presley-nek a korai sikereit örökíti meg. Az album olyan klasszikusokat tartalmaz, mint a ''Heartbreak Hotel'' és ''Blue Suede Shoes''',
+        'Új', 'Rock \'n\' Roll', 9000, 'Assets\\images\\products\\elvispresley.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Chuck Berry Is on Top', 'Chuck Berry',
+        'A ''Chuck Berry Is on Top'' album Chuck Berry ikonikus rock ''n'' roll stílusának zsenialitását mutatja be. Számok, mint a ''Johnny B. Goode'', mérföldkövei a rock zene történetének.',
+        'Új', 'Rock \'n\' Roll', 8300, 'Assets\\images\\products\\chuckberry.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('The Four Seasons', 'Vivaldi',
+        'Vivaldi ''Négy évszak'' című műve a barokk zene remekműve. Ezen a lenyűgöző albumon hallható a ''Tavasz'', ''Nyár'', ''Ősz'' és ''Tél'' című kompozíciók, amelyek a természet hangulatát tükrözik.',
+        'Új', 'Klasszikus Zene', 9500, 'Assets\\images\\products\\fourseasons.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Symphony No. 5', 'Beethoven',
+        'Beethoven 5. szimfóniája az egyik legismertebb klasszikus zenei alkotás. A mű drámai kezdete és az átütő erejű fináléja minden hallgatónak mély élményt nyújt',
+        'Új', 'Klasszikus Zene', 8800, 'Assets\\images\\products\\beethoven5.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Golden Hits', 'Johnny Cash',
+        'Johnny Cash ''Golden Hits'' albuma a country zene legendájának legismertebb dalait gyűjti össze. Az album a ''Folsom Prison Blues'' és ''Ring of Fire'' című slágerekkel betekintést enged Cash gazdag zenei örökségébe',
+        'Új', 'Country', 8200, 'Assets\\images\\products\\johnnycash.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Red Headed Stranger', 'Willie Nelson',
+        'A ''Red Headed Stranger'' Willie Nelson egyik kiemelkedő alkotása, amely a klasszikus country zene esszenciáját tükrözi. Az album történetmesélő stílusa és Nelson egyedi hangja mélyen megérinti a hallgatót',
+        'Új', 'Country', 7700, 'Assets\\images\\products\\willienelson.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('What\'s Going On', 'Marvin Gaye',
+        'Marvin Gaye ''What''s Going On'' című albuma a soul zene mérföldköve. A társadalmi kommentárokkal teli számok, mint a címadó ''What''s Going On'', új dimenziót nyitottak a soul zene világában.',
+        'Új', 'Soul és R&B', 8600, 'Assets\\images\\products\\whatsgoingon.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Lady Soul', 'Aretha Franklin',
+        'Aretha Franklin ''Lady Soul'' albuma méltán viseli a soul királynője címét. Az albumon olyan örökzöld slágerek találhatók, mint a ''Respect'' és ''Chain of Fools'', melyek a soul zene klasszikusai lettek',
+        'Új', 'Soul és R&B', 8000, 'Assets\\images\\products\\ladysoul.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Thriller', 'Michael Jackson',
+        'Michael Jackson ''Thriller'' albuma az egyik legjobban eladott lemez minden időkben. Az album úttörő jelentőségű a pop zenei videók terén, és olyan híres dalokat tartalmaz, mint a ''Billie Jean'' és a ''Beat It''',
+        'Új', 'Pop', 10000, 'Assets\\images\\products\\thriller.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('1989', 'Taylor Swift',
+        'Taylor Swift ''1989'' című albuma a modern pop zene egyik meghatározó alkotása. Az album Swift zenei stílusának érett változását mutatja be, és slágereket tartalmaz, mint a ''Shake It Off'' és ''Blank Space''',
+        'Új', 'Pop', 8500, 'Assets\\images\\products\\1989.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Dark Side of the Moon', 'Pink Floyd',
+        'A ''Dark Side of the Moon'' a Pink Floyd pszichedelikus rock remekműve. Az album zenei újításai és konceptuális mélysége jelentősen befolyásolta a rock zenei műfaj',
+        'Új', 'Rock', 9500, 'Assets\\images\\products\\darksideofthemoon.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Led Zeppelin IV', 'Led Zeppelin',
+        'A ''Led Zeppelin IV'' album ikonikus darabja a rock zenének. Olyan híres dalokat tartalmaz, mint a ''Stairway to Heaven'' és ''Black Dog'', amelyek meghatározták a ''70-es évek rock zenéjét.',
+        'Új', 'Rock', 9200, 'Assets\\images\\products\\ledzeppeliniv.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('10', 'Tankcsapda',
+        'A ''10'' a Tankcsapda magyar rock zenekar egyik meghatározó albuma. Az albumon található energikus és őszinte dalok, mint a ''Mennyország tourist'', a magyar rock zene jeles képviselői.',
+        'Új', 'Rock', 7800, 'Assets\\images\\products\\tankcsapda10.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Best of Edda', 'Edda Művek',
+        'Az ''Edda Művek Best of'' albuma a magyar rock zene klasszikus darabjait gyűjti össze. Az album dalai, mint a ''Kölyköd voltam'' és ''A kör'', generációk kedvenceivé váltak.',
+        'Új', 'Rock', 7700, 'Assets\\images\\products\\eddamuvek.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Homework', 'Daft Punk',
+        'A Daft Punk ''Homework'' albuma a francia elektronikus zenei duo debütáló lemeze. Az album innovatív keveréke a house, techno és disco hangzásoknak, új irányt mutatott az elektronikus zenében.',
+        'Új', 'Electronic', 8900, 'Assets\\images\\products\\homework.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Selected Ambient Works 85-92',
+        'Az ''Aphex Twin Selected Ambient Works 85-92'' albuma az ambient techno zene egyik úttörője. Richard D. James álneve alatt készült ez az album, amely zenei kísérleteivel és innovatív hangzásával hatással volt a későbbi elektronikus zenei alkotásokra',
+        'Ambient techno pioneer', 'Új', 'Electronic', 8200, 'Assets\\images\\products\\aphextwin.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Illmatic', 'Nas',
+        'Nas ''Illmatic'' albuma az East Coast hip-hop egyik klasszikusa. Az album mély társadalmi és személyes témákat ölel fel, és olyan emblematikus dalokat tartalmaz, mint a ''N.Y. State of Mind'' és ''The World Is Yours''',
+        'Új', 'Hip-Hop', 8700, 'Assets\\images\\products\\illmatic.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('The Chronic', 'Dr. Dre',
+        'Dr. Dre ''The Chronic'' albuma a West Coast rap zene egyik mérföldköve. Az album jelentős hatással volt a hip-hop zenére a ''90-es években, és olyan klasszikus dalokat tartalmaz, mint a ''Nuthin'' But a ''G'' Thang'' és ''Dre Day''',
+        'Új', 'Hip-Hop', 9000, 'Assets\\images\\products\\thechronic.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Blue', 'Joni Mitchell',
+        'Joni Mitchell ''Blue'' albuma a folk zene remekműve. Az album személyes és érzelmes dalokkal teli, amelyek mélyen megérintik a hallgatókat, mint például a ''River'' és ''A Case of You''e',
+        'Új', 'Folk', 8300, 'Assets\\images\\products\\blue.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Táncdalok', 'Kovács Kati',
+        'Kovács Kati ''Táncdalok'' albuma a magyar népzene klasszikusai közé tartozik. Az albumon szereplő dalok, mint a ''Most kéne abbahagyni'' és ''Nem leszek a játékszered'', a magyar popzene meghatározó darabjai.e',
+        'Új', 'Folk', 7500, 'Assets\\images\\products\\kovacskati.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Master of Puppets', 'Metallica',
+        'A Metallica ''Master of Puppets'' albuma a thrash metal zene egyik alapköve. Az album energikus és technikailag kifinomult zenéje új mércét állított a heavy metal számára',
+        'Új', 'Metal', 9200, 'Assets\\images\\products\\masterofpuppets.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Paranoid', 'Black Sabbath',
+        'A Black Sabbath ''Paranoid'' albuma a heavy metal zene meghatározó alkotása. Az album olyan ikonikus dalokat tartalmaz, mint a ''Paranoid'' és ''Iron Man'', amelyek a metal zene alapkövei',
+        'Új', 'Metal', 8600, 'Assets\\images\\products\\paranoid.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Legend', 'Bob Marley',
+        'Bob Marley ''Legend'' albuma a reggae zene legismertebb és legnépszerűbb gyűjteménye. Az albumon található dalok, mint a ''No Woman, No Cry'' és ''Redemption Song'', Marley örökségének esszenciális részét képezik.',
+        'Új', 'Reggae', 8400, 'Assets\\images\\products\\legend.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Duppy Conqueror', 'Bob Marley & The Wailers',
+        'A ''Duppy Conqueror'' Bob Marley & The Wailers egyik kulcsalbuma, amely a roots reggae zene esszenciáját mutatja be. Az album dalaiban Marley spirituális üzenetei és a reggae zenei stílusa találkozik.',
+        'Új', 'Reggae', 7900, 'Assets\\images\\products\\duppyconqueror.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Álomarcú lány', 'Presser Gábor',
+        'Presser Gábor ''Álomarcú lány'' című albuma a magyar pop zene kiemelkedő darabja. Az album dalai, mint a címadó ''Álomarcú lány'' és ''Neked írom a dalt'', Presser egyedi zenei stílusát és zeneszerzői tehetségét mutatják be',
+        'Új', 'Pop', 7800, 'Assets\\images\\products\\alomarculany.jpg');
+INSERT INTO `products` (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
+VALUES ('Best of Zséda', 'Zséda',
+        'A ''Best of Zséda'' album Zséda legnépszerűbb magyar pop slágereit gyűjti össze. Az albumon olyan ismert dalok találhatók, mint a ''Mint a film'' és ''Asszony leszek'', amelyek a modern magyar popzene fontos pillanatai.',
+        'Új', 'Pop', 7600, 'Assets\\images\\products\\zsedabestof.jpg');
 
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('A Love Supreme', 'John Coltrane', 'Spiritual jazz masterpiece', 'Új', 'Jazz', 8500, 'alovesupreme.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Time Out', 'Dave Brubeck Quartet', 'Innovative jazz rhythms', 'Új', 'Jazz', 7900, 'timeout.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Texas Flood', 'Stevie Ray Vaughan', 'Powerful blues guitar', 'Új', 'Blues', 8100, 'texasflood.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Born Under a Bad Sign', 'Albert King', 'Blues classic', 'Új', 'Blues', 7600, 'bornunderabadsign.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Elvis Presley', 'Elvis Presley', 'The King of Rock \'n\' Roll', 'Új', 'Rock \'n\' Roll', 9000,
-        'elvispresley.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Chuck Berry Is on Top', 'Chuck Berry', 'Iconic rock \'n\' roll', 'Új', 'Rock \'n\' Roll', 8300,
-        'chuckberry.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('The Four Seasons', 'Vivaldi', 'Baroque masterpiece', 'Új', 'Klasszikus Zene', 9500, 'fourseasons.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Symphony No. 5', 'Beethoven', 'Iconic classical symphony', 'Új', 'Klasszikus Zene', 8800, 'beethoven5.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Golden Hits', 'Johnny Cash', 'Country music legend', 'Új', 'Country', 8200, 'johnnycash.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Red Headed Stranger', 'Willie Nelson', 'Classic country products', 'Új', 'Country', 7700, 'willienelson.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('What\'s Going On', 'Marvin Gaye', 'Soulful social commentary', 'Új', 'Soul és R&B', 8600, 'whatsgoingon.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Lady Soul', 'Aretha Franklin', 'The Queen of Soul', 'Új', 'Soul és R&B', 8000, 'ladysoul.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Thriller', 'Michael Jackson', 'Best-selling products of all time', 'Új', 'Pop', 10000, 'thriller.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('1989', 'Taylor Swift', 'Modern pop classic', 'Új', 'Pop', 8500, '1989.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Dark Side of the Moon', 'Pink Floyd', 'Psychedelic rock masterpiece', 'Új', 'Rock', 9500,
-        'darksideofthemoon.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Led Zeppelin IV', 'Led Zeppelin', 'Iconic rock products', 'Új', 'Rock', 9200, 'ledzeppeliniv.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('10', 'Tankcsapda', 'Magyar rock zene', 'Új', 'Rock', 7800, 'tankcsapda10.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Best of Edda', 'Edda Művek', 'Magyar rock klasszikusok', 'Új', 'Rock', 7700, 'eddamuvek.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Homework', 'Daft Punk', 'French electronic duo debut', 'Új', 'Electronic', 8900, 'homework.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Selected Ambient Works 85-92', 'Aphex Twin', 'Ambient techno pioneer', 'Új', 'Electronic', 8200,
-        'aphextwin.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Illmatic', 'Nas', 'East Coast hip-hop classic', 'Új', 'Hip-Hop', 8700, 'illmatic.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('The Chronic', 'Dr. Dre', 'West Coast rap landmark', 'Új', 'Hip-Hop', 9000, 'thechronic.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Blue', 'Joni Mitchell', 'Folk music masterpiece', 'Új', 'Folk', 8300, 'blue.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Táncdalok', 'Kovács Kati', 'Magyar népzene', 'Új', 'Folk', 7500, 'kovacskati.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Master of Puppets', 'Metallica', 'Thrash metal essential', 'Új', 'Metal', 9200, 'masterofpuppets.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Paranoid', 'Black Sabbath', 'Heavy metal originators', 'Új', 'Metal', 8600, 'paranoid.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Legend', 'Bob Marley', 'Reggae icon compilation', 'Új', 'Reggae', 8400, 'legend.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Duppy Conqueror', 'Bob Marley & The Wailers', 'Roots reggae essential', 'Új', 'Reggae', 7900,
-        'duppyconqueror.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Álomarcú lány', 'Presser Gábor', 'Magyar pop zene', 'Új', 'Pop', 7800, 'alomarculany.jpg');
-INSERT INTO products (albumcim, eloado, leiras, allapot, kategoria, ar, boritokep)
-VALUES ('Best of Zséda', 'Zséda', 'Magyar pop slágerek', 'Új', 'Pop', 7600, 'zsedabestof.jpg');
-
--- --------------------------------------------------------
 
 CREATE TABLE `product_category`
 (
     `productID`  bigint(20) NOT NULL,
     `categoryID` bigint(20) NOT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
-
---
--- Dumping data for table `product_category`
---
+);
 
 INSERT INTO `product_category` (`productID`, `categoryID`)
 VALUES (1, 2),
@@ -217,22 +246,11 @@ VALUES (1, 2),
        (51, 4),
        (52, 4);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `product_type`
---
-
 CREATE TABLE `product_type`
 (
     `productID` bigint(20) NOT NULL,
     `typeID`    bigint(20) NOT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
-
---
--- Dumping data for table `product_type`
---
+);
 
 INSERT INTO `product_type` (`productID`, `typeID`)
 VALUES (1, 2),
@@ -276,12 +294,6 @@ VALUES (1, 2),
        (51, 2),
        (52, 2);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `transaction`
---
-
 CREATE TABLE `transaction`
 (
     `tranID`        bigint(20) NOT NULL,
@@ -290,47 +302,21 @@ CREATE TABLE `transaction`
     `paymentMethod` text       NOT NULL,
     `status`        text       NOT NULL,
     `createDate`    timestamp  NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
-
---
--- Dumping data for table `transaction`
---
-
-INSERT INTO `transaction` (`tranID`, `userID`, `orderID`, `paymentMethod`, `status`, `createDate`)
-VALUES (12, 4, 12, 'creditCard', 'successful', '2020-12-27 02:36:14'),
-       (13, 4, 12, 'JuiceByMCB', 'successful', '2020-12-27 13:49:55'),
-       (14, 4, 12, 'creditCard', 'successful', '2020-12-27 13:58:44');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `types`
---
+);
 
 CREATE TABLE `types`
 (
     `typeID`      bigint(20)  NOT NULL,
     `p_type_name` varchar(30) NOT NULL,
     `p_type_desc` text        NOT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
-
---
--- Dumping data for table `types`
---
+) ;
 
 INSERT INTO `types` (`typeID`, `p_type_name`, `p_type_desc`)
-VALUES (1, 'new', 'new products are tagged as new'),
-       (2, 'featured', 'products which have to get attention are tagged as featured'),
-       (3, 'hot', 'products on sale are tagged as hot'),
-       (4, 'best', 'best- seller products are tagged as best');
+VALUES (1, 'új', 'az új albumokat újként jelölik'),
+       (2, 'kiemelt', 'a nagy érdeklődést kiváltó albumokat kiemeltként jelölik'),
+       (3, 'akciós', 'az akciós termékeket akciós jelölik'),
+       (4, 'legjobb', 'a legjobban fogyó termékeket legjobbként jelölik');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
 
 CREATE TABLE `user`
 (
@@ -348,32 +334,7 @@ CREATE TABLE `user`
     `isSubscribed` tinyint(1)   NOT NULL,
     `isAdmin`      tinyint(1)   NOT NULL,
     `createDate`   timestamp    NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`userID`, `uname`, `pass`, `fname`, `lname`, `email`, `address`, `phone`, `description`, `vkey`,
-                    `verified`, `isSubscribed`, `isAdmin`, `createDate`)
-VALUES (1, 'oprah123', '$2y$10$pu.rx7.mCBuy.L/1WjJbiufyUm43iUHjqp9wVLcxqzH0H.qqqOrVm', 'Oprah', 'Windsor',
-        'vinoveg106@chatdays.com', 'New York', '57458962', '', '18981cb084d8b9392a26041542908bdc', 1, 1, 1,
-        '2020-12-25 17:59:23'),
-       (2, 'siri123', '$2y$10$F4agSnQaMewBbKKcoavmn.vmn4Utci5WM1KtFjQ7b/nSQm4lCbVkm', 'Siri', 'Windsor',
-        'tadoso1652@aranelab.com', '', '', '', 'e14520491a0cfcba3d5d9de1798273a5', 1, 0, 0, '2020-12-25 14:03:48'),
-       (3, 'sanjana2020', '$2y$10$YG6ch/.jzZ9.TGR1D6RVY.FMPHCGX52Bhy6BDYD.4HY4SZ6isovaS', 'sanjana', 'lolo',
-        'sanjana.ramchurun@umail.uom.ac.mu', '', '', '', 'b394c058279a76504793c869410d41b8', 1, 0, 0,
-        '2020-12-26 18:16:08'),
-       (4, 'sanjana2021', '$2y$10$zwnOI5uDLMjFTPh9TuNBf.edR00sOnkp04SRHgkboTUyBDsIPYbZe', 'lala', 'lolo',
-        'katy61100@outlook.com', 'flic en flac', '55555555', 'lin bon', 'd7a55e39acca229015eb6224163b3298', 1, 0, 0,
-        '2020-12-26 18:19:45');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `userorder`
---
+);
 
 CREATE TABLE `userorder`
 (
@@ -384,163 +345,80 @@ CREATE TABLE `userorder`
     `phone`      varchar(8)   NOT NULL,
     `status`     text         NOT NULL,
     `createDate` timestamp    NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+);
 
---
--- Dumping data for table `userorder`
---
-
-INSERT INTO `userorder` (`orderID`, `userID`, `total`, `address`, `phone`, `status`, `createDate`)
-VALUES (12, 4, 55, 'flic en flac', '55555555', 'successful', '2020-12-27 02:36:14'),
-       (13, 4, 50, '22, Morc Anna', '55555555', 'successful', '2020-12-27 13:49:55'),
-       (14, 4, 100, '22, Morc Anna', '55555555', 'successful', '2020-12-27 13:58:44');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cart`
---
 ALTER TABLE `cart`
     ADD PRIMARY KEY (`cartID`),
     ADD KEY `userID` (`userID`);
 
---
--- Indexes for table `cartitem`
---
 ALTER TABLE `cartitem`
     ADD PRIMARY KEY (`cartItemID`),
     ADD KEY `1_Cart_Zero-Or-More_CartItems` (`cartID`),
     ADD KEY `1_Product_Many_CartItems` (`productID`);
 
---
--- Indexes for table `categories`
---
 ALTER TABLE `categories`
     ADD PRIMARY KEY (`categoryID`);
 
---
--- Indexes for table `orderitem`
---
 ALTER TABLE `orderitem`
     ADD PRIMARY KEY (`orderItemID`),
     ADD KEY `1_Order_Many_OrderItems` (`orderID`),
     ADD KEY `1_Product_Many_OrderItems` (`productID`);
 
-
-
-
--- Indexes for table `product_category`
---
 ALTER TABLE `product_category`
     ADD KEY `1_Product_Many_Categories` (`productID`),
     ADD KEY `1_Category_Many_Products` (`categoryID`);
 
---
--- Indexes for table `product_type`
---
 ALTER TABLE `product_type`
     ADD KEY `1_Product_Many_Types` (`productID`),
     ADD KEY `1_Type_Many_Products` (`typeID`);
 
---
--- Indexes for table `transaction`
---
 ALTER TABLE `transaction`
     ADD PRIMARY KEY (`tranID`),
     ADD KEY `1_Order_Many_Transactions` (`orderID`),
     ADD KEY `1_User_Many_Transactions` (`userID`);
 
---
--- Indexes for table `types`
---
 ALTER TABLE `types`
     ADD PRIMARY KEY (`typeID`);
 
---
--- Indexes for table `user`
---
 ALTER TABLE `user`
     ADD PRIMARY KEY (`userID`);
 
---
--- Indexes for table `userorder`
---
 ALTER TABLE `userorder`
     ADD PRIMARY KEY (`orderID`),
     ADD KEY `1_User_Many_Orders` (`userID`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cart`
---
 ALTER TABLE `cart`
     MODIFY `cartID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
---
--- AUTO_INCREMENT for table `cartitem`
---
 ALTER TABLE `cartitem`
     MODIFY `cartItemID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
---
--- AUTO_INCREMENT for table `categories`
---
 ALTER TABLE `categories`
     MODIFY `categoryID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
---
--- AUTO_INCREMENT for table `orderitem`
---
 ALTER TABLE `orderitem`
     MODIFY `orderItemID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
-
-
---
--- AUTO_INCREMENT for table `transaction`
---
 ALTER TABLE `transaction`
     MODIFY `tranID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
---
--- AUTO_INCREMENT for table `types`
---
 ALTER TABLE `types`
     MODIFY `typeID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
---
--- AUTO_INCREMENT for table `user`
---
 ALTER TABLE `user`
     MODIFY `userID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
---
--- AUTO_INCREMENT for table `userorder`
---
 ALTER TABLE `userorder`
     MODIFY `orderID` bigint(20) NOT NULL AUTO_INCREMENT,
     AUTO_INCREMENT = 1;
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `cart`
---
 ALTER TABLE `cart`
     ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
