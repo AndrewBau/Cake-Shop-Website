@@ -24,18 +24,18 @@
             if(mysqli_num_rows($result) === 1){
                 $row = mysqli_fetch_assoc($result);
 
-                // check if user has verified his email
+                // csekkoljuk, hogy validált emailcíme van-e
                 if($row['verified'] == 1)
                 {
                     setcookie("thankYouCookie", "verificationEmailSent", time() - 3600);
                     setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
                     setcookie("resetPassword","resetMailSent", time() - 3600);
-                    // check if hashed passwords match
+                    // hashelt passok egyeznek-e
                     if(password_verify($password, $row['pass']))
                     {
                         include "./AdditionalPHP/startSession.php";
 
-                        // store the user data in this session
+                        // sessionebn tároljuk a user adatot
                         $_SESSION['uname'] = $row['uname'];
                         $_SESSION['isAdmin'] = $row['isAdmin'];
 
@@ -72,15 +72,15 @@
                         }
                     } 
                     else {
-                        $errCriteria = "Incorrect Username or Password!";
+                        $errCriteria = "Helytelen felhasználónév vagy jelszó!";
                     }
                 }
                 else
                 {
-                    $errCriteria = "Please verify your email address before you log in.";
+                    $errCriteria = "Kérjük, erősítse meg az e-mail címét, mielőtt bejelentkezik!.";
                 }
             } else {
-                $errCriteria = "Incorrect Username or Password!";
+                $errCriteria = "Helytelen felhasználónév vagy jelszó!";
             }
         }
         
@@ -99,7 +99,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | LOGIN</title>
+        <title>VINYLMASTER | BEJELENTKEZÉS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
@@ -110,7 +110,7 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <!-- Animate CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <title>MALAKO | Login</title>
+        <title>VINYLMASTER | Bejelentkezés</title>
     </head>
 
     <body>
@@ -138,19 +138,19 @@
             <div class="form">
                 <div class="login">
                     <div class="login-header">
-                        <h3>LOGIN</h3>
-                        <p>Please enter your credentials to login</p>
+                        <h3>BEJELENTKEZÉS</h3>
+                        <p>Kérjük, adja meg az azonosítóit a bejelentkezéshez.</p>
                     </div>
                 </div>
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
-                    <input type="password" name="password" placeholder="Password"/>
+                    <input type="text" name="uname" placeholder="Felhasználónév" value="<?php echo $uname;?>"/>
+                    <input type="password" name="password" placeholder="Jelszó"/>
                     <span class="Password-Error"><?php if($errCriteria != ""){echo "$errCriteria <br><br>";}?></span>
                     
-                    <button>login</button>
-                    <p class="message">Not registered? <a href="registration.php">Create an account</a></p>
-                    <br><span class="forget-text"><a href="forgetPassword.php">Forgot Password?</a></span>
+                    <button>bejelentkezés</button>
+                    <p class="message">Nem regisztrált? <a href="registration.php">Regisztráció</a></p>
+                    <br><span class="forget-text"><a href="forgetPassword.php">Elfelejtette jelszavát?</a></span>
                     <!-- <p class="or-message"><b>OR</b></p> -->
                 </form>
 

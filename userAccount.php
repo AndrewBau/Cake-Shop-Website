@@ -31,7 +31,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | MY ACCOUNT</title>
+        <title>VINYLMASTER | AZ ÉN SZÁMLÁM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
@@ -75,13 +75,13 @@
         <!-- Start Tab -->
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="pill" href="#home">Edit Profile</a></li>
+                <li class="active"><a data-toggle="pill" href="#home">Profil módosítása</a></li>
             </ul>
             
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
                     <div class="tab-title">
-                        <h3>Edit My Profile</h3>
+                        <h3>Profil módosítása</h3>
                     </div>
                     <!--Start User Profile-->
                     <?php include './Includes/userProfile.php'; ?>

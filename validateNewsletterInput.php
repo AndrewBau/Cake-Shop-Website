@@ -16,7 +16,7 @@
 
             if($row['isSubscribed'] == 1)
             {
-                echo "You are already subscribed!";
+                echo "Már feliratkoztál!";
             }
             else
             {
@@ -24,17 +24,17 @@
 
                 if(mysqli_query($conn, $sql))
                 {
-                    echo "Thank you for subscribing! We will get back to you soon.";
+                    echo "Köszönjük a feliratkozásod! Hamarosan keresni fogunk.";
                 }
                 else
                 {
-                    echo "Something went wrong. Please try again later.";
+                    echo "Valami hiba történt. Kérlek próbáld meg újra később.";
                 }
             }
         }
         else
         {
-            echo "Please create an account to subscribe to our newsletter.";
+            echo "A Hírlevélre való feliratkozáshoz regisztrálnod kell.";
         }     
     }
          

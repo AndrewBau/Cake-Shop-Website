@@ -1,12 +1,12 @@
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Következő/előző vezérlők
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// Thumbnail kép vezérlők
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }

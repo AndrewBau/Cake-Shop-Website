@@ -12,18 +12,18 @@
     margin-bottom:-40px;
 }
 
-/* Hide the images by default */
+/* Eltünteti a képet defaultnál */
 .slideshow-container .mySlides{
     display: none;
     margin: 0px;
 }
   
-/* On hover, add a black background color with a little bit see-through */
+/* hover esetén adjon hozzá fekete háttérszínt egy kis átlátszósággal. */
 .prev:hover, .next:hover{
     background-color: rgba(0,0,0,0.8);
 }
   
-/* Caption text */
+/* Felírat szöveg */
 .slideshow-container .text{
     color: white;
     line-height: 50px;
@@ -36,7 +36,7 @@
     z-index:3;
 }
   
-/* Fading animation */
+/* Elhalványuló animáció */
 .slideshow-container .fade{
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -56,7 +56,7 @@
 /* End Slideshow */
 
 
-/* Start What You Can Do */
+/* Start Munkánk */
 .what-you-can-do{
     position:relative;
     background-color: white;
@@ -99,10 +99,10 @@
     padding: 0 30px;
     margin: 0;
 }
-/* End What You Can Do */
+/* End Munkánk */
 
 
-/* Start Special Offer */
+/* Start Speciális ajánlat */
 .offer-section{
     z-index: 1;
     margin-bottom: 0;
@@ -110,9 +110,9 @@
 
 .offer-bg {
     background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("Assets/images/2.products/cupcake_bg2_cropped.jpg");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center; /* képet középre igazít */
+    background-repeat: no-repeat; /* ne ismételje a képet */
+    background-size: cover; /* Átméretezi a képet, hogy lefedje az egész konténert */
     text-align: center;
 }
 
@@ -139,14 +139,14 @@
     letter-spacing: .2rem;
 }
 
-/* == Shop Now Button == */
+/* == Vásárlás most Gomb == */
 .offer-section .subscribe-button-container{
     display: inline-block;
 }
 
 .subscribe-button{
     border: none;
-    background-color: #FF7380FF;
+    background-color: #1a73e8;
     color: white;
     padding: 1rem;
     font-size: 12pt;
@@ -166,10 +166,10 @@
 .subscribe-button-container{
     width: 150px;
 }
-/* End Special Offer */
+/* End Speciális ajánlat */
 
 
-/* Start How to Order*/
+/* Start Hogyan rendelj*/
 .how-to-order h2{
     padding-top: 40px;
     color:black;
@@ -203,10 +203,10 @@
 .wave-image-group .how-to-order-wave{
     margin-bottom: -70px;
 }
-/* End How to Order*/
+/* End Hogyan rendelj*/
 
 
-/* Start Our Baker */
+/* Start Mesterünk */
 .our-baker{
     background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./Assets/images/1.index/CupcakePattern_Darken.jpg");
     background-position: center;
@@ -256,9 +256,9 @@
 }
 
 .baker-profile-group .hierarchy{
-    color: #FF7380FF;
+    color: #1a73e8;
 }
-/* End Our Baker */
+/* End Mesterünk */
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -289,7 +289,7 @@
     /* End Slideshow */
 
 
-    /* Start What You Can Do */
+    /* Start Munkánk */
     .what-you-can-do h2{
         padding-top: 20px;
         color:black;
@@ -311,10 +311,10 @@
         display: flex;
 
     }
-    /* End What You Can Do */
+    /* End Munkánk */
 
 
-    /* Start Special Offer */
+    /* Start Speciális ajánlat */
     .offer-data{
         margin-bottom: 0;
         padding: 0 10px;
@@ -329,10 +329,10 @@
     .offer-section .subtitle h2{
         color: white;
     }
-    /* End Special Offer */
+    /* End Speciális ajánlat */
     
     
-    /* Start How to Order*/
+    /* Start Hogyan rendelj*/
     .how-to-order h2{
         padding-top: 20px;
         margin: 0px;
@@ -362,10 +362,10 @@
     .wave-image-group .how-to-order-wave{
         margin-bottom: -70px;
     }
-    /* End How to Order*/
+    /* End Hogyan rendelj*/
 
 
-    /* Start Our Baker */
+    /* Start Mesterünk */
     .helper-individual-index{
         padding:20px 15px;
     }
@@ -375,7 +375,7 @@
         width: 1300px;
         display: flex;
     }
-    /* End Our Baker */
+    /* End Mesterünk */
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR INDEX.HTML*/
@@ -383,10 +383,10 @@
 
 
 /*--------------------------------------------------------------------------*/
-/*Start About Us Page*/
+/*Start RÓLUNK Oldal*/
 /*--------------------------------------------------------------------------*/
 
-/* Start About Us Header */
+/* Start Rólunk Header */
 .about-us-header .banner{
     background:linear-gradient(rgba(6, 0, 85, 0.3), rgba(6, 0, 85, 0.3)), url("./Assets/images/4.aboutus/Banner.jpg");
     padding-bottom: 150px;
@@ -399,12 +399,12 @@
     font-size: 50px;
     padding-top: 20px;
     padding-bottom: 60px;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
-/*End About Us Header*/
+/*End Rólunk Header*/
 
 
-/* Start Baker Info */
+/* Start Munkás Info */
 .baker-info-group{
     text-align: center;
     padding-bottom: 50px;
@@ -413,7 +413,7 @@
 .baker-info-group .baker-info-title span{
     font-size: 25px;
     font-family: Courgette;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .baker-info-group .baker-name{
@@ -446,7 +446,7 @@
 .baker-info-group .baker-position span{
     font-size: 20px;
     font-family: Courgette;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .baker-photo-group .baker-photo{
@@ -454,10 +454,10 @@
     padding-bottom: 100%;
     background-size: cover;
 }
-/* End Baker Info */
+/* End Munkás Info */
 
 
-/* Start Award Section */
+/* Start Kitüntetés Szekció */
 .award-section{
     background-color: #F4F3EFFF;
     padding-top: 50px;
@@ -473,7 +473,7 @@
 .award-title{
     text-align: center;
     padding-bottom: 15px;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .award-title span{
@@ -526,13 +526,13 @@
     padding-bottom: 15px;
     font-size: 20px;
     font-family: Courgette;
-    color:#A593C2FF;
+    color:#1a73e8;
 }
 
 .badge-info .badge-description{
     font-size: 20px;
 }
-/* End Award Section */
+/* End Kitüntetés Szekció */
 
 
 /* Start Team Info */
@@ -557,7 +557,7 @@
 
 .team-section .team-title span{
     font-family: Courgette;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .helper0 .helper-pic{
@@ -602,7 +602,7 @@
 
 .helper-more-about .hierarchy{
     font-size: 20px;
-    color: #FF7380FF;
+    color: #1a73e8;
 }
 
 .helper-social-media .social-media a{
@@ -623,14 +623,14 @@
 /*---------------------------------------------------------------------------------------------*/
 
 @media only screen and (min-width: 1200px){
-    /* Start About Us Header */
+    /* Start Rólunk Header */
     .about-us-header .banner{
         padding-bottom: 300px;
     }
-    /* End About Us Header */
+    /* End Rólunk Header */
 
 
-    /* Start Baker Info */
+    /* Start Mester Info */
     .baker-info-group{
         padding-bottom: 0px;
     }
@@ -652,7 +652,7 @@
     .baker-info-group .baker-info-title span{
         font-size: 25px;
         font-family: Courgette;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .baker-info-group .baker-name{
@@ -684,7 +684,7 @@
     .baker-info-group .baker-position span{
         font-size: 20px;
         font-family: Courgette;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .baker-photo-group .baker-photo{
@@ -693,10 +693,10 @@
         background-size: 500px;
         background-size: cover;
     }
-    /* End Baker Info */
+    /* End Mester Info */
 
 
-    /* Start Award Section */
+    /* Start Kitüntetés Szekció */
     .award-section{
         background-color: #F4F3EFFF;
         padding-top: 50px;
@@ -706,7 +706,7 @@
 
     .award-title{
         text-align: center;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .award-title span{
@@ -721,15 +721,15 @@
     }
 
     .badge1 .badge-photo{
-        background-image: url("./Assets/images/4.aboutus/Badge1.png");
+        background-image: url("./Assets/images/4.aboutus/Badge1.jpg");
     }
 
     .badge2 .badge-photo{
-        background-image: url("./Assets/images/4.aboutus/Badge2.png");
+        background-image: url("./Assets/images/4.aboutus/Badge2.jpg");
     }
 
     .badge3 .badge-photo{
-        background-image: url("./Assets/images/4.aboutus/Badge3.png");
+        background-image: url("./Assets/images/4.aboutus/Badge3.jpg");
     }
 
     .badge-photo{
@@ -758,20 +758,20 @@
         padding-bottom: 15px;
         font-size: 20px;
         font-family: Courgette;
-        color:#A593C2FF;
+        color:#1a73e8;
     }
 
     .badge-info .badge-description{
         font-size: 20px;
     }
-    /* End Award Section */
+    /* End Kitüntetés Szekció */
 
 
-    /* Start Award Section */
+    /* Start Kitüntetés Szekció */
     .award-badge-container{
         display:flex;
     }
-    /* End Award Section */
+    /* End Kitüntetés Szekció */
 
 
     /* Start Team Info */
@@ -795,7 +795,7 @@
 
     .team-section .team-title span{
         font-family: Courgette;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .all-helper-info{
@@ -841,7 +841,7 @@
 
     .helper-more-about .hierarchy{
         font-size: 20px;
-        color: #FF7380FF;
+        color: #1a73e8;
     }
 
     .helper-social-media .social-media a{
@@ -864,7 +864,7 @@
 
 
 /*--------------------------------------------------------------------------*/
-/*Start Contact Us Page*/
+/*Start KAPCSOLATFELVÉTEL Oldal*/
 /*--------------------------------------------------------------------------*/
 
 /* Start Banner */
@@ -877,7 +877,7 @@
 /* End Banner */
 
 /*--------------------------------------------------------------------------*/
-/*End Contact Us Page*/
+/*End KAPCSOLATFELVÉTEL Oldal*/
 /*--------------------------------------------------------------------------*/
 
 

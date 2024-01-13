@@ -4,73 +4,73 @@
     //SESSION START
     include "./AdditionalPHP/startSession.php";
 
-    //DATABASE CONNECTION  cakeshop
+    //KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER
     include_once 'connection.php';
 
     $validated = false;
 
-    // define variables and set to empty values
+    // változók definiálása és beállitása üres értékre
     $fname = $lname = $email = $address = $country = $city = $zip = $paymentMethod = $ccname = $ccnum = $ccexp_m =$ccexp_y = $cccvv = "";
     $fnameErr = $lnameErr = $emailErr = $addressErr = $countryErr = $cityErr = $zipErr = $paymentMethodErr = $ccnameErr = $ccnumErr = $ccexpErr = $cccvvErr = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        //FIRST NAME VALIDATION
+        //KERESZTNÉV VALIDÁLÁSA
         $fname = test_input($_POST["fname"]);
-        // check if name only contains letters and whitespace
+        // leellenőrzi, hogy csak betűket és spacet tartalmaz-e
         if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
-          $fnameErr = "Only letters and white space allowed";
+          $fnameErr = "Csak betű és szóköz engedélyezett";
         }
 
-        //LAST NAME VALIDATION
+        //VEZETÉKNÉV VALIDÁLÁSA
         $lname = test_input($_POST["lname"]);
-        // check if name only contains letters and whitespace
+        // leellenőrzi, hogy csak betűket és spacet tartalmaz-e
         if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
-          $lnameErr = "Only letters and white space allowed";
+          $lnameErr = "Csak betű és szóköz engedélyezett";
         }
       
-        //EMAIL VALIDATION
+        //EMAIL VALIDÁLÁSA
         $email = test_input($_POST["email"]);
-        // check if e-mail address is well-formed
+        // ellenőrzi a formátumot
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $emailErr = "Invalid email format";
+          $emailErr = "Érvénytelen email cím formátum";
         }
         
-        //ADDRESS VALIDATION
+        //CÍM VALIDÁLÁSA
         $address = test_input($_POST["address_checkout"]);
-        // check if email contains numbers at the start, followed by letters, contains space, hyphen and comma
+        // Ellenőrizze, hogy a cím számmal kezdődik-e, azt követik-e betűk, tartalmaz-e szóközt, kötőjelet és vesszőt.
         if (!preg_match("/^[0-9a-zA-Z\s,-]+$/",$address)) {
-          $addressErr = "Invalid address";
+          $addressErr = "Érvénytelen cím";
         }
 
-        //COUNTRY VALIDATION
+        //ORSZÁG VALIDÁLÁSA
         // $country = test_input($_POST["country"]);
         // check if country == mauritius
         // if ($country != "Mauritius" || $country != "mauritius" ) {
-        //   $addressErr = "Sorry, we currently deliver in Mauritius only.";
+        //   $addressErr = "Elnézést, de csak Mauritiusba szállítunk.";
         // }
 
-        //CITY VALIDATION
+        //VÁROS VALIDÁLÁSA
         $city = test_input($_POST["city"]);
-        // check if city == options
+        // ellenőrzi, hogy city == options
         if ($city == "Port Louis" || $city == "Curepipe" || $city == "Vacoas" || $city == "Quatre Bornes" || $city == "Rose Hill" || $city == "Flic En Flac" || $city == "Phoenix") {
           //valid
         }
         else{
-          $cityErr = "Invalid city";
+          $cityErr = "Érvénytelen város";
         }
 
-        //ZIP VALIDATION
+        //IRÁNYÍTÓSZÁM VALIDÁLÁSA
         $zip = test_input($_POST["zip"]);
-        // check if zip contains exactly 5 numbers
+        // ellenőrzi, hogy az irányítószám pontosan 5 számjegyet tartalmaz.
         if (!preg_match("/^[0-9]{5}/",$zip)) {
-          $zipErr = "Invalid zip code";
+          $zipErr = "Érvénytelen irányítószám";
         }
       
-        //PAYMENT METHOD VALIDATION
+        //FIZETÉSI METÓDUS VALIDÁLÁSA
         $paymentMethod = test_input($_POST["paymentMethod"]);
 
-        //REGEX BY CARD TYPE
+        //REGEX KÁRTYATÍPUS ALAPJÁN
         $cardtype = array(
           "visa"       => "/^4[0-9]{15}$/",
           // "mastercard" => "/^5[1-5][0-9]{14}$/"
@@ -78,40 +78,40 @@
         );
 
 
-        //CC NAME VALIDATION
+        //HITELKÁRTYA NÉV ÉRVÉNYESSÉGELLENŐRZÉS
         $ccname = test_input($_POST["ccname"]);
-        // check if ccname only contains letters and whitespace
+        // Ellenőrzi, hogy a hitelkártya név csak betűket és szóközöket tartalmaz-e.
         if (!preg_match("/^[a-zA-Z-' ]*$/",$ccname)) {
-          $ccnameErr = "Only letters and white space allowed";
+          $ccnameErr = "Csak betű és szóköz engedélyezett";
         }
 
-        //CC NUM VALIDATION
+        //HITELKÁRTYASZÁM VALIDÁLÁSA
         $ccnum = test_input($_POST["ccnum"]);
-        // check if ccnum matches regex by supported card types
+        // ellenprzi, hogy a hitelkártyaszám illeszkedik-e a kártyatípusnak megfelelő regexbe
         if (!preg_match($cardtype['visa'],$ccnum)) {
-          $ccnumErr = "Invalid card number
+          $ccnumErr = "Érvénytelen kártyaszám
           <br>
-          We are sorry! Our system currently supports VISA cards only.";
+          Elnézést! Jelenleg a rendszerünk a VISA és MasterCard kártyákat támogatja.";
         }
 
 
-        //CC EXPIRATION DATE VALIDATION
+        //HITELKÁRTYA LEJÁRATI DÁTUM VALIDÁLÁSA
         if (empty($_POST["ccexp_m"]) || empty($_POST["ccexp_y"])) {
-          $ccexpErr = "Please enter the expiration date";
+          $ccexpErr = "Kérlek add meg a lejárati dátumot";
         } 
         else {
             $ccexp_m = test_input($_POST["ccexp_m"]);
             $ccexp_y = test_input($_POST["ccexp_y"]);
 
-            //VALIDATES MONTH
+            //VALIDÁLJA A HÓNAPOT
             if((int)$ccexp_m > 0 && (int)$ccexp_m < 13){
-              //VALIDATES YEAR
+              //VALIDÁLJA AZ ÉVET
               if((int)$ccexp_y > 1900 && (int)$ccexp_y < 4000){
                 $expired_check = \DateTime::createFromFormat('my', $ccexp_m.$ccexp_y);
                 $month_now = date('m');
                 $year_now = date('y');
                 $now = new \DateTime();
-                //CHECK IF EXPIRED
+                //ELLENŐRZI, HOGY LEJÁRT-E
 
                 if($year_now < (int)$ccexp_y){
                   //valid year
@@ -123,40 +123,40 @@
                   }
                   //exp
                   else{
-                    $ccexpErr = "Your credit card has expired.";
+                    $ccexpErr = "A kártya már lejárt";
                   }
                 }
                 //exp
                 else {
-                  $ccexpErr = "Your credit card has expired..";
+                  $ccexpErr = "A kártya már lejárt.";
                 }
 
 
 
 
                 // if ($expired_check > $now) {
-                //   $ccexpErr = "Your credit card has expired";
+                //   $ccexpErr = "A kártya már lejárt.";
                 // }
               }
               else {
-                $ccexpErr = "Invalid year";
+                $ccexpErr = "Érvénytelen év";
               }
             }
             else {
-              $ccexpErr = "Invalid expiration date";
+              $ccexpErr = "Érvénytelen lejárati dátum";
             }
          }
 
 
-          //CC CVV VALIDATION
+          //HITELKÁRTYA CVV VALIDÁLÁSA
           $cccvv = test_input($_POST["cccvv"]);
-          // check if CVV contains has 3 or 4 digits and is
-          //between 0-9 and does not have any alphabets and special characters.
+          //Ellenőrzi, hogy a CVV tartalmaz-e 3 vagy 4 számjegyet.
+          //Ellenőrzi, hogy a CVV 0 és 9 közötti számjegyet tartalmaz, és nem tartalmaz betűket vagy speciális karaktereket.
           if (preg_match("/^[0-9]{3,4}$/",$cccvv)) {
             //valid
           }
           else{
-            $cccvvErr = "Invalid CVV";
+            $cccvvErr = "Érvénytelen CVV";
           }
 
           if($fnameErr == "" && $lnameErr == "" && $emailErr == "" && $addressErr == "" && $countryErr == "" && $cityErr == "" && $zipErr == "" && $paymentMethodErr == "" && $ccnameErr == "" && $ccnumErr == "" && $ccexpErr == "" && $cccvvErr == ""){
@@ -183,7 +183,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>MALAKO | Checkout</title>
+    <title>VINYLMASTER | Pénztár</title>
 
     
 
@@ -203,25 +203,25 @@
     
     <main>
 
-      <!-- TITLE -->
+      <!-- CÍM -->
       <div class="py-5 text-center">
-        <h1 class="business-name">MALAKO</h1>
-        <h2>Checkout form</h2>
+        <h1 class="business-name">VINYLMASTER</h1>
+        <h2>Pénztár form</h2>
       </div>
 
 
-        <!-- MY CART  -->
+        <!-- KOSARAM  -->
       <div class="row g-3">
         <div class="col-md-5 col-lg-4 order-md-last">
 
-          <!-- YOUR CART / CART VALUE -->
+          <!-- KOSARAD / KOSÁR ÉRTÉK -->
           <h4 class="d-flex justify-content-between align-items-center my-cart mb-3">
-            <span class="text-muted">Your cart</span>
-            <!-- //CART NUMBER -->
+            <span class="text-muted">Kosarad</span>
+            <!-- //KÁRTYA SZÁM -->
             <span class="badge cart-number bg-pink rounded-pill"><?php if(isset($_SESSION['item_quantity'])) {echo $_SESSION['item_quantity'];} else {echo "0";} ?></span>
           </h4>
 
-          <!-- CART ITEMS LIST + TOTAL -->
+          <!-- KOSÁRBAN LÉVŐ ELEMEK + VÉGÖSSZEG -->
           <ul class="list-group mb-3">
             <?php
             foreach($_SESSION['shopping_cart'] as $key => $product){
@@ -234,13 +234,13 @@
 
               
               
-                  <!-- PRODUCT 1  -->
+                  <!-- TERMÉK 1  -->
               <li class="list-group-item d-flex justify-content-between lh-sm linen-rows">
                 <div >
                   <h6 class="my-0"><?php echo $product_row['albumcim']; ?></h6>
-                  <small class="text-muted">x <?php echo $product['quantity']; ?> unit(s)</small>
+                  <small class="text-muted">x <?php echo $product['quantity']; ?> db</small>
                 </div>
-                <span class="text-muted price-tag">Rs <?php echo number_format(($product['quantity']  * $product_row['ar']),2); ?></span>
+                <span class="text-muted price-tag">HUF <?php echo number_format(($product['quantity']  * $product_row['p_price']),2); ?></span>
               </li>
             
             <?php
@@ -251,10 +251,10 @@
             
             ?>
 
-                <!-- TOTAL -->
+                <!-- VÉGÖSSZEG -->
             <li class="list-group-item d-flex justify-content-between total-row">
-              <span>Total (Ft)</span>
-              <strong class="price-tag">Ft <?php echo number_format($_SESSION['total_price'], 2); ?></strong>
+              <span>Végösszeg (HUF)</span>
+              <strong class="price-tag">HUF <?php echo number_format($_SESSION['total_price'], 2); ?></strong>
             </li>
           </ul>
 
@@ -262,10 +262,10 @@
 
         <!-- ================================================================================= -->
 
-        <!-- BILLING ADDRESS  -->
+        <!-- SZÁMLÁZÁSI CÍM  -->
         <div class="col-md-7 col-lg-8">
 
-          <h4 class="mb-3 border-bottom-pink">Billing address</h4>
+          <h4 class="mb-3 border-bottom-pink">Számlázási cím</h4>
          
          
          
@@ -285,66 +285,66 @@
           <div class="row g-3">
 
 
-              <!-- ENTER FIRST NAME  -->
+              <!--  KERESZTNÉN MEGADÁSA  -->
               <div class="col-sm-6">
-                <label for="firstName" class="form-label">First name</label>
+                <label for="firstName" class="form-label">Keresztnév</label>
                 <input type="text" class="form-control" name="fname" id="firstName" placeholder="" value="<?php echo $fname; ?>" required>
                 <div class="invalid-feedback">
-                  Valid first name is required.
+                  Érvényes keresztnév szükséges.
                 </div>
                 <span class="error"><?php echo $fnameErr;?></span>
               </div>
 
 
-              <!-- ENTER LAST NAME -->
+              <!-- VEZETÉKNÉV MEGADÁSA -->
               <div class="col-sm-6">
-                <label for="lastName" class="form-label">Last name</label>
+                <label for="lastName" class="form-label">Vezetéknév</label>
                 <input type="text" class="form-control" name="lname" id="lastName" placeholder="" value="<?php echo $lname; ?>" required>
                 <div class="invalid-feedback">
-                  Valid last name is required.
+                   Érvényes vezetéknév szükséges.
                 </div>
                 <span class="error"><?php echo $lnameErr;?></span>
               </div>
 
 
-              <!-- ENTER EMAIL  -->
+              <!-- EMAIL MEGADÁSA  -->
               <div class="col-12">
-                <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" value="<?php echo $email; ?>">
+                <label for="email" class="form-label">Email <span class="text-muted">(Opcionális)</span></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="név@cím.com" value="<?php echo $email; ?>">
                 <div class="invalid-feedback">
-                  Please enter a valid email address for shipping updates.
+                  Érvényes emai cím szükséges, hogy naprakész adatokat kapj a szállítással kapcsolatban.
                 </div>
                 <span class="error"><?php echo $emailErr;?></span>
               </div>
 
 
-              <!-- ENTER ADDRESS -->
+              <!-- CÍM MEGADÁSA -->
               <div class="col-12">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" name="address_checkout" placeholder="1234 Main St" value="<?php echo $address; ?>" required>
+                <label for="address" class="form-label">Cím</label>
+                <input type="text" class="form-control" id="address" name="address_checkout" placeholder="Utcanév 1234" value="<?php echo $address; ?>" required>
                 <div class="invalid-feedback">
-                  Please enter your shipping address.
+                  Szállítási cím szükséges.
                 </div>
                 <span class="error"><?php echo $addressErr;?></span>
               </div>
 
 
-              <!-- CHOOSE COUNTRY  -->
+              <!-- ORSZÁG VÁLASZTÁSA  -->
               <div class="col-md-5">
-                <label for="country" class="form-label">Country</label>
+                <label for="country" class="form-label">Ország</label>
                 <select class="form-select" name="country" id="country" required>
                   <option value="Mauritius">Mauritius</option>
                 </select>
                 <!-- <div class="invalid-feedback">
-                  Please select a valid country.
+                  Érvényes ország szükséges.
                 </div>
                 <span class="error"><?php //echo $countryErr;?></span> -->
               </div>
 
 
-              <!-- CHOOSE CITY  -->
+              <!-- VÁROS VÁLASZTÁSA  -->
               <div class="col-md-4">
-                <label for="state" class="form-label">City</label>
+                <label for="state" class="form-label">Város</label>
                 <select class="form-select" name="city" id="state" required>
                   <option value="Port Louis">Port Louis</option>
                   <option value="Curepipe">Curepipe</option>
@@ -356,18 +356,18 @@
 
                 </select>
                 <div class="invalid-feedback">
-                  Please provide a valid city.
+                  Érvényes város szükséges.
                 </div>
                 <span class="error"><?php echo $cityErr;?></span>
               </div>
 
 
-              <!-- ENTER ZIP CODE -->
+              <!-- IRÁNYÍTÓSZÁM MEGADÁSA -->
               <div class="col-md-3">
-                <label for="zip" class="form-label">Zip</label>
+                <label for="zip" class="form-label">Irányítószám</label>
                 <input type="text" class="form-control" name="zip" value="<?php echo $zip; ?>" id="zip" placeholder="" required>
                 <div class="invalid-feedback">
-                  Zip code required.
+                  Irányítószám szükséges.
                 </div>
                 <span class="error"><?php echo $zipErr;?></span>
               </div>
@@ -376,25 +376,25 @@
             <hr class="my-4 pinkLine">
 
 
-            <!-- ADDRESS CHECKBOX -->
+            <!-- CÍM CHECKBOX -->
             <div class="form-check">
               <input type="checkbox" class="form-check-input" name="address_check" id="same-address">
-              <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+              <label class="form-check-label" for="same-address">A szállítási cím ugyanaz, mint a számlázási cím</label>
             </div>
 
 
             <hr class="my-4 pinkLine">
 
 
-            <!-- PAYMENT METHOD -->
-            <h4 class="mb-3">Payment Method</h4>
+            <!-- FIZETÉSI MÓD -->
+            <h4 class="mb-3">Fizetés módja</h4>
 
 
-            <!-- CREDIT CARD  -->
+            <!-- KREDIT KÁRTYA  -->
             <div class="my-3">
               <div class="form-check">
                 <input id="credit" name="paymentMethod" type="radio" class="form-check-input" value="creditCard" <?php if ($paymentMethod == "creditCard"){ echo "checked";} ?> >
-                <label class="form-check-label" for="credit">Credit card</label>
+                <label class="form-check-label" for="credit">Kredit kártya</label>
               </div>
 
               <!-- MCB JUICE  -->
@@ -414,77 +414,77 @@
 
             
 
-            <!-- CREDIT CARD DETAILS  -->
+            <!-- KREDIT KÁRTYA ADATOK  -->
             <div class="row gy-3">
 
-              <!-- NAME ON CARD  -->
+              <!-- NÉV A KÁRTYÁN  -->
               <div class="col-md-6">
-                <label for="cc-name" class="form-label">Name on card</label>
+                <label for="cc-name" class="form-label">Kártyán szereplő név</label>
                 <input type="text" class="form-control" name="ccname" id="cc-name" placeholder="" value="<?php echo $ccname; ?>" required>
-                <small class="text-muted">Full name as displayed on card</small>
+                <small class="text-muted">Teljes név, ahogyan a kártyán látható</small>
                 <div class="invalid-feedback">
-                  Name on card is required
+                A kártyán szereplő név szükséges
                 </div>
                 <span class="error"><?php echo $ccnameErr;?></span>
               </div>
 
 
-              <!-- CREDIT CARD NUMBER  -->
+              <!-- KREDIT KÁRTYA SZÁM  -->
               <div class="col-md-6">
-                <label for="cc-number" class="form-label">Credit card number</label>
+                <label for="cc-number" class="form-label">Kredit kártya szám</label>
                 <input type="text" class="form-control" name="ccnum" id="cc-number" placeholder="" value="<?php echo $ccnum; ?>" required>
                 <div class="invalid-feedback">
-                  Credit card number is required
+                Hitelkártyaszám szükséges
                 </div>
                 <span class="error"><?php echo $ccnumErr;?></span>
               </div>
 
 
-              <!-- EXPIRATION  -->
+              <!-- LEJÁRATI DÁTUM  -->
               <div class="col-md-6">
-                <label for="cc-expiration" class="form-label">Expiration</label>
+                <label for="cc-expiration" class="form-label">Lejár</label>
                 <div class="" style="display: flex;">
                   <input type="text" class="form-control" name="ccexp_m" id="cc-expiration-mm" placeholder="mm" value="<?php echo $ccexp_m; ?>" required>
                   <input type="text" class="form-control" style="margin-left: 1rem;" name="ccexp_y" id="cc-expiration-yy" placeholder="yyyy" value="<?php echo $ccexp_y; ?>" required>
                 </div>
                 <div class="invalid-feedback">
-                  Expiration date required
+                  Lejárati dátum szükséges
                 </div>
                 <span class="error"><?php echo $ccexpErr;?></span>
               </div>
 
 
-              <!-- CVV SECURITY CODE  -->
+              <!-- CVV BIZTONSÁGI KÓD  -->
               <div class="col-md-3">
                 <label for="cc-cvv" class="form-label">CVV</label>
                 <input type="text" class="form-control" name="cccvv"id="cc-cvv" placeholder="" value="<?php echo $cccvv; ?>" required>
                 <div class="invalid-feedback">
-                  Security code required
+                  Biztonsági kód szükséges
                 </div>
                 <span class="error"><?php echo $cccvvErr;?></span>
               </div>
             </div>
 
 
-            <!-- COTINUE TO CHECKOUT BUTTON  -->
+            <!-- TOVÁBB A PÉNZTÁRHOZ GOMB  -->
             <hr class="my-4 pinkLine" >
             
-            <button class="w-100 btn btn-primary btn-lg button" type="submit">Continue to checkout</button>
+            <button class="w-100 btn btn-primary btn-lg button" type="submit">Tovább a pénztárhoz</button>
             
-            <a href="index.php" class="w-30 btn btn-primary btn-lg button mt-3 cancel">Cancel</a>
+            <a href="index.php" class="w-30 btn btn-primary btn-lg button mt-3 cancel">Mégse</a>
 
-            <!-- <button class="w-30 btn btn-primary btn-lg button mt-3 cancel">Cancel</button> -->
+            <!-- <button class="w-30 btn btn-primary btn-lg button mt-3 cancel">Mégse</button> -->
           </form>
         </div>
       </div>
     </main>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">&copy; 2020 MALAKO</p>
+      <p class="mb-1">&copy; 2024 VINYLMASTER</p>
       <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacy</a></li>
-        <li class="list-inline-item"><a href="#">Terms</a></li>
-        <li class="list-inline-item"><a href="#">Support</a></li>
+        <li class="list-inline-item"><a href="#">Adatkezelési tájékoztató</a></li>
+        <li class="list-inline-item"><a href="#">Felhasználói feltételek</a></li>
+        <li class="list-inline-item"><a href="#">Támogatás</a></li>
       </ul>
     </footer>
   </div>

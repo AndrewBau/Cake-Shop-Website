@@ -1,8 +1,8 @@
-//everytime page reloads, this function will be called
+//bármikor újratöltjük ezt az oldalt, ez meg lesz hívva
 onLoadCartNumbers();
 
 let carts = document.querySelectorAll('.featured__new_cart');
-//adds event listener to all cart icons
+//Eseményfigyelőt hoz létre az összes bevásárlókosár ikonhoz.
 for(let i=0; i<carts.length; i++){
     carts[i].addEventListener('mousedown', () => {
         cartNumbers();
@@ -17,7 +17,7 @@ for(let i=0; i<carts.length; i++){
 // let add-to-cart-button = document.getElementById('add-to-cart-btn');
 // add-to-cart-button.addEventListener('mousedown', id_pass());
 
-//function that prevents cart number display to go back to zero on reload
+//Funkció, amely megakadályozza, hogy a kosár számjelző visszaálljon nullára az újratöltéskor
 function onLoadCartNumbers() {
     let productNumbers = localStorage.getItem('cartNumbers');
     console.log("entered on load function");
@@ -27,7 +27,7 @@ function onLoadCartNumbers() {
         console.log("entered on load function inside if");
     }
 }
-//funtion to display add to cart on cart on nav
+//Függvény a 'Kosár' ikonra teszi a 'Hozzáadás a kosárhoz' a navigáció-sávban.
 function cartNumbers() {
     console.log("entered cartNumbers");
     let productNumbers = localStorage.getItem('cartNumbers');
@@ -48,7 +48,7 @@ function cartNumbers() {
     }
 }
 
-//everytime page reloads, this function will be called
+//bármikor újratöltjük ezt az oldalt, ez meg lesz hívva
 onLoadCartNumbers();
 
 

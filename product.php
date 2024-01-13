@@ -4,7 +4,7 @@
     //START SESSION
     include "./AdditionalPHP/startSession.php";
 
-    //CONNECTION TO DATABASE : cakeshop
+    //KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER
     include_once 'connection.php';
 
     
@@ -25,36 +25,36 @@ if(!isset($_SESSION['productID'])){
     }
 }
 else {
-    //if session is defined and get is undefined
+    //Ha a session definiált de a GET nem
     if($_GET['product_id'] == "") {
-        //carry on with program.. session value does not change
+        //Folytassa a programot... A session értéke nem változik
     }
-    else { //if session is defined and get is not empty
+    else { //Ha asession definiált és a GET nem üres
         $_SESSION['productID'] = $_GET['product_id'];
     }
 }
 
-// BASIC MYSQL QUERIES
+// BASIC MYSQL LEKÉRDEZÉSEK
 if(isset($_SESSION['uname'])){
 
-    //set session for userID
+    // session userID-val
     $Q_fetch_userID = 'SELECT userID FROM user WHERE uname = "'. $_SESSION['uname'].'"';
     $run_fetch_userID = mysqli_query($conn, $Q_fetch_userID);
     $result = mysqli_fetch_array($run_fetch_userID);
     $_SESSION['userID'] = $result[0];
 
-    //give cartID to user
+    // cartID-d ad a usernek
     $Q_select_user_in_cart = 'SELECT * FROM cart WHERE userID = '.$_SESSION['userID'];
     $run_select_user_in_cart = mysqli_query($conn, $Q_select_user_in_cart);
     $count_user_in_cart = mysqli_num_rows($run_select_user_in_cart);
     
-    //create cartID for user only once
+    // cartID-t ad a usernek,de csak egyszer
     if( $count_user_in_cart==0){
         $Q_insert_into_cart = 'INSERT INTO cart (userID) VALUES ('.$_SESSION['userID'].')';
         $run_insert_into_cart = mysqli_query($conn, $Q_insert_into_cart);   
     }
 
-    //set session for cartID
+    // session a cartID-nak
     $Q_fetch_cartID = 'SELECT cartID FROM cart WHERE userID ='.$_SESSION['userID'];
     $run_fetch_cartID = mysqli_query($conn, $Q_fetch_cartID);
     $result2 = mysqli_fetch_array($run_fetch_cartID);
@@ -67,42 +67,42 @@ if(isset($_SESSION['uname'])){
 
 
 
-//check if Add to Cart button has been submitted
+//Ellenőrzi, hogy az 'Kosárba helyezés' gomb elküldésre került-e
 if(filter_input(INPUT_POST, 'add-to-cart')){
     if(isset($_SESSION['shopping_cart'])){
 
-        //keep track of how many products are in shopping cart
+        // követi, hány termék van a bevásárlókosárban
         $count = count($_SESSION['shopping_cart']);
 
-        //create sequential array for matching array keys to product ids
+        // Létrehoz egy tömböt, hogy az egyező kulcsokat hozzá lehessen rendelni a termék azonosítókhoz
         $product_ids = array_column($_SESSION['shopping_cart'], 'id');
 
             if(!in_array($_GET['product_id'], $product_ids)){//** */
                 $_SESSION['shopping_cart'][$count] = array
 
                 (
-                    'id' => $_GET['product_id'], //GET used since id is provided in URL -filter_input(INPUT_GET, 'product_id')
+                    'id' => $_GET['product_id'], // GET metódus használata, az id az URL-ben van megadva - filter_input(INPUT_GET, 'product_id')
                     'name' => filter_input(INPUT_POST, 'name'),
                     'price' => filter_input(INPUT_POST, 'price'),
                     'quantity' => filter_input(INPUT_POST, 'input_quantity')
                 ); 
 
-                //INSERT CART ITEM DETAILS TO TABLE cartitem
+                //Tétel részleteinek beszúrása a 'cartitem' táblába
                 $Q_insert_into_cartitem = 'INSERT INTO cartitem (productID, cartID, price, quantity) 
                 VALUES ('.$_SESSION['productID'].','.$_SESSION['cartID'].','.filter_input(INPUT_POST, 'price').','.filter_input(INPUT_POST, 'input_quantity').' )';
                 $run_insert_into_cartitem = mysqli_query($conn, $Q_insert_into_cartitem);
             }
-            else {//product already exist, increase quantity
+            else {//a termék már létezik, mennyiséget növeli
 
-                //match array key to id of product being added to the cart
+                //Tömbkulcs illesztése a kosárba helyezett termék azonosítójához
                 for($i=0; $i<count($product_ids); $i++){
                     if($product_ids[$i] ==  $_GET['product_id']){
                     //filter_input(INPUT_GET, 'product_id')){
-                        //add item quantity from form to the existing product in the array
+                        //Az űrlapból származó tételmennyiség hozzáadása a meglévő termékhez a tömbben
                         // $_SESSION['shopping_cart'][$i]['quantity'] += filter_input(INPUT_POST, 'input-quantity');
                         $_SESSION['shopping_cart'][$i]['quantity'] += $_POST['input_quantity'];
 
-                        //UPDATE QUERY IN TABLE cartitem
+                        //FRISSÍTI A QUERYT A cartitem TÁBLÁBAN
                         $Q_update_cartitem = 'UPDATE cartitem SET quantity = '.$_SESSION['shopping_cart'][$i]['quantity'].' 
                         WHERE productID = '.$_GET['product_id'];
                         $run_update_cartitem = mysqli_query($conn, $Q_update_cartitem);
@@ -110,19 +110,19 @@ if(filter_input(INPUT_POST, 'add-to-cart')){
                 }
             }
     }
-    else { //if shopping cart does not exist, create first product with array key 0
-        //create array using submitted form data, start from key 0 and fill it with values
+    else { //Ha a bevásárlókosár nem létezik, hozzon létre egy első terméket az 0. kulccsal
+        //Tömb létrehozása a beküldött űrlapadatok felhasználásával, kezdve az 0. kulcsnál, értékekkel töltve fel
         $_SESSION['shopping_cart'][0] = array
 
         (
-            'id' => $_GET['product_id'], //GET used since id is provided in URL - filter_input(INPUT_GET, 'product_id')
+            'id' => $_GET['product_id'], //GET metódus használata, az id az URL-ben van megadva - filter_input(INPUT_GET, 'product_id')
             'name' => filter_input(INPUT_POST, 'name'),
             'price' => filter_input(INPUT_POST, 'price'),
             'quantity' => filter_input(INPUT_POST, 'input_quantity')
         );
 
 
-        //INSERT CART ITEM DETAILS TO TABLE cartitem
+        //BEILLESZTI A KOSÁR ELEMÉNEK ADATAIT A cartitem TÁBLÁBA
         $Q_insert_into_cartitem = 'INSERT INTO cartitem (productID, cartID, price, quantity) 
         VALUES ('.$_GET['product_id'].','.$_SESSION['cartID'].','.filter_input(INPUT_POST, 'price').','.filter_input(INPUT_POST, 'input_quantity').' )';
         $run_insert_into_cartitem = mysqli_query($conn, $Q_insert_into_cartitem);
@@ -144,11 +144,11 @@ function pre_r($array){
 <html>
     <head>
     <meta charset="utf-8">
-    <title>MALAKO | Details</title>
+    <title>VINYLMASTER | Részletek</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <!--========== CSS FILES ==========-->
+    <!--========== CSS FÁJLOK ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="Sanjana.css">
     <link href="jquery.nice-number.css" rel="stylesheet">
@@ -168,69 +168,69 @@ function pre_r($array){
 
     
     <?php
-    //CART QUANTITY VALUE
+    //A KOSÁR MENNYISÉG ÉRTÉKE
     include_once 'numOfItemsInCart.php';
     ?>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-    <!-- Animate CSS -->
+    <!-- Animált CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!--========== BOXICONS ==========-->
+    <!--========== BOXIKONOK==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     </head>
 
     <body>
-          <!--========== PHP QUERIES ==========-->
+          <!--========== PHP QUERIK ==========-->
         <?php 
                 
-            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
-            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
-            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects product with id =1
+            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //Kiemelt termékek kiválasztása
+            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //Új termékek kiválasztása
+            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //Kiválasztja a terméket, ahol id =1
 
         ?>
 
 
         <!--========== HEADER ==========-->
         <?php $page = 'product'?>
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
 
-        <!--========== PHP FETCH PRODUCT DETAILS ==========-->
+        <!--========== PHP FETCHELT TERMÉKEK ADATAI ==========-->
 
         <?php
              if(isset($_GET['product_id'])){ //if(isset($_GET['product_id'])){
                 $product_id = $_GET['product_id'];
                 
-                //******* start get products details *******
+                //******* start get termék adatok *******
                 //query
                 $Q_get_product = "SELECT * FROM products WHERE productID = '$product_id'";
                 //run query
                 $run_get_product = mysqli_query($conn, $Q_get_product);
-                //store details in array
+                //Tárolási adatok a tömbben
                 $row_product = mysqli_fetch_array($run_get_product);
-                //******* end get products details *******
+                //******* end get termék adatok *******
 
-                //******* start get products type *******
+                //******* start get termék típus *******
                 $Q_get_type_id = "SELECT * FROM product_type WHERE productID = '$product_id'";
                 $run_get_type_id = mysqli_query($conn, $Q_get_type_id);
                 $row_type_id = mysqli_fetch_array($run_get_type_id);
-                //******* end  get products type *******
+                //******* end  get termék típus *******
 
-                //******* start get products category *******
+                //******* start get termék kategória *******
                 $Q_get_cat_id = "SELECT * FROM product_category WHERE productID = '$product_id'";
                 $run_get_cat_id = mysqli_query($conn, $Q_get_cat_id);
                 $row_cat_id = mysqli_fetch_array($run_get_cat_id);
-                //******* end  get products category *******
+                //******* end  get termék kategória *******
 
                 //declare variables for all column headers
                 $p_name = $row_product['albumcim'];
@@ -246,12 +246,12 @@ function pre_r($array){
             }
         ?>
 
-        <!--PRODUCT DETAILS GRID-->
+        <!--TERMÉK ADATOK GRID-->
         
         <div class="container mx-auto mt-0 pt-0 ">
             <!-- <form method="POST" action="index.php?action=add&id=<?php //echo $product_id; ?>"> -->
                 <div class="row continue-shop-div text-center">
-                    <a href="products.php" class="button continue" id="cat-but" >Continue</a>
+                    <a href="products.php" class="button continue" id="cat-but" >Folytatás</a>
                     <!-- <button class="dropbtn button" id="cat-but"></button> -->
                 </div>
                 <div class="row">
@@ -260,30 +260,30 @@ function pre_r($array){
                     </div>
                     <div class="col mt-4">
                         <h1><?php echo $p_name;?></h1>
-                        <h2>Rs <?php echo $p_price;?></h2>
-                        <!-- INPUT QUANTITY -->
+                        <h2>HUF <?php echo $p_price;?></h2>
+                        <!-- INPUT MENNYISÉG -->
                         <form id="form-pd" method="POST" action="product.php?action=add&product_id=<?php echo $product_id; ?>">
                             <div class="box my-4">
                                 <label class="subtitle" style="margin-left: 2.7rem; 
-                                margin-bottom: .8rem; font-weight: 700; color: grey; ">Quantity</label><br>
+                                margin-bottom: .8rem; font-weight: 700; color: grey; ">Mennyiség</label><br>
                                 <input type="number" value="1" min="1" max="100" name= "input_quantity" id= "input_quantity" class="input-quantity mx-2 p-3 px-4">
                                 <input type="hidden" name="name" value="<?php echo $p_name;?>" />
                                 <input type="hidden" class="show_id" name="productID_id" value="<?php echo $product_id;?>" />
                                 <input type="hidden" name="price" value="<?php echo $p_price;?>" /> <br>
-                                <input type="submit" name="add-to-cart" id="add-to-cart-btn" value="Add to Cart" class="btn btn-primary btn-lg my-4 button" />
+                                <input type="submit" name="add-to-cart" id="add-to-cart-btn" value="Kosárba" class="btn btn-primary btn-lg my-4 button" />
 
                             </div>
                         </form>
                         <!-- <div>
-                            <a href="products.php" class="continue-shop">Continue shopping</a>
+                            <a href="products.php" class="continue-shop">Vásárlás folytatása</a>
                         </div> -->
-                        <!-- <button type="button" class="btn btn-primary btn-lg my-4 button">Add to cart</button> -->
+                        <!-- <button type="button" class="btn btn-primary btn-lg my-4 button">Kosárba tesz</button> -->
                     </div>
                 </div>
                 <div class="row">
                     <div class="product-description my-3">
                         <div class="description">
-                            <h2>description</h2>
+                            <h2>leírás</h2>
                         </div>
                         <div class="para_details py-2 px-4 my-3 ">
                             <p>

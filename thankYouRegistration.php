@@ -13,30 +13,30 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | THANK YOU</title>
+        <title>VINYLMASTER | KÖSZÖNJÜK</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--CSS File-->
+        <!--CSS Fájlok-->
         <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-        <!--BOXICONS-->
+        <!--BOXICONOK-->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Animate CSS -->
+        <!-- Animált CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
 
     <body>
         <?php $page = 'thankYouRegistration';?>
 
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';;?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
 
         <div class="mail-sent-group">
@@ -46,10 +46,10 @@
                 </div>
 
                 <div class="mail-sent-text">
-                    <h1>Thank you for joining!</h1>
-                    <span class="message">A verification mail has been sent to you email account. Please check your inbox to verify.</span>
+                    <h1>Köszönjük, hogy csatlakoztál!</h1>
+                    <span class="message">Egy megerősítő e-mail lett küldve a címedre. Nézd meg a bejövő elektronikus leveleidet és erősítsd meg a regisztrációd.</span>
                     <br><br>
-                    <span class="tip">Tip: If you have not received the email, please check your Spam or Trash folder.</span>
+                    <span class="tip">Tipp: Ha nem kaptad meg a levelet, akkor nézd meg, hogy nincs-e a Spam vagy Levélszemét mappában.</span>
                 </div>
             </div>
         </div>

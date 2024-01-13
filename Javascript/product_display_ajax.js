@@ -1,5 +1,5 @@
 
-                //CATEGORIES FUNCTION - DISPLAY WITHOUT LOAD
+                //KATEGÓRIÁK FÜGGVÉNY - MEGJELENÍTÉS BETÖLTÉS NÉLKÜL
                 function display_products_by_cat_id(cat_id, cat_name){
                     var xhttp;
                    
@@ -16,13 +16,13 @@
                     xhttp.send();   
                     console.log('sent');
 
-                    //CHANGES TITLE
-                    document.getElementById('small_title').innerHTML = 'CATEGORY';
+                    //CIM VÁLTOZTATÁSA
+                    document.getElementById('small_title').innerHTML = 'KATEGÓRIA';
                     document.getElementById('big_title').innerHTML = cat_name;
                     
                 }
 
-                //SORT BY FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT
+                //SORBATESZI A FÜGGVÉNY - MEGJELENÍTÉS BETÖLTÉS NÉLKÜL, AMIKOR AZ AZONOSÍTÓ EGYEZIK AZ EREDMÉNNYEL
                 function sortby_products(sort_num){
                     var xhttp;
                       //AJAX
@@ -38,7 +38,7 @@
                     xhttp.send();   
                     console.log('sent sortby');
 
-                    //CHANGES TITLE
+                    //MEGVÁLTOZTATJA A CÍMET
                     document.getElementById('small_title').innerHTML = 'SORT BY PRICE';
 
                     if(sort_num == 1){
@@ -51,7 +51,7 @@
                 }
 
 
-                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT
+                //TERMÉK TÍPUSOK FUNCTION - MEGJELENÍTÉS BETÖLTÉS NÉLKÜL, AMIKOR AZ AZONOSÍTÓ EGYEZIK AZ EREDMÉNNYEL
                 function display_products_by_type(p_type){
                     var xhttp;
                    
@@ -68,7 +68,7 @@
                     xhttp.send();   
                     console.log('sent');
 
-                    //CHANGES TITLE
+                    //CÍM VÁLTOZTATÁS
 
                     if(p_type==1){
                         document.getElementById('small_title').innerHTML = 'new';
@@ -83,13 +83,13 @@
                         document.getElementById('small_title').innerHTML = 'best-seller';
                     }
 
-                    //BIG TITLE
-                    document.getElementById('big_title').innerHTML = 'PRODUCTS';
+                    //NAGY CÍM
+                    document.getElementById('big_title').innerHTML = 'TERMÉKEK';
                     
                 }
 
                   
-                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT2
+                //TERMÉK TÍPUSOK FUNCTION - MEGJELENÍTÉS BETÖLTÉS NÉLKÜL, AMIKOR AZ AZONOSÍTÓ EGYEZIK AZ EREDMÉNNYEL
                 function display_products_by_type_second(p_type){
                     var xhttp;
                    
@@ -106,7 +106,7 @@
                     xhttp.send();   
                     console.log('sent');
 
-                    //CHANGES TITLE
+                    //CÍM VÁLTOZTATÁS
 
                     if(p_type==1){
                         document.getElementById('small_title2').innerHTML = 'new';
@@ -121,7 +121,7 @@
                         document.getElementById('small_title2').innerHTML = 'best-seller';
                     }
 
-                    //BIG TITLE
+                    //NAGY CÍM
                     document.getElementById('big_title2').innerHTML = 'PRODUCTS';
                     
                 }

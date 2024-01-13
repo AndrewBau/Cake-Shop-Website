@@ -2,7 +2,7 @@
 
 <div class="map">
     <div class="subtitle">
-        <h2>TALÁLJON MEG MINKET</h2>
+        <h2>ITT TALÁLHATSZ MEG MINKET</h2>
     </div>
 
     <div class="google-map">

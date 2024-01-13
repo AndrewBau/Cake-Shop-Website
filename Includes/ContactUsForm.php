@@ -8,7 +8,7 @@
     <div class="contact-us">
         <div class="subtitle">
             <h2>KAPCSOLATFELVÉTEL</h2>
-            <p>Cégünk a legjobb, ismerje meg a kreatív csapatunkat, amely sosem alszik. Mondjon valamit nekünk, mi válaszolunk Önnek.</p>
+            <p>Cégünk a legjobb, ismerd meg a kreatív csapatunkat, amely sosem alszik. Mondj valamit nekünk, mi válaszolunk Neked.</p>
             <span class="send-input-message"></span>
             <span id="sendError" class="input-error"></span>
         </div>
@@ -26,10 +26,10 @@
             <span id="phoneError" class="input-error"></span>
             <input id="customerPhone" name="customerPhone" type="tel"/>
             
-            <label for="orderNumber">MEGRENDELÉSŐ SZÁM</label>
+            <label for="orderNumber">MEGRENDELŐ SZÁM</label>
             <input id="orderNumber" name="orderNumber" type="text" />
             
-            <label for="customerNote">ÜZENETE <em>&#x2a;</em></label>
+            <label for="customerNote">ÜZENETED <em>&#x2a;</em></label>
             <span class="input-error"></span>
             <textarea id="customerNote" name="customerMessage" required rows="4"></textarea>
             <br>

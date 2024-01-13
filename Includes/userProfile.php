@@ -24,20 +24,6 @@
 
 
                     <div class="form-group">
-                        <span class="input-error"><?php echo $fnameCriteria;?></span>
-                        <label class="col-md-4 control-label" for="First Name">Keresztnév</label>  
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <input value = "<?php echo $fname;?>" id="First Name" name="fname" type="text" placeholder="First Name" class="form-control input-md">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
                         <span class="input-error"><?php echo $lnameCriteria;?></span>
                         <label class="col-md-4 control-label" for="Last Name ">Vezetéknév </label>  
                         <div class="col-md-4">
@@ -45,7 +31,21 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-user"></i>
                                 </div>
-                                <input value = "<?php echo $lname;?>" id="Last Name " name="lname" type="text" placeholder="Last Name " class="form-control input-md">
+                                <input value = "<?php echo $lname;?>" id="Last Name " name="lname" type="text" placeholder="Vezetéknév " class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <span class="input-error"><?php echo $fnameCriteria;?></span>
+                        <label class="col-md-4 control-label" for="First Name">Keresztnév</label>  
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <input value = "<?php echo $fname;?>" id="First Name" name="fname" type="text" placeholder="Keresztnév" class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -59,10 +59,11 @@
                                 <div class="input-group-addon">
                                     <i class="fas fa-map-marked-alt"></i>
                                 </div>
-                                <input value = "<?php echo $address;?>" id="Address " name="address" type="text" placeholder="Enter Address " class="form-control input-md">
+                                <input value = "<?php echo $address;?>" id="Address " name="address" type="text" placeholder="Cím " class="form-control input-md">
                             </div>
                         </div>
                     </div>
+                    
 
                     <div class="form-group">
                         <span class="input-error"><?php echo $phoneCriteria;?></span>
@@ -72,7 +73,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-phone"></i> 
                                 </div>
-                                <input value = "<?php echo $phone;?>" id="Phone Number " name="phone" type="text" placeholder="Phone Number " class="form-control input-md">
+                                <input value = "<?php echo $phone;?>" id="Phone Number " name="phone" type="text" placeholder="Telefonszám " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -96,7 +97,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Overview (max 200 words)">Pár szó rólam</label>
                         <div class="col-md-4">                     
-                            <textarea class="form-control" rows="10"  id="Overview (max 200 words)" name="description" placeholder="Overview (max 200 words)"><?php echo $description;?></textarea>
+                            <textarea class="form-control" rows="10"  id="Overview (max 200 words)" name="description" placeholder="(max 200 szó)"><?php echo $description;?></textarea>
                         </div>
                     </div>
 
@@ -115,8 +116,8 @@
                     <hr>
                     <div class="change-password-container">
                         <div class="change-password-subtitle">
-                            <h3>Change Password</h3>
-                            <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspA jelszó frissítése után újra be kell jelentkeznie.</p>
+                            <h3>Jelszó módosítás</h3>
+                            <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspA jelszó frissítése után újra be kell jelentkezned.</p>
                         </div>
                     </div>
 
@@ -128,7 +129,7 @@
                                 <div class="input-group-addon">
                                     <i class="fas fa-unlock-alt"></i>
                                 </div>
-                                <input type="password" id="Current Password " name="currentPassword" type="text" placeholder="Enter Current Password " class="form-control input-md">
+                                <input type="password" id="Current Password " name="currentPassword" type="text" placeholder="Jelenlegi jelszó " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -143,7 +144,7 @@
                                 <div class="input-group-addon">
                                     <i class="fas fa-key"></i>
                                 </div>
-                                <input type="password" id="New Password " name="newPassword" type="text" placeholder="Enter New Password " class="form-control input-md">
+                                <input type="password" id="New Password " name="newPassword" type="text" placeholder="Új jelszó " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -157,7 +158,7 @@
                                 <div class="input-group-addon">
                                     <i class="fas fa-key"></i>
                                 </div>
-                                <input type="password" id="Confirm Password " name="confirmPassword" type="text" placeholder="Confirm Password " class="form-control input-md">
+                                <input type="password" id="Confirm Password " name="confirmPassword" type="text" placeholder="Jelszó megerősítése " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -178,7 +179,7 @@
                             <div class="change-password-container">
                                 <div class="change-password-subtitle">
                                     <h3>Delete Account</h3>
-                                    <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspFigyelmeztetés: A fiókja <b>véglegesen törölve</b> lesz. Kérjük, legyen biztos benne.</p>
+                                    <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspFigyelmeztetés: A fiókod <b>véglegesen törölve</b> lesz. Kérjük, legyél biztos benne.</p>
                                 </div>
                             </div>
 
@@ -190,7 +191,7 @@
                                         <div class="input-group-addon">
                                             <i class="fas fa-unlock-alt"></i>
                                         </div>
-                                        <input type="password" id="Current Password " name="delPassword" type="text" placeholder="Confirm Your Password" class="form-control input-md">
+                                        <input type="password" id="Current Password " name="delPassword" type="text" placeholder="Erősítsd meg a jelszavad" class="form-control input-md">
                                     </div>
                                 </div>
                             </div>

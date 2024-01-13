@@ -27,17 +27,17 @@
         <hr size="2px" width="80%" color="white">
 
         <div class="contact-links">
-            <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
+            <span class="phone"><i class="fas fa-phone-square-alt"></i> +36 36 1234 XXXX</span>
             <span class="address">Eger, Eszterházy tér 1, 3300 Magyarország</span>
         </div>
 
         <div class="legal-links">
-            <span class="privacy-policy"><b><a href=#>ADATVÉDELMI SZABÁLYZAT</a></b></span>
-            <span class="term-of-use"><b><a href=#>FELHASZNÁLÁSI FELTÉTELEK</a></b></span>
+            <span class="privacy-policy"><b><a href=#>ADATKEZELÉSI TÁJÉKOZTATÓ</a></b></span>
+            <span class="term-of-use"><b><a href=#>FELHASZNÁLÓI FELTÉTELEK</a></b></span>
         </div>
 
         <div class="copyright">
-            <span class="copyright-text">&#169; <?php echo date("Y"); ?> Design by EKKE Team</span>
+            <span class="copyright-text">&#169; <?php echo date("Y"); ?> Design by András & Erik & Levente & Tamás</span>
         </div>
     </div>  
 </footer>
