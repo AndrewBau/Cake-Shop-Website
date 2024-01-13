@@ -116,7 +116,7 @@
                     <hr>
                     <div class="change-password-container">
                         <div class="change-password-subtitle">
-                            <h3>Change Password</h3>
+                            <h3>Jelszó módosítás</h3>
                             <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspA jelszó frissítése után újra be kell jelentkezned.</p>
                         </div>
                     </div>
