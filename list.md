@@ -8,6 +8,7 @@ cart.php
 category_search.php
 checkout_test.php
 checkout.php
+connection.php
 checkout
 forgetPassword.php
 Includes
