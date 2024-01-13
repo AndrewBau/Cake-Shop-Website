@@ -10,13 +10,13 @@
     <title>VINYLMASTER | Kategóriák</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
+    <!--========== PHP KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER ==========-->
     <?php 
         include_once 'connection.php';
         include_once 'numOfItemsInCart.php';
     ?>
 
-    <!--========== CSS FILES ==========-->
+    <!--========== CSS FÁJLOK ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="Sanjana.css">
 
@@ -30,24 +30,24 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-    <!-- Animate CSS -->
+    <!-- Animált CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!--========== BOXICONS ==========-->
+    <!--========== BOXIKONOK ==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     </head>
 
     <body>
-          <!--========== PHP QUERIES ==========-->
+          <!--========== PHP QUERIK ==========-->
         <?php 
             
-            $Q_fetch_featured = "SELECT * FROM products WHERE typeID = 2 ; ";//selects featured products
-            $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//selects new products
-            $Q_fetch_product_details =  "SELECT * FROM products WHERE productID = 1 ; ";//selects product with id =1
-            $Q_fetch_categories = "SELECT * FROM product_categories;"; //selects all categories
-            $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //sort all products by price low to high
-            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //sort all products by price high to low
+            $Q_fetch_featured = "SELECT * FROM products WHERE typeID = 2 ; ";//Kiemelt termékek kiválasztása 
+            $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//Kiválasztja az új termékeket
+            $Q_fetch_product_details =  "SELECT * FROM products WHERE productID = 1 ; ";//Kiválasztja a terméket, melynél id=1
+            $Q_fetch_categories = "SELECT * FROM product_categories;"; //Kiválasztja az összes kategóriát
+            $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //Termékeket növekvő sorrendbe teszi
+            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //Termékeket csökkenő sorrendbe teszi
             
             
         
@@ -56,19 +56,19 @@
 
         <!--========== HEADER ==========-->
         <?php $page = 'products_category'?>
-        <!--Start Navigation Bar-->
+        <!--Start Navigéciós Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigéciós Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigéciós Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigéciós Sáv @media 1200px-->
 
       
 
 
-        <!--========== PHP FETCH PRODUCT DETAILS ==========-->
+        <!--========== PHP FETCHELT TERMÉKEK ADATAI ==========-->
 
         <?php
             if(isset($_GET['categoryID'])){
@@ -85,7 +85,7 @@
         
         <section class="featured section" id="featured">
 
-               <!--========== TITLE BANNER ==========-->
+               <!--========== CÍM BANNER ==========-->
             <?php 
             
                 $result_cat = mysqli_query($conn, $Q_fetch_categories);
@@ -97,7 +97,7 @@
                     <h2 class="category-name "><?php echo $row_cat['p_cat_name']; ?></h2>
                 </div>
 
-                <!--========== SORT BY BUTTON ==========-->
+                <!--========== RENDEZÉS GOMB SZERINT ==========-->
                 <div class="dropdown col-auto">
                     <button class="dropbtn button" id="cat-but">Rendezés &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
@@ -107,7 +107,7 @@
                     </div>
                 </div>
 
-                <!--========== CATEGORIES BUTTON ==========-->
+                <!--========== KATEGÓRIÁK GOMB ==========-->
                 <div class="dropdown col-auto">
                     <button class="dropbtn button" id="cat-but">Kategóriák &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
@@ -137,7 +137,7 @@
 
                                 <div class="featured__products" id="product__card">
                                     <div class="featured__box">
-                                        <div class="featured__new">NEW</div>
+                                        <div class="featured__new">ÚJ</div>
                                         <div class=""><a href="product.php?product_id=<?php echo $product_id; ?>"><i class='bx bxs-cart-add bx-tada-hover featured__new_cart'></i></a></div>
                                         <a href="product.php?product_id=<?php echo $product_id; ?>" >
                                             <img src="<?php echo $row_product['p_img']; ?>" alt="" class="featured__img avoid__clicks"
@@ -151,7 +151,7 @@
                                     <div class="featured__data">
                                         <?php $product_id = $row_product['productID']; ?>
                                         <a href="product.php?product_id=<?php echo $product_id; ?>" class="product__name" id="product__name"style="text-decoration: none;"><?php echo $row_product['p_name']; ?></a></br>
-                                        <span class="featured__price">Rs <?php echo $row_product['p_price']; ?></span>
+                                        <span class="featured__price">HUF <?php echo $row_product['p_price']; ?></span>
                                        
                                     </div>
                                 </div>

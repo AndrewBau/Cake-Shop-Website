@@ -37,7 +37,7 @@
 [product.php](product.php) *
 [products.php](products.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [products_by_type_search.php](products_by_type_search.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
-[products_category.php](products_category.php) * !
+[products_category.php](products_category.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [products_sortby.php](products_sortby.php) * !
 [README.md](README.md) has to be recreated
 [registration.php](registration.php) * ?
