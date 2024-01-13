@@ -8,7 +8,7 @@
 [Javascript](Javascript) *
 
 [about.php](about.php) *
-[Account.css](Account.css)
+[Account.css](Account.css) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [accountInvalidPage.php](accountInvalidPage.php) *
 [accountVerifiedPage.php](accountVerifiedPage.php) *
 [adminPanel.php](adminPanel.php) * ?
