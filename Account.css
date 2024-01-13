@@ -3,7 +3,7 @@ hr{
     opacity: .2;
 }
 
-/* Start User Profile */
+/* Start User Profil */
 .col-md-15 {
     width: 100%;
     position: relative;
@@ -84,10 +84,10 @@ hr{
 .danger-zone-inside {
     padding: 15px;
 }
-/* End User Profile */
+/* End User Profil */
 
 
-/*Start Login & Registration Panel*/
+/*Start Login & Regisztráció Panel*/
 .login-page {
     width: 100%;
     padding: 10px 0;
@@ -186,10 +186,10 @@ hr{
 .g-recaptcha{
     height: 100px;
 }
-/*End Login & Registration Panel*/
+/*End Login & Regisztráció Panel*/
 
 
-/* Start Thank You Page */
+/* Start Megköszönő oldal */
 .mail-sent-group{
     display:flex;
     align-items: center;
@@ -227,9 +227,9 @@ hr{
 .mail-sent-text .message{
     font-size: 20px;
 }
-/* End Thank You Page */
+/* End Megköszönő oldal */
 
-/* Start Email Verification Page */
+/* Start Email Megerősítő oldal */
 .mail-verified-image{
     background-image: url("./Assets/images/6.login/emailVerified.png");
 }
@@ -257,10 +257,10 @@ hr{
     text-decoration: none;
 }
 
-/* End Email Verification Page */
+/* End Email Megerősítő oldal */
 
 
-/* Start Password Reset Page */
+/* Start Jelszó megváltoztató oldalhoz */
 .login-form .forget-text a{
     color:black;
     font-size: 20px;
@@ -274,7 +274,7 @@ hr{
     background-repeat: no-repeat;
     background-size: contain;
 }
-/* End Password Reset Page */
+/* End Jelszó megváltoztató oldalhoz */
 
 /*---------------------------------------------------------------------------------------------*/
 /*START MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP*/
@@ -282,7 +282,7 @@ hr{
 
 @media only screen and (min-width: 1200px){
 
-    /*Start Background Image For Login Page*/
+    /*Start Bg Kép a login oldalhoz*/
     .bg-image-container .bg-image{
         background-image: url("./Assets/images/6.login/CakeAndCoffee.jpg");
         filter: blur(8px);
@@ -292,10 +292,10 @@ hr{
         background-repeat: no-repeat;
         background-size: cover;
     }
-    /*End Background Image For Login Page*/
+    /*End Bg Kép a login oldalhoz*/
 
 
-    /*Start Background Image For Registration Page*/
+    /*Start Bg Kép a regisztrációs oldalhoz*/
     .bg-image-container .bg-image-join{
         background-image: url("./Assets/images/6.login/Eclair.jpg");
         filter: blur(8px);
@@ -305,10 +305,10 @@ hr{
         background-repeat: no-repeat;
         background-size: cover;
     }
-    /*End Background Image For Registration Page*/
+    /*End Bg Kép a regisztrációs oldalhoz*/
 
 
-    /*Start Background Image For Password Reset Page*/
+    /*Start Bg Kép a jelszó változtató oldalhoz*/
     .bg-image-container .bg-image-forget{
         background-image: url("./Assets/images/6.login/Dessert.jpg");
         filter: blur(8px);
@@ -318,7 +318,7 @@ hr{
         background-repeat: no-repeat;
         background-size: cover;
     }
-    /*End Background Image For RPassword Reset Page*/
+    /*End Bg Kép a jelszó változtató oldalhoz*/
 
 
     /*Start Login Panel*/
@@ -440,7 +440,7 @@ hr{
     /*End Login Panel*/
 
 
-    /* Start User Profile Subtitle*/
+    /* Start User Profil Felírat*/
     .user-profile-container .input-error{
         font-weight: bold;
         color: #FFA5A5FF;
@@ -536,7 +536,7 @@ hr{
         font-size: 35px;
     }
 
-    /* End User Profile Subtitle*/
+    /* End User Profil Felírat*/
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP, ADMINPANEL.PHP*/

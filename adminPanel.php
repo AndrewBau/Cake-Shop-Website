@@ -55,7 +55,7 @@
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                     mail($to, $subject, $msg, $headers);
-                    // Used to prevent the mail from sending each time the page is refreshed
+                    // megakadályozza a levelek újabb elküldését minden oldalfrissítés alkalmával.
                     header("location: $_SERVER[PHP_SELF]");
                 }
             }
@@ -67,16 +67,16 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | ADMIN PANEL</title>
+        <title>VINYLMASTER | ADMIN PANEL</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-        <!--BOXICONS-->
+        <!--BOXICONOK-->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Animate CSS -->
+        <!-- ANIMÁLT CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
         <!-- Bootstrap Core CSS -->
@@ -127,14 +127,14 @@
         <!-- Start Tab -->
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="pill" href="#home">Edit Profile</a></li>
-                <li><a data-toggle="pill" href="#sendMail">Send Mail</a></li>
+                <li class="active"><a data-toggle="pill" href="#home">Profil szerkeztése</a></li>
+                <li><a data-toggle="pill" href="#sendMail">Levél küldése</a></li>
             </ul>
             
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
                     <div class="tab-title">
-                        <h3>Edit My Profile</h3>
+                        <h3>Profilom szerkeztése</h3>
                     </div>
                     <!--Start User Profile-->
                     <?php include './Includes/userProfile.php'; ?>
@@ -144,17 +144,17 @@
                         
                 <div id="sendMail" class="tab-pane fade">
                     <div class="tab-title">
-                        <h3>Send Mail To Subscribers</h3>
+                        <h3>Levél küldése a felíratkozóknak</h3>
                     </div>
                     <div class="container mt-5 mb-5">
                         <form method="POST" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
                             <div class="sendMailBtnContainer">
-                                <button name="sendMail" class="btn btn-info"><span class="glyphicon glyphicon-send"></span> Send Mail</button>
+                                <button name="sendMail" class="btn btn-info"><span class="glyphicon glyphicon-send"></span> Levél küldése</button>
                             </div>
                             <br>
-                            <label>Subject:</label>
-                            <input class="form-control input-md" name="subject" type="text" placeholder="Enter mail subject" required>
+                            <label>Tárgy:</label>
+                            <input class="form-control input-md" name="subject" type="text" placeholder="Add meg a levél tárgyát" required>
                             <br>
                             
                             <div class="textAreaContainer">
@@ -169,10 +169,10 @@
                     <script>
                         $(document).ready(function() {
                             $('#summernote').summernote({
-                                placeholder: 'Malako',
+                                placeholder: 'VINYLMASTER',
                                 height: 500,
                                 toolbar: [
-                                    // [groupName, [list of button]]
+                                    // [csoportNév, [gombok listája]]
                                     ['basic', ['style', 'fontname', 'fontsize']],
                                     ['style', ['bold', 'italic', 'underline', 'clear']],
                                     ['font', ['strikethrough', 'superscript', 'subscript']],

@@ -17,7 +17,7 @@
                     console.log('sent');
 
                     //CIM VÁLTOZTATÁSA
-                    document.getElementById('small_title').innerHTML = 'CATEGORY';
+                    document.getElementById('small_title').innerHTML = 'KATEGÓRIA';
                     document.getElementById('big_title').innerHTML = cat_name;
                     
                 }
@@ -84,7 +84,7 @@
                     }
 
                     //NAGY CÍM
-                    document.getElementById('big_title').innerHTML = 'PRODUCTS';
+                    document.getElementById('big_title').innerHTML = 'TERMÉKEK';
                     
                 }
 

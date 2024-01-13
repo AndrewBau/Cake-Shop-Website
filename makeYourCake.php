@@ -7,30 +7,30 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | MAKE YOUR CAKE</title>
+        <title>VINYLMASTER | KÉSZÍTS SAJÁT BAKELITET</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Atish.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-        <!--BOXICONS-->
+        <!--BOXIKONOK-->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Animate CSS -->
+        <!-- Animált CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
 
     <body>
         <?php $page = 'makeyourcake';?>
 
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
         
         <!--Start Wave Image-->
@@ -48,7 +48,7 @@
             <div class="footer">
 
                 <div class="logo">
-                    <span class="logo-name">MALAKO</span>
+                    <span class="logo-name">VINYLMASTER</span>
                 </div>
             
                 <div class="social-media">
@@ -70,17 +70,17 @@
                 <hr size="2px" width="80%" color="white">
 
                 <div class="contact-links">
-                    <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
-                    <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
+                    <span class="phone"><i class="fas fa-phone-square-alt"></i> +36 36 1234 XXXX</span>
+                    <span class="address">Eger, Eszterházy tér 1, 3300 Magyarország</span>
                 </div>
 
                 <div class="legal-links">
-                    <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
-                    <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
+                    <span class="privacy-policy"><b><a href=#>ADATKEZELÉSI TÁJÉKOZTATÓ</a></b></span>
+                    <span class="term-of-use"><b><a href=#>FELHASZNÁLÓI FELTÉTELEK</a></b></span>
                 </div>
 
                 <div class="copyright">
-                    <span class="copyright-text">&#169; 2020 Design by Atish & Sanjana</span>
+                    <span class="copyright-text">&#169; 2024 Design by András & Erik & Levente & Tamás</span>
                 </div>
 
             </div>  
@@ -89,23 +89,23 @@
         <!--End Footer-->
 
         
-        <!-- Start Bottom Nav -->
+        <!-- Start Alsó Nav -->
         <div class="bottom-nav-group">
             <nav class="bottom-nav">
                 <a href="login.html" class="bottom-nav-link">
                     <i class="fas fa-user bottom-nav-icon" ></i>
-                    <span class="bottom-nav-text">Account</span>
+                    <span class="bottom-nav-text">Fiók</span>
                 </a>
                 <a href="#" class="bottom-nav-link">
                     <i class="fas fa-search"></i>
-                    <span class="bottom-nav-text">Search</span>
+                    <span class="bottom-nav-text">Keresés</span>
                 </a>
                 <a href="#" class="bottom-nav-link">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="bottom-nav-text">My Cart</span>
+                    <span class="bottom-nav-text">Kosaram</span>
                 </a> 
             </nav>
         </div>
-        <!-- End Bottom Nav -->
+        <!-- End Alsó Nav -->
     </body>
 </html>

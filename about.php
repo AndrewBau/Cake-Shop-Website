@@ -46,7 +46,7 @@
         <!--End Fejléc-->
 
 
-        <!--Start Baker Info-->
+        <!--Start Mester Info-->
         <div class="baker-info-group">
             <div class="baker-info-container">
                 <div class="baker-info-text">
@@ -55,7 +55,7 @@
                     </div>
         
                     <div class="baker-name">
-                        <span>Sára Konner</span>
+                        <span>KONNER SÁRA</span>
                     </div>
         
                     <div class="baker-description">
@@ -76,10 +76,10 @@
                 </div>
             </div>
         </div>
-        <!--End Baker Info-->
+        <!--End Mester Info-->
 
 
-        <!--Start Awards-->
+        <!--Start Kitüntetések-->
         <div class="award-section">
             <div class="award-title">
                 <span>Kitüntetéseink</span>
@@ -99,7 +99,7 @@
                         <div class="badge-info">
                             <span class="badge-title">A ÉV LEMEZBOLTJA</span>
                             <span class="badge-date">2010-2011</span>
-                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez egész Magyarországon!</p>
+                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez Magyarországon!</p>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                         <div class="badge-info">
                             <span class="badge-title">A ÉV LEMEZBOLTJA</span>
                             <span class="badge-date">2015-2016</span>
-                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez egész Magyarországon!</p>
+                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez Magyarországon!</p>
                         </div>
                     </div>
                 </div>
@@ -127,15 +127,15 @@
                         <div class="badge-info">
                             <span class="badge-title">AZ ÉV BAKELIT LEMEZ KÉSZÍTŐJE</span>
                             <span class="badge-date">2019-2020</span>
-                            <p class="badge-description">Legtöbb minőségi bakelit lemez elkészítését és forgalomba helyezését végezte Magyarországon 2019.-ben!</p>
+                            <p class="badge-description">Legtöbb minőségi bakelit lemez elkészítését és forgalomba helyezését végezte Magyarországon 2019-ben!</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--End Awards-->
+        <!--End Kitüntetések-->
 
-        <!--Start Team Info-->
+        <!--Start Csapatinfó-->
         <div class="team-section">
             <div class="team-title">
                 <span>Aranykezű Mestereink</span>
@@ -154,7 +154,7 @@
                         </div>
 
                         <div class = "helper-more-about">
-                            <p class="name"><b>LAKATOS OLAJOS</b></p>
+                            <p class="name"><b>LAKATOS ALAJOS</b></p>
                             <p class="hierarchy">TÁRSALAPÍTÓ</p>
                             <p class="description">A Rolling Stones albumai mindig ámulatba ejtenek...</p>
                         </div>
@@ -186,7 +186,7 @@
 
                         <div class = "helper-more-about">
                             <p class="name"><b>BANÁNOS ÁGNES</b></p>
-                            <p class="hierarchy">Lemezkészítő</p>
+                            <p class="hierarchy">ÍRÓ ÉS ARCHIVÁLÓ</p>
                             <p class="description">Amikor megszólal Elvis Presley a lemezen, megszűnika világ.</p>
                         </div>
         
@@ -210,7 +210,7 @@
                 </div>
             </div>
         </div>
-        <!--End Team Info-->
+        <!--End Csapatinfó-->
 
 
         <!-- Start Google Map-->

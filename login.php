@@ -149,8 +149,8 @@
                     <span class="Password-Error"><?php if($errCriteria != ""){echo "$errCriteria <br><br>";}?></span>
                     
                     <button>bejelentkezés</button>
-                    <p class="message">Nem regisztrált? <a href="registration.php">Fiók létrehozása</a></p>
-                    <br><span class="forget-text"><a href="forgetPassword.php">Elfelejtette jelszvaát?</a></span>
+                    <p class="message">Nem regisztrált? <a href="registration.php">Regisztráció</a></p>
+                    <br><span class="forget-text"><a href="forgetPassword.php">Elfelejtette jelszavát?</a></span>
                     <!-- <p class="or-message"><b>OR</b></p> -->
                 </form>
 

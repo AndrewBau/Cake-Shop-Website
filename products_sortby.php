@@ -7,16 +7,16 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <title>MALAKO | Sort By</title>
+    <title>VINYLMASTER | Sorbarendezés</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
+    <!--========== PHP KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER ==========-->
     <?php 
         include_once 'connection.php';
         include_once 'numOfItemsInCart.php';
     ?>
 
-    <!--========== CSS FILES ==========-->
+    <!--========== CSS FÁJLOK ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="Sanjana.css">
 
@@ -27,16 +27,16 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-    <!-- Animate CSS -->
+    <!-- Animált CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!--========== BOXICONS ==========-->
+    <!--========== BOXIKONOK ==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     </head>
 
     <body>
-          <!--========== PHP QUERIES ==========-->
+          <!--========== PHP QUERIK ==========-->
         <?php 
             
             $Q_fetch_featured = "SELECT * FROM products WHERE typeID = 2 ; ";//selects featured products
@@ -53,26 +53,26 @@
 
         <!--========== HEADER ==========-->
         <?php $page = 'products_category'?>
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
-        <!--========== CATEGORIES BUTTON ==========-->
+        <!--========== KATEGÓRIA GOMB ==========-->
         <?php 
         
         //$result_cat = mysqli_query($conn, $Q_fetch_categories);
 
         ?>
         <!-- <div class="row category-title">
-            <h2 class="category">CATEGORY</h2>
+            <h2 class="category">KATEGÓRIA</h2>
             <h2 class="category-name "><?php echo $row_cat['p_cat_name']; ?></h2>
             <div class="dropdown col-auto mx-auto pt-5 pb-1">
-                <button class="dropbtn button" id="cat-but" style="outline: none;">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                <button class="dropbtn button" id="cat-but" style="outline: none;">Kategóriák &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                 <div class="dropdown-content">
                     <?php
                     while($row_categories = mysqli_fetch_assoc($result_cat)){
@@ -88,7 +88,7 @@
         </div> -->
 
 
-        <!--========== PHP FETCH PRODUCT DETAILS ==========-->
+        <!--========== PHP FETCHELT TERMÉKEK ADATAI ==========-->
 
         <?php
             if(isset($_GET['categoryID'])){
@@ -105,15 +105,15 @@
         
         <section class="featured section" id="featured">
 
-               <!--========== TITLE BANNER ==========-->
+               <!--========== CÍM BANNER ==========-->
             <?php 
             
                 $result_cat = mysqli_query($conn, $Q_fetch_categories);
 
-                if($_GET['sortby']==1){ //1 = low to high
+                if($_GET['sortby']==1){ //1 = növekvő
                     $result_sortby =mysqli_query($conn, $Q_sortby_price_asc);
                 }
-                elseif($_GET['sortby']==2){ //2 = high to low
+                elseif($_GET['sortby']==2){ //2 = csökkenő
                     $result_sortby =mysqli_query($conn, $Q_sortby_price_desc);
                 }
                 
@@ -121,31 +121,31 @@
             ?>
             <div class="row category-title">
                 <div class="col">
-                    <h2 class="category">SORT BY PRICE</h2>
+                    <h2 class="category">Rendezés ár szerint</h2>
                     <?php
                     if($_GET['sortby']==1){
-                        echo '<h2 class="category-name ">low to high</h2>';
+                        echo '<h2 class="category-name ">növekvő</h2>';
                     }
                     elseif($_GET['sortby']==2){
-                        echo '<h2 class="category-name ">high to low</h2>';
+                        echo '<h2 class="category-name ">csökkenő</h2>';
                     }
                     ?>
                    
                 </div>
 
-                <!--========== SORT BY BUTTON ==========-->
+                <!--========== RENDEZÉS GOMB SZERINT ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Sort by &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Rendezés &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
-                        <a href="products_sortby.php?sortby=1">price low to high</a>
-                        <a href="products_sortby.php?sortby=2">price high to low</a>
+                        <a href="products_sortby.php?sortby=1">Ár alacsonytól magasig</a>
+                        <a href="products_sortby.php?sortby=2">Ár magastól alacsonyig</a>
                          
                     </div>
                 </div>
 
-                <!--========== CATEGORIES BUTTON ==========-->
+                <!--========== KATEGÓRIÁK GOMB ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Kategóriák &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
@@ -173,7 +173,7 @@
 
                                 <div class="featured__products" id="product__card">
                                     <div class="featured__box">
-                                        <div class="featured__new">NEW</div>
+                                        <div class="featured__new">ÚJ</div>
                                         <div class=""><a href="product.php?product_id=<?php echo $product_id; ?>"><i class='bx bxs-cart-add bx-tada-hover featured__new_cart'></i></a></div>
                                         <a href="product.php?product_id=<?php echo $product_id; ?>" >
                                             <img src="<?php echo $row_product['boritokep']; ?>" alt="" class="featured__img avoid__clicks"

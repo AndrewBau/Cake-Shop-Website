@@ -1,5 +1,5 @@
 // Beállítjuk a dátumot a visszaszámoláshoz
-var countDownDate = new Date("Jan 1, 2021 00:00:00").getTime();
+var countDownDate = new Date("Jan 20, 2024 00:00:00").getTime();
 
 // Minden másodperben frissíti a visszaszámolást
 var x = setInterval(function() {
@@ -17,12 +17,12 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Visszaadja az eredményt itt id="demo"
-  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("countdown").innerHTML = days + "n " + hours + "ó "
+  + minutes + "p " + seconds + "mp ";
     
   // Ha lejárt az idő kiír valamit
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "END OF SALES";
+    document.getElementById("countdown").innerHTML = "Lejárt az árúsítás!";
   }
 }, 1000);

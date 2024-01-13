@@ -15,7 +15,7 @@ if(buttonPressed.id == "subscribe")
         var regmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if( !mail.value.match(regmail) )
         {
-            mailError = "Invalid mail format";
+            mailError = "Érvénytelen mail formátum";
             document.getElementById("mailError").innerHTML = mailError;
             allErrors.push(mailError);
         }

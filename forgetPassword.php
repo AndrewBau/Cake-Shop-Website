@@ -12,12 +12,12 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ((empty($_POST['email']))){
-            $errCriteria = "Email required";
+            $errCriteria = "Email megadása szükséges!";
         } else {
             $email = test_input($_POST["email"]);
-            // check if name only contains letters and whitespace
+            // ellenőrizzük, hogy az email megfelelő formátumú-e
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailCriteria = "Invalid email format";
+                $emailCriteria = "Email formátum nem megfelelő";
             }
             else {
                 $captcha = $_POST["g-recaptcha-response"];
@@ -53,8 +53,8 @@
                         }
 
                         $to = $row['email'];
-                        $subject = "Reset Password";
-                        $message = "Username: <b>$uname</b><br>Password: <b>$newPassword</b><br><br><b>Please reset your password after you login.</b>";
+                        $subject = "Jelszó visszaállítása";
+                        $message = "Username: <b>$uname</b><br>Jelszó: <b>$newPassword</b><br><br><b>Belépés után egyből változtasd meg a jelszavad.</b>";
                         $headers = "From: malako.cakeshop@gmail.com \r\n";
                         $headers .= "MIME-Version: 1.0" . "\r\n";
                         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -70,11 +70,11 @@
                             header('location: passwordResetPage.php');
                         }
                     } else {
-                        $errCriteria = "Cannot find your account!";
+                        $errCriteria = "A felhasználói fiók nem található!";
                     }
                     
                 } else {
-                    $errCriteria = "Please confirm the reCAPTCHA";
+                    $errCriteria = "Kérlek hitelesítsd a reCAPTCHA-t!";
                 }
             }
         }
@@ -92,7 +92,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | RESET PASSWORD</title>
+        <title>VINYLMASTER | JELSZÓ VISSZAÁLLÍTÁSA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
@@ -130,8 +130,8 @@
             <div class="form">
                 <div class="login">
                     <div class="login-header">
-                        <h3>RESET PASSWORD</h3>
-                        <p>Enter your email below</p>
+                        <h3>JELSZÓ VISSZAÁLLÍTÁSA</h3>
+                        <p>Add meg az email címed</p>
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
                     <input type="text" name="email" placeholder="Email" value="<?php echo $email;?>"/>
                     <span class="input-error"><?php if($errCriteria != ""){echo "$errCriteria <br><br>";}?></span>
                     <div name="g-recaptcha-response" class="g-recaptcha" data-sitekey="6LdT9A0aAAAAAPLi4Ab29xdM28aipZ0D3IyXbjXQ"></div>
-                    <button>Reset Password</button>
+                    <button>Jelszó visszaállítása</button>
                 </form>
             </div>
         </div>

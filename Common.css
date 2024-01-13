@@ -19,7 +19,7 @@ html, body{
 
 .subtitle h2{
     text-align: center;
-    color: #FF7380FF;
+    color: #1a73e8;
     font-size: 40px;
     letter-spacing: 2.2pt;
 }
@@ -38,7 +38,7 @@ html, body{
     width: 100%;
     margin-top: 23px;
     border: none;
-    background: #FF7380FF;
+    background: #1a73e8;
     color: white;
     letter-spacing: 2px;
     transition: 0.2s all ease-in-out;
@@ -47,7 +47,7 @@ html, body{
 }
 
 
-/* Start Navigation Bar */
+/* Start Navigációs Sáv */
 .main-header-media1200{
     display:none;
 }
@@ -110,7 +110,7 @@ html, body{
 
 .main-nav .active{
     text-decoration: blink;
-    color: #FF7380FF;
+    color: #1a73e8;
     border-bottom: 2px solid currentColor;
 }
 
@@ -170,7 +170,7 @@ html, body{
     font-weight: 300;
     
 }
-/* End Navigation Bar */
+/* End Navigációs Sáv */
 
 
 /* Start Wave Image */
@@ -199,7 +199,7 @@ html, body{
 /* End Wave Image */
 
 
-/* Start Locate Us */
+/* Start Helyszín */
 .google-map{
     vertical-align: bottom;
     margin-bottom: -7px;
@@ -208,13 +208,13 @@ html, body{
 .map .subtitle h2{
     color: black;
 }
-/* End Locate Us */
+/* End Helyszín */
 
 
-/* Start Contact Us Form */
+/* Start Kapcsolatfelvétel Form */
 .contact-section .input-error{
     font-size: 12pt;
-    color:  #FF7380FF;
+    color:  #1a73e8;
 }
 
 .contact-section .send-input-message{
@@ -272,7 +272,7 @@ html, body{
 }
   
 .contact-section em {
-    color: #FF7380FF;
+    color: #1a73e8;
     font-weight: bold;
 }
   
@@ -286,7 +286,7 @@ html, body{
 }
   
 .contact-section input:focus, textarea:focus {
-    border: 1px solid #FF7380FF;
+    border: 1px solid #1a73e8;
 }
   
 .contact-section textarea {
@@ -310,10 +310,10 @@ html, body{
     align-items: center;
     justify-content: center;
 }
-/* End Contact Us Form */
+/* End Kapcsolatfelvétel Form */
 
 
-/* Start Newsletter */
+/* Start Hírfolyam */
 .newsletter-section .input-error{
     font-size: 13pt;
     color: red;
@@ -359,7 +359,7 @@ html, body{
 .subscribe-button{
     display: inline-block;
     border: none;
-    background-color: #FF7380FF;
+    background-color: #1a73e8;
     color: white;
     padding: 1rem;
     font-size: 12pt;
@@ -380,12 +380,12 @@ html, body{
 .subscribe-button-container{
     width: 150px;
 }
-/* End Newsletter */
+/* End Hírfolyam */
 
 
 /* Start Footer */
 .footer{
-    background-color: #FF7380FF;
+    background-color: #9e9e9e;
     background-size: 100%;
     width: 100%;
     height: 580px;
@@ -458,7 +458,7 @@ html, body{
 /* End Footer */
 
 
-/* Start Bottom Navbar */
+/* Start Alsó Navbar */
 .bottom-nav{
     position: fixed;
     bottom: 0;
@@ -488,13 +488,13 @@ html, body{
 }
 
 .bottom-nav-active{
-    color: #FF7380FF;
+    color: #1a73e8;
 }
 
 .bottom-nav-icon{
     font-size: 18px;
 }
-/* End Bottom Navbar */
+/* End Alsó Navbar */
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -511,7 +511,7 @@ html, body{
         display:none;
     }
 
-    /*Start Navigation Bar*/
+    /*Start Navigációs Sáv*/
     .main-header-media1200{
         display: contents;
     }
@@ -539,12 +539,12 @@ html, body{
     }
 
     .main-nav-media1200 a:hover{
-        color: #FFA5A5FF;
+        color: #1a73e8;
     }
 
     .main-nav-media1200 .active{
         text-decoration: blink;
-        color: #FFA5A5FF;
+        color: #1a73e8;
         border-bottom: 2px solid currentColor;
     }
 
@@ -573,7 +573,7 @@ html, body{
     .indexNav ul{
         padding-bottom: 0px;
     }
-    /*End Navigation Bar*/
+    /*End Navigációs Sáv*/
 
 
     /* Start Wave Image */
@@ -609,14 +609,14 @@ html, body{
     }
     /* End Wave Image */
 
-    /* Start Locate Us */
+    /* Start Helyszín */
     .map .subtitle h2{
         color: black;
     }
-    /* End Locate Us */
+    /* End Helyszín */
 
 
-    /* Start Contact Us Form */
+    /* Start Kapcsolatfelvétel Form */
     .contact-section h2{
         padding-top: 40px;
         font-size: 40px;
@@ -638,10 +638,10 @@ html, body{
         padding: 0px 300px;
         padding-bottom: 50px;
     }
-    /* End Contact Us Form */
+    /* End Kapcsolatfelvétel Form */
 
 
-    /* Start Newsletter */
+    /* Start Hírfolyam */
     .newsletter{
 
         padding-left: 400px; 
@@ -651,14 +651,14 @@ html, body{
     .subscribe-button-container{
         width: 150px;
     }
-    /* End Newsletter */
+    /* End Hírfolyam */
 
 
-    /* Start Bottom Navbar */
+    /* Start Alsó Navbar */
     .bottom-nav{
         display: none;
     }
-    /* End Bottom Navbar */
+    /* End Alsó Navbar */
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR COMMON ELEMENTS*/

@@ -6,7 +6,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | EMAIL VERIFIED</title>
+        <title>VINYLMASTER | EMAIL MEGERŐSÍTVE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
@@ -39,10 +39,10 @@
                 </div>
 
                 <div class="mail-sent-text">
-                    <h1>Your email address has been verified.</h1>
-                    <span class="message">You will now be redirected to the login page.</span>
+                    <h1>Email címed megerősítésre került.</h1>
+                    <span class="message">Át leszel irányítva a bejelentkezéshez.</span>
                     <br><br>
-                    <span class="tip">Redirecting........</span>
+                    <span class="tip">Átirányítás........</span>
                 </div>
             </div>
         </div>

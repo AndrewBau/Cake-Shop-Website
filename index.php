@@ -7,33 +7,32 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | HOME</title>
+        <title>VINYLMASTER | KEZDŐOLDAL</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--CSS File-->
+        
         <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Atish.css">
-        <!-- Font Awesome -->
+        
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-        <!--BOXICONS-->
+       
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Animate CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <script src="Javascript/swapWaveImg.js"></script>
-        <!-- COUNTDOWN FUNCTION JAVASCRIPT BY SANJANA -->
+        
         <script src = "Javascript/countdown_sales.js"></script>
     </head>
 
     <body>
         <?php $page = 'index'?>
 
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
 
         <!--Start Wave Image-->
@@ -48,20 +47,20 @@
         <!--Start Slideshow-->
         <div class="slideshow-container">
 
-            <!-- Full-width images with number and caption text -->
+            <!-- Full-width képek számmal és felirat szöveggel -->
             <div class="mySlides fade">
             <img src="Assets/images/1.index/Cake_1.jpg" style="width:100%">
-            <div class="text">EVERY BATCH FROM SCRATCH</div>
+            <div class="text">"MERT ZENE NÉLKÜL MIT ÉREK ÉN?"</div>
             </div>
         
             <div class="mySlides fade">
             <img src="Assets/images/1.index/Cake_2.jpg" style="width:100%">
-            <div class="text">WE IMPLEMENT SWEET DREAMS</div>
+            <div class="text">"Ó, AZ ÖREG BAKELIT, MÉG MINDIG TUDTHAT VALAMIT!"</div>
             </div>
         
             <div class="mySlides fade">
             <img src="Assets/images/1.index/Cake_3.jpg" style="width:100%">
-            <div class="text">A LITTLE BLISS IN EVERY BITE</div>
+            <div class="text">"FURCSA ÉRZÉS A NOSZTALGIA, NÉHA ENGEM IS MEGTALÁL. EGY ÖRÖKZÖLD A FÜLEMBE KÚSZIK, SOHA NEM HATHAT RÁ A HALÁL."</div>
             </div>
             
         </div>
@@ -78,96 +77,86 @@
         </div>
         <!--End Wave Image-->
 
-        <!--Start What You Can Do-->
+        <!--Start Mit tudunk adni-->
         <div class="what-you-can-do">
             <div class="subtitle">
-                <h2>WHAT YOU CAN DO</h2>
+                <h2>AJÁNLATAINK</h2>
             </div>
 
             <div class="row">
 
                 <div class="column">
                     <i class="fas fa-cookie"  style="color: black;"></i>
-                    <span class="what-you-can-do-subtitle buy-our-cake">Freshly baked cakes</span>
-                    <span class="what-you-can-do-text">Get a taste of our freshly prepared cakes by ordering online!</span>
+                    <span class="what-you-can-do-subtitle buy-our-cake">Eredeti lemezek</span>
+                    <span class="what-you-can-do-text">Válogass eredeti bakelit relikviáinkból és rendeld meg online!</span>
                 </div>
 
                 <div class="column">
                     <i class="fas fa-mitten"  style="color: black;"></i>
-                    <span class="what-you-can-do-subtitle customize-cake">Customize your cake</span>
-                    <span class="what-you-can-do-text">You can customize your cake with your favourite glazing, toppings, color and more!</span>
+                    <span class="what-you-can-do-subtitle customize-cake">Készíts saját lemezt</span>
+                    <span class="what-you-can-do-text">Küldd el nekünk a digitális zenei listádat és borítóterved, és mi elkészítjük a saját, egyedi bakelit lemezedet</span>
                 </div>
                 
                 <div class="column">
                     <i class="fas fa-boxes"  style="color: black;"></i>
-                    <span class="what-you-can-do-subtitle create-box">Custom cake box</span>
-                    <span class="what-you-can-do-text">You can add different types of cakes in a box and we deliver it to you!</span>
+                    <span class="what-you-can-do-subtitle create-box">Új kiadású lemezek</span>
+                    <span class="what-you-can-do-text">Találd meg korunk előadóinak limitált kiadású példányait</span>
                 </div>
 
             </div>
          </div>
 
         </div>
-        <!--End What You Can Do-->
+        <!--End Mit tudunk adni-->
        
         
-        <!--Start Special Offer-->
+        <!--Különleges ajánlat-->
         <section class="offer-section">
             <div class="offer-bg">
                 <div class="offer-data">
                     <div class="subtitle">
-                        <h2>SPECIAL OFFER</h2>
+                        <h2>KÜLÖNLEGES AJÁNLAT</h2>
                     </div>
-                    <p class="offer-description">Extreme Christmas Sales ends in: </p>
-                    <p class="offer-description" id="countdown" style="font-family: Old Standard TT; font-size: 2rem;">Sales countdown</p>
+                    <p class="offer-description">Újévi Ajánlatunk véget ér: </p>
+                    <p class="offer-description" id="countdown" style="font-family: Old Standard TT; font-size: 2rem;">AJÁNLAT VÉGE</p>
 
                     <div class="subscribe-button-container">
-                        <a href="products.php"><button class="subscribe-button" name="subscribe">SHOP NOW</button></a>
+                        <a href="products.php"><button class="subscribe-button" name="subscribe">VÁSÁROLJ MOST</button></a>
                     </div>
                 </div>
             </div>
         </section>
-        <!--End Special Offer-->
+        <!--Különleges ajánlat vége-->
 
-
-        <!--Start Wave Image-->
-        <!-- <div class="wave-image-group">
-            <div class="wave-image">
-                <img src="Assets/images/1.index/NavBar_WaveWhite.png">
-            </div>
-        </div> -->
-        <!--End Wave Image-->
-
-
-        <!--Start How to Order-->
+        <!--Start Rendelés lépései-->
         <div class="how-to-order">
             <div class="subtitle">
-                <h2 class="order-subtitle">HOW TO ORDER</h2>
+                <h2 class="order-subtitle">MEGRENDELÉS MENETE</h2>
             </div>
-            <div class="row" style="color: #FF7380FF;">
+            <div class="row" style="color: #1a73e8;">
                 <div class="column">
                   <i class="fas fa-birthday-cake"></i>
-                  <p><b>Choose your cake</b></p>
+                  <p><b>Válaszd ki a lemezt</b></p>
                 </div>
                 <div class="column">
                   <i class="fas fa-cart-plus"></i>
-                  <p><b>Add to cart</b></p>
+                  <p><b>Add hozzá a kosaradhoz</b></p>
                 </div>
                 <div class="column">
                   <i class="fas fa-money-check-alt"></i>
-                  <p><b>Checkout</b></p>
+                  <p><b>Megrendelés és fizetés</b></p>
                 </div>
                  <div class="column">
                  <i class="fas fa-box-open"></i>
-                 <p><b>We pack it up</b></p>
+                 <p><b>Rendelésfeldolgozás</b></p>
                 </div>
                   <div class="column">
                   <i class="fas fa-shipping-fast"></i>
-                  <p><b>Fast Delivery</b></p>
+                  <p><b>Kiszállítás</b></p>
                 </div>
             </div>
          </div>
-        <!--End How to Order-->
+        <!--End Rendelés lépései-->
 
 
         <!--Start Wave Image Flip-->
@@ -179,11 +168,11 @@
         <!--End Wave Image Flip-->
 
 
-        <!-- Start Our Baker-->
+        <!-- Start Mesterünk-->
         <div class="our-baker">
 
             <div class="subtitle">
-                <h2>OUR BAKERS</h2>
+                <h2>Csapatunk</h2>
             </div>
             
             <div class="all-helper-info-index">
@@ -194,9 +183,9 @@
                         </div>
 
                         <div class = "helper-more-about">
-                            <p class="name"><b>SARAH CONNOR</b></p>
-                            <p class="hierarchy">CEO - Malako Bakery Shop</p>
-                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            <p class="name"><b>KONNER SÁRA</b></p>
+                            <p class="hierarchy">CEO - VINYLMASTER</p>
+                            <p class="description">A formátum nem számít, mindegyik jó dili</p>
                         </div>
         
                         <div class="helper-social-media">
@@ -225,9 +214,9 @@
                         </div>
 
                         <div class = "helper-more-about">
-                            <p class="name"><b>JUAN OLSON</b></p>
-                            <p class="hierarchy">CO-FOUNDER</p>
-                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            <p class="name"><b>LAKATOS ALAJOS</b></p>
+                            <p class="hierarchy">TÁRSALAPÍTÓ</p>
+                            <p class="description">Zene nélkül mit érek én?</p>
                         </div>
         
                         <div class="helper-social-media">
@@ -256,9 +245,9 @@
                         </div>
 
                         <div class = "helper-more-about">
-                            <p class="name"><b>AGNES BUCHANAN</b></p>
-                            <p class="hierarchy">MASTER BAKER</p>
-                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            <p class="name"><b>BANÁNOS ÁGNES</b></p>
+                            <p class="hierarchy">ÍRÓ ÉS ARCHIVÁLÓ</p>
+                            <p class="description">Last Christmas I gave you MAHART...</p>
                         </div>
         
                         <div class="helper-social-media">
@@ -281,7 +270,7 @@
                 </div>
             </div>
         </div>
-        <!-- End Our Baker-->
+        <!-- End Mesterünk-->
 
 
         <!-- Start Google Map-->
@@ -289,14 +278,14 @@
         <!-- End Google Map-->
 
 
-        <!-- Start Contact Us -->
+        <!-- Start Kapcsolatfelvétel -->
         <?php include './Includes/ContactUsForm.php';?>
-        <!-- End Contact Us-->
+        <!-- End Kapcsolatfelvétel-->
         
 
-        <!--Start Newsletter-->
+        <!--Start Hírfolyam-->
         <?php include './Includes/NewsLetter.php';?>
-        <!--End Newsletter-->
+        <!--End Hírfolyam-->
 
 
         <!--Start Footer-->
@@ -304,9 +293,9 @@
         <!--End Footer-->
 
         
-        <!-- Start Bottom Nav -->
+        <!-- Start Alsó Nav -->
         <?php include './Includes/MobileBottomNav.php';?>
-        <!-- End Bottom Nav -->
+        <!-- End Alsó Nav -->
 
     </body>
 </html>

@@ -1,14 +1,14 @@
 <?php
-//<!--========== PHP CONNECTION TO DATABASE ==========-->
+//<!--========== PHP KAPCSOLAT AZ ADATBÁZISHOZ ==========-->
     $host = "localhost";
     $username = "root";
     // $pass = "malako123";
     $pass = "";
 
     $dbname = "cakeshop";
-    //create connection
+    //kapcsolat létrehozása
     $conn = mysqli_connect($host, $username, $pass, $dbname);
-    //check connection
+    //kapcsolat ellenőrzése
     if(!$conn){
         die("Connection failed: " . mysqli_connect_error());
     }

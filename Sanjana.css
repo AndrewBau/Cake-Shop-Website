@@ -28,7 +28,7 @@
 /*========== End Wave Image ========== */
 /*___________________________________________________________________________*/
 
-/* ========== VARIABLES CSS =========== */
+/* ========== VÁLTOZÓK CSS =========== */
 
 :root{
     --header-height: 3rem;
@@ -36,18 +36,18 @@
     --font-bold: 700;
 }
 
-/* ========== IMAGES USED IN CSS =========== */
+/* ========== KÉPEK CSSBEN =========== */
 
 :root{
     --offer-1: url("Assets/images/2.products/cupcake_bg2_cropped.jpg");
     --offer-2: url("Assets/images/2.products/christmas_2.jpg");
 }
 
-/* ========== COLOURS =========== */
+/* ========== SZÍNEK =========== */
 
 :root {
-    --first-color: #FF7380FF;
-    --first-color-alt: #FFA5A5FF;
+    --first-color: #1a73e8;
+    --first-color-alt: #2196f3;
     --white-color: white;
     --baby-pink-color: #ffd7d7;
     --yellow-color: #ffe547;
@@ -56,7 +56,7 @@
     --grey-color: #d0d0d0;
 }
 
-/* ========== FONTS AND TYPOGRAPHY =========== */
+/* ========== FONTOK ÉS TIPOGRÁFIA =========== */
 
 :root {
     --body-font: 'Open Sans', sans-serif;
@@ -81,7 +81,7 @@
 
 }
 
-/* ========== MARGINS =========== */
+/* ========== MARGINOK =========== */
 :root {
     --mb-1: .5rem;
     --mb-half: .75rem;
@@ -97,7 +97,7 @@
     --z-fixed: 100;
 }
 
-/* ========== BASE =========== */
+/* ========== BÁZIS =========== */
 
 a {
     text-decoration: none;
@@ -154,7 +154,7 @@ img{
 
 
 
-/*========== CART ========== */
+/*========== LISTA ========== */
 .title-cart{
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -326,11 +326,11 @@ img{
   
  
 }
-/*========== HOME ========== */
+/*========== KEZŐDOLDAL ========== */
 
 
 
-/*========== BUTTONS ========== */
+/*========== GOMBOK ========== */
 .button{
     display: inline-block;
     background-color: var(--first-color) !important;
@@ -384,7 +384,7 @@ img{
     border-radius: 25px;
 }
 
-/*========== DROP DOWN BUTTONS ========== */
+/*========== LENYÍLÓ GOMBOK ========== */
 
 .dropbtn {
     background-color: var(--first-color) !important;
@@ -437,7 +437,7 @@ img{
  
 
 
-/*========== EVENTS ========== */
+/*========== ESEMÉNYEK ========== */
 
 .avoid__clicks{
     pointer-events: none;
@@ -447,7 +447,7 @@ img{
     display: none;
 }
 
-/*========== FEATURED PRODUCTS ========== */
+/*========== KIVÁLASZTOTT TERMÉKEK ========== */
 
 .featured__container{
     /* padding: 1rem;
@@ -538,7 +538,7 @@ img{
     text-decoration: none;
 }
 
-/*========== PRODUCTS ========== */
+/*========== TREMÉKEK ========== */
 .product__name{
     color: var(--dark-color-light);
     font-weight: var(--font-semi);
@@ -552,9 +552,9 @@ img{
     font-weight:var(--font-bold);
 }
 
-/*========== PRODUCTS DETAILS ========== */
+/*========== TERMÉKEK ADATAI ========== */
 
-/*========== INPUT  ========== */
+/*========== BEVITEL  ========== */
 .input-quantity{
     border:none;
     outline: none;
@@ -616,7 +616,7 @@ img{
     
 }
 
-/*========== CATEGORY ========== */
+/*========== KATEGÓRIA ========== */
 .category-title{
 padding: .8rem;
 margin-bottom: 3rem !important;
@@ -663,21 +663,21 @@ display: flex;
     border: 1px solid linen !important;
 }
 
-/*========== OFFER ========== */
+/*========== AJÁNLAT ========== */
 
 .offer__bg {
     background-image: var(--offer-1);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center; /* Kép középre igazítása */
+    background-repeat: no-repeat; /* ne ismétlődjön a kép */
+    background-size: cover; /* háttér átméretezése, hogy fedje a konténert */
     text-align: center;
 }
 
 .offer__bg2 {
     background-image: var(--offer-2);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center; /* Kép középre igazítása */
+    background-repeat: no-repeat; /* ne ismétlődjön a kép */
+    background-size: cover; /* háttér átméretezése, hogy fedje a konténert */
     text-align: center;
 }
 
@@ -709,7 +709,7 @@ display: flex;
 
 
 
-/*========== NEW PRODUCTS ========== */
+/*========== ÚJ TERMÉKEK ========== */
 
 .new__container{
     row-gap: 2rem;
@@ -742,7 +742,7 @@ display: flex;
 }
 
 
-/*========== PRODUCT DETAILS ========== */
+/*========== TERMÉK ADATAI ========== */
 
 
 .product-image{
@@ -777,10 +777,10 @@ display: flex;
 
 
 /*---------------------------------------------------------------------------------------------*/
-/*MEDIA QUERY for pc browser*/
+/*MEDIA QUERY pc böngészőnek*/
 /*---------------------------------------------------------------------------------------------*/
 
-/*========== MEDIA QUERIES BY SANJANA ========== */
+/*========== MEDIA QUERIK ========== */
 @media screen and (min-width: 768px){
     body{
         margin:0;
@@ -817,7 +817,7 @@ display: flex;
         margin-right: auto;
     }
 }
-/*========== REVERSE MEDIA QUERIES BY SANJANA ========== */
+/*========== FORDÍTOTT MEDIA QUERIEK ========== */
 @media (max-width: 1200px) {
     .hide-wave {
       display: none
@@ -835,7 +835,7 @@ display: flex;
         border-left: 5px solid var(--first-color-alt);
     }
 
-    /* CART STUFFS */
+    /* KOSÁR TARTALMA */
 
         
     .receipt-card{
@@ -961,26 +961,26 @@ display: flex;
         right: .3rem;
         bottom: .3rem;
     }
-    /* div containing title and cart icon */
+    /* div tartalmazza a címet és a kosár ikont */
     .title-cart{
         margin-bottom: 0 !important;
         margin-top: 1rem !important;
         border-bottom: .5px solid var(--dark-color-light) !important;
     }
 
-    /* my cart title */
+    /* kosár címe */
     .title-cart h1{
     font-size: 1.2rem !important; 
     margin-bottom: 0px !important; 
     padding-top: 4px;
     }
     
-    /* cart icon next to 'My Cart' */
+    /* kosár ikon a 'Kosaram' mellett */
     .title-cart i{
         font-size: 1.5rem !important;  
     }
 
-    /* PRODUCTS PAGE TITLE */
+    /* TERMÉKEK OLDAL CÍME */
     .category-title{
         margin-left: 0 !important;
         margin-right: 0 !important;
