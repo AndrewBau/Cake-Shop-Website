@@ -19,7 +19,7 @@ html, body{
 
 .subtitle h2{
     text-align: center;
-    color: #FF7380FF;
+    color: #1a73e8;
     font-size: 40px;
     letter-spacing: 2.2pt;
 }
@@ -38,7 +38,7 @@ html, body{
     width: 100%;
     margin-top: 23px;
     border: none;
-    background: #FF7380FF;
+    background: #1a73e8;
     color: white;
     letter-spacing: 2px;
     transition: 0.2s all ease-in-out;
@@ -110,7 +110,7 @@ html, body{
 
 .main-nav .active{
     text-decoration: blink;
-    color: #FF7380FF;
+    color: #1a73e8;
     border-bottom: 2px solid currentColor;
 }
 
@@ -214,7 +214,7 @@ html, body{
 /* Start Kapcsolatfelvétel Form */
 .contact-section .input-error{
     font-size: 12pt;
-    color:  #FF7380FF;
+    color:  #1a73e8;
 }
 
 .contact-section .send-input-message{
@@ -272,7 +272,7 @@ html, body{
 }
   
 .contact-section em {
-    color: #FF7380FF;
+    color: #1a73e8;
     font-weight: bold;
 }
   
@@ -286,7 +286,7 @@ html, body{
 }
   
 .contact-section input:focus, textarea:focus {
-    border: 1px solid #FF7380FF;
+    border: 1px solid #1a73e8;
 }
   
 .contact-section textarea {
@@ -359,7 +359,7 @@ html, body{
 .subscribe-button{
     display: inline-block;
     border: none;
-    background-color: #FF7380FF;
+    background-color: #1a73e8;
     color: white;
     padding: 1rem;
     font-size: 12pt;
@@ -488,7 +488,7 @@ html, body{
 }
 
 .bottom-nav-active{
-    color: #FF7380FF;
+    color: #1a73e8;
 }
 
 .bottom-nav-icon{
@@ -539,12 +539,12 @@ html, body{
     }
 
     .main-nav-media1200 a:hover{
-        color: #FFA5A5FF;
+        color: #1a73e8;
     }
 
     .main-nav-media1200 .active{
         text-decoration: blink;
-        color: #FFA5A5FF;
+        color: #1a73e8;
         border-bottom: 2px solid currentColor;
     }
 

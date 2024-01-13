@@ -256,7 +256,7 @@
 }
 
 .baker-profile-group .hierarchy{
-    color: #FF7380FF;
+    color: #1a73e8;
 }
 /* End Mesterünk */
 
@@ -399,7 +399,7 @@
     font-size: 50px;
     padding-top: 20px;
     padding-bottom: 60px;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 /*End Rólunk Header*/
 
@@ -413,7 +413,7 @@
 .baker-info-group .baker-info-title span{
     font-size: 25px;
     font-family: Courgette;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .baker-info-group .baker-name{
@@ -446,7 +446,7 @@
 .baker-info-group .baker-position span{
     font-size: 20px;
     font-family: Courgette;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .baker-photo-group .baker-photo{
@@ -473,7 +473,7 @@
 .award-title{
     text-align: center;
     padding-bottom: 15px;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .award-title span{
@@ -526,7 +526,7 @@
     padding-bottom: 15px;
     font-size: 20px;
     font-family: Courgette;
-    color:#A593C2FF;
+    color:#1a73e8;
 }
 
 .badge-info .badge-description{
@@ -557,7 +557,7 @@
 
 .team-section .team-title span{
     font-family: Courgette;
-    color:#FF7380FF;
+    color:#1a73e8;
 }
 
 .helper0 .helper-pic{
@@ -602,7 +602,7 @@
 
 .helper-more-about .hierarchy{
     font-size: 20px;
-    color: #FF7380FF;
+    color: #1a73e8;
 }
 
 .helper-social-media .social-media a{
@@ -652,7 +652,7 @@
     .baker-info-group .baker-info-title span{
         font-size: 25px;
         font-family: Courgette;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .baker-info-group .baker-name{
@@ -684,7 +684,7 @@
     .baker-info-group .baker-position span{
         font-size: 20px;
         font-family: Courgette;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .baker-photo-group .baker-photo{
@@ -706,7 +706,7 @@
 
     .award-title{
         text-align: center;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .award-title span{
@@ -758,7 +758,7 @@
         padding-bottom: 15px;
         font-size: 20px;
         font-family: Courgette;
-        color:#A593C2FF;
+        color:#1a73e8;
     }
 
     .badge-info .badge-description{
@@ -795,7 +795,7 @@
 
     .team-section .team-title span{
         font-family: Courgette;
-        color:#FF7380FF;
+        color:#1a73e8;
     }
 
     .all-helper-info{
@@ -841,7 +841,7 @@
 
     .helper-more-about .hierarchy{
         font-size: 20px;
-        color: #FF7380FF;
+        color: #1a73e8;
     }
 
     .helper-social-media .social-media a{
