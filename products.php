@@ -230,7 +230,7 @@
                     console.log('sent');
 
                     //CÍM VÁLTOZTATÁSA
-                    document.getElementById('small_title').innerHTML = 'CATEGORY';
+                    document.getElementById('small_title').innerHTML = 'KATEGÓRIA';
                     document.getElementById('big_title').innerHTML = cat_name;
                     
                 }
@@ -252,13 +252,13 @@
                     console.log('sent sortby');
 
                     //CÍM MEGVÁLTOZTATÁSA
-                    document.getElementById('small_title').innerHTML = 'SORT BY PRICE';
+                    document.getElementById('small_title').innerHTML = 'ÁR SZERINT RENDEZVE';
 
                     if(sort_num == 1){
-                        document.getElementById('big_title').innerHTML = 'low to high';
+                        document.getElementById('big_title').innerHTML = 'növekvő';
                     }
                     else if(sort_num ==2){
-                        document.getElementById('big_title').innerHTML = 'high to low';
+                        document.getElementById('big_title').innerHTML = 'csökkenő';
                     }
                     
                 }
@@ -284,20 +284,20 @@
                     //CÍM VÁLTOZTATÁSA
 
                     if(p_type==1){
-                        document.getElementById('small_title').innerHTML = 'new';
+                        document.getElementById('small_title').innerHTML = 'új';
                     }
                     else  if(p_type==2){
-                        document.getElementById('small_title').innerHTML = 'featured';
+                        document.getElementById('small_title').innerHTML = 'kiválasztott';
                     }
                     else  if(p_type==3){
-                        document.getElementById('small_title').innerHTML = 'sales';
+                        document.getElementById('small_title').innerHTML = 'értékesítések';
                     }
                     else  if(p_type==4){
                         document.getElementById('small_title').innerHTML = 'best-seller';
                     }
 
                     //NAGY CÍM
-                    document.getElementById('big_title').innerHTML = 'PRODUCTS';
+                    document.getElementById('big_title').innerHTML = 'TERMÉKEK';
                     
                 }
 
@@ -322,20 +322,20 @@
                     //CÍM MEGVÁLTOZTATÁSA
 
                     if(p_type==1){
-                        document.getElementById('small_title2').innerHTML = 'new';
+                        document.getElementById('small_title2').innerHTML = 'új';
                     }
                     else  if(p_type==2){
-                        document.getElementById('small_title2').innerHTML = 'featured';
+                        document.getElementById('small_title2').innerHTML = 'kiválasztott';
                     }
                     else  if(p_type==3){
-                        document.getElementById('small_title2').innerHTML = 'sales';
+                        document.getElementById('small_title2').innerHTML = 'értékesítések';
                     }
                     else  if(p_type==4){
                         document.getElementById('small_title2').innerHTML = 'best-seller';
                     }
 
                     //NAGY CÍM
-                    document.getElementById('big_title2').innerHTML = 'PRODUCTS';
+                    document.getElementById('big_title2').innerHTML = 'TERMÉKEK';
                     
                 }
 
