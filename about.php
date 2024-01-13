@@ -99,7 +99,7 @@
                         <div class="badge-info">
                             <span class="badge-title">A ÉV LEMEZBOLTJA</span>
                             <span class="badge-date">2010-2011</span>
-                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez egész Magyarországon!</p>
+                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez Magyarországon!</p>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                         <div class="badge-info">
                             <span class="badge-title">A ÉV LEMEZBOLTJA</span>
                             <span class="badge-date">2015-2016</span>
-                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez egész Magyarországon!</p>
+                            <p class="badge-description">Legtöbb eladott minőségi bakelit lemez Magyarországon!</p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                         <div class="badge-info">
                             <span class="badge-title">AZ ÉV BAKELIT LEMEZ KÉSZÍTŐJE</span>
                             <span class="badge-date">2019-2020</span>
-                            <p class="badge-description">Legtöbb minőségi bakelit lemez elkészítését és forgalomba helyezését végezte Magyarországon 2019.-ben!</p>
+                            <p class="badge-description">Legtöbb minőségi bakelit lemez elkészítését és forgalomba helyezését végezte Magyarországon 2019-ben!</p>
                         </div>
                     </div>
                 </div>
