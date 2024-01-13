@@ -4,70 +4,70 @@
     //SESSION START
     include "./AdditionalPHP/startSession.php";
 
-    //DATABASE CONNECTION  cakeshop
+    //KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER
     include_once 'connection.php';
 
     $validated = false;
 
-    // define variables and set to empty values
+    // változók definiálása és beállitása üres értékre
     $fname = $lname = $email = $address = $country = $city = $zip = $paymentMethod = $ccname = $ccnum = $ccexp_m =$ccexp_y = $cccvv = "";
     $fnameErr = $lnameErr = $emailErr = $addressErr = $countryErr = $cityErr = $zipErr = $paymentMethodErr = $ccnameErr = $ccnumErr = $ccexpErr = $cccvvErr = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        //FIRST NAME VALIDATION
+        //KERESZTNÉV VALIDÁLÁSA
         $fname = test_input($_POST["fname"]);
-        // check if name only contains letters and whitespace
+        // leellenőrzi, hogy csak betűket és spacet tartalmaz-e
         if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
-        $fnameErr = "Only letters and white space allowed";
+        $fnameErr = "Csak betű és szóköz engedélyezett";
         }
 
-        //LAST NAME VALIDATION
+        //VEZETÉKNÉV VALIDÁLÁSA
         $lname = test_input($_POST["lname"]);
-        // check if name only contains letters and whitespace
+        // leellenőrzi, hogy csak betűket és spacet tartalmaz-e
         if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
-        $lnameErr = "Only letters and white space allowed";
+        $lnameErr = "Csak betű és szóköz engedélyezett";
         }
     
-        //EMAIL VALIDATION
+        //EMAIL VALIDÁLÁSA
         $email = test_input($_POST["email"]);
-        // check if e-mail address is well-formed
+        // ellenőrzi a formátumot
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "Invalid email format";
+        $emailErr = "Érvénytelen email cím formátum";
         }
         
-        //ADDRESS VALIDATION
+        //CÍM VALIDÁLÁSA
         $address = test_input($_POST["address_checkout"]);
-        // check if email contains numbers at the start, followed by letters, contains space, hyphen and comma
+        // Ellenőrizze, hogy a cím számmal kezdődik-e, azt követik-e betűk, tartalmaz-e szóközt, kötőjelet és vesszőt.
         if (!preg_match("^[0-9a-zA-Z\s,-]+$",$address)) {
-        $addressErr = "Invalid address";
+        $addressErr = "Érvénytelen cím";
         }
 
-        //COUNTRY VALIDATION
+        //ORSZÁG VALIDÁLÁSA
         $country = test_input($_POST["country"]);
-        // check if country == mauritius
+        // ellenőrzi, hogy country == mauritius
         if ($country != "Mauritius" || $country != "mauritius" ) {
-        $addressErr = "Sorry, we currently deliver in Mauritius only.";
+        $addressErr = "Elnézést, de csak Mauritiusba szállítunk.";
         }
 
-        //CITY VALIDATION
+        //VÁROS VALIDÁLÁSA
         $city = test_input($_POST["city"]);
-        // check if city == options
+        // ellenőrzi, hogy city == options
         if ($city != "PortLouis" || $city != "Curepipe" || $city != "Vacoas" || $city != "QuatreBornes" || $city != "RoseHill" || $city != "FlicEnFlac" || $city != "Phoenix") {
-        $cityErr = "Invalid city";
+        $cityErr = "Érvénytelen város";
         }
 
-        //ZIP VALIDATION
+        //ZIP VALIDÁLÁSA
         $zip = test_input($_POST["zip"]);
-        // check if zip contains exactly 5 numbers
+        // ellenőrzi, hogy az irányítószám pontosan 5 számjegyet tartalmaz.
         if (!preg_match("^[0-9]{5}",$zip)) {
-        $zipErr = "Invalid zip code";
+        $zipErr = "Érvénytelen irányítószám";
         }
     
-        //PAYMENT METHOD VALIDATION
+        //FIZETÉSI METÓDUS VALIDÁLÁSA
         $paymentMethod = test_input($_POST["paymentMethod"]);
 
-        //REGEX BY CARD TYPE
+        //REGEX KÁRTYATÍPUS ALAPJÁN
         $cardtype = array(
         "visa"       => "/^4[0-9]{12}(?:[0-9]{3})?$/",
         "mastercard" => "/^5[1-5][0-9]{14}$/"
@@ -75,58 +75,58 @@
         );
 
 
-        //CC NAME VALIDATION
+        //HITELKÁRTYA NÉV ÉRVÉNYESSÉGELLENŐRZÉS
         $ccname = test_input($_POST["ccname"]);
-        // check if ccname only contains letters and whitespace
+        // Ellenőrzi, hogy a hitelkártya név csak betűket és szóközöket tartalmaz-e.
         if (!preg_match("/^[a-zA-Z-' ]*$/",$ccname)) {
-        $ccnameErr = "Only letters and white space allowed";
+        $ccnameErr = "Csak betű és szóköz engedélyezett";
         }
 
-        //CC NUM VALIDATION
+        //HITELKÁRTYASZÁM VALIDÁLÁSA
         $ccnum = test_input($_POST["ccnum"]);
-        // check if ccnum matches regex by supported card types
+        // ellenprzi, hogy a hitelkártyaszám illeszkedik-e a kártyatípusnak megfelelő regexbe
         if (!preg_match($cardtype['visa'],$ccnum) || !preg_match($cardtype['mastercard'],$ccnum)) {
-        $ccnumErr = "Invalid card number
+        $ccnumErr = "Érvénytelen kártyaszám
         <br>
-        We are sorry! Our system currently supports VISA and MasterCard only.";
+       Elnézést! Jelenleg a rendszerünk a VISA és MasterCard kártyákat támogatja.";
         }
 
 
-        //CC EXPIRATION DATE VALIDATION
+        //HITELKÁRTYA LEJÁRATI DÁTUM VALIDÁLÁSA
         if (empty($_POST["ccexp_m"]) || empty($_POST["ccexp_y"])) {
-        $ccexpErr = "Please enter the expiration date";
+        $ccexpErr = "Kérlek add meg a lejárati dátumot.";
         } 
         else {
             $ccexp_m = test_input($_POST["ccexp_m"]);
             $ccexp_y = test_input($_POST["ccexp_y"]);
 
-            //VALIDATES MONTH
+            //VALIDÁLJA A HÓNAPOT
             if((int)$ccexp_m > 0 && (int)$ccexp_m < 13){
-                //VALIDATES YEAR
+                //VALIDÁLJA AZ ÉVET
                 if((int)$ccexp_y > 1900 && (int)$ccexp_y < 4000){
                 $expires = \DateTime::createFromFormat('my', $ccexp_m.$ccexp_y);
                 $now = new \DateTime();
-                //CHECK IF EXPIRED
+                //ELLENŐRZI, HOGY LEJÁRT-E
                 if ($expired < $now) {
-                    $ccexpErr = "Your credit card has expired";
+                    $ccexpErr = "A kártya már lejárt";
                 }
                 }
                 else {
-                $ccexpErr = "Invalid year";
+                $ccexpErr = "Érvénytelen év";
                 }
             }
             else {
-                $ccexpErr = "Invalid expiration date";
+                $ccexpErr = "Érvénytelen lejárati dátum";
             }
         }
 
 
-        //CC CVV VALIDATION
+        //HITELKÁRTYA CVV VALIDÁLÁSA
         $cccvv = test_input($_POST["cccvv"]);
-        // check if CVV contains has 3 or 4 digits and is
-        //between 0-9 and does not have any alphabets and special characters.
+        //Ellenőrzi, hogy a CVV tartalmaz-e 3 vagy 4 számjegyet.
+        //Ellenőrzi, hogy a CVV 0 és 9 közötti számjegyet tartalmaz, és nem tartalmaz betűket vagy speciális karaktereket.
         if (!preg_match("^[0-9]{3, 4}$",$cccvv)) {
-            $cccvvErr = "Invalid CVV";
+            $cccvvErr = "Érvénytelen CVV";
         }
 
         if($fnameErr = $lnameErr = $emailErr = $addressErr = $countryErr = $cityErr = $zipErr = $paymentMethodErr = $ccnameErr = $ccnumErr = $ccexpErr = $cccvvErr = ""){
