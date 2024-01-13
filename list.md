@@ -7,7 +7,7 @@
 [Includes](Includes) *
 [Javascript](Javascript) *
 
-[about.php](about.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
+[about.php](about.php) *
 [Account.css](Account.css)
 [accountInvalidPage.php](accountInvalidPage.php) *
 [accountVerifiedPage.php](accountVerifiedPage.php) *
