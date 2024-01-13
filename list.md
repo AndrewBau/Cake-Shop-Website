@@ -19,7 +19,7 @@
 [checkAccount.php](checkAccount.php) *
 [checkout.php](checkout.php) *
 [checkout_test.php](checkout_test.php) *
-[Common.css](Common.css)
+[Common.css](Common.css) (munka alatt)
 [connection.php](connection.php) * ?
 [contact.php](contact.php) *
 [debug.log](debug.log) *
