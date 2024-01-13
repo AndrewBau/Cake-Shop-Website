@@ -13,7 +13,7 @@
 [accountVerifiedPage.php](accountVerifiedPage.php) *
 [adminPanel.php](adminPanel.php) * ?
 [ajax_test.php](ajax_test.php) *
-[Atish.css](Atish.css)
+[Atish.css](Atish.css) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [cart.php](cart.php) *
 [category_search.php](category_search.php) *
 [checkAccount.php](checkAccount.php) *
