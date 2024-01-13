@@ -46,7 +46,7 @@
         <!--End Fejléc-->
 
 
-        <!--Start Baker Info-->
+        <!--Start Mester Info-->
         <div class="baker-info-group">
             <div class="baker-info-container">
                 <div class="baker-info-text">
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <!--End Baker Info-->
+        <!--End Mester Info-->
 
 
         <!--Start Awards-->

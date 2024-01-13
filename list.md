@@ -7,7 +7,7 @@
 [Includes](Includes) *
 [Javascript](Javascript) *
 
-[about.php](about.php) * !
+[about.php](about.php) * 
 [Account.css](Account.css)
 [accountInvalidPage.php](accountInvalidPage.php) *
 [accountVerifiedPage.php](accountVerifiedPage.php) *
