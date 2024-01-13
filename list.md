@@ -11,6 +11,7 @@ checkout.php
 checkout
 forgetPassword.php
 Includes
+index.php
 Javascript
 login.php
 logout.php
