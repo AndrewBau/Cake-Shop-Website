@@ -2,10 +2,10 @@
 //<!--========== PHP KAPCSOLAT AZ ADATBÁZISHOZ ==========-->
     $host = "localhost";
     $username = "root";
-    // $pass = "malako123";
+    // $pass = "vinylmaster123";
     $pass = "";
 
-    $dbname = "cakeshop";
+    $dbname = "vinylmasterdb";
     //kapcsolat létrehozása
     $conn = mysqli_connect($host, $username, $pass, $dbname);
     //kapcsolat ellenőrzése

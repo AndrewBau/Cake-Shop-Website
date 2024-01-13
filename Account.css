@@ -142,7 +142,7 @@ hr{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background-color:#FFA5A5FF;
+    background-color:#2196f3;
     background-image: linear-gradient(45deg,rgb(252, 173, 173),rgb(255, 195, 195));
     width: 100%;
     border: 0;
@@ -161,7 +161,7 @@ hr{
 }
 
 .form .message a {
-    color: #FFA5A5FF;
+    color: #2196f3;
     text-decoration: none;
 }
 
@@ -174,7 +174,7 @@ hr{
 }
 
 .social-login .login-text{
-    color:  #FFA5A5FF;
+    color:  #2196f3;
     font-size: 20px;
 }
 
@@ -366,8 +366,8 @@ hr{
         font-family: "Roboto", sans-serif;
         text-transform: uppercase;
         outline: 0;
-        background-color:#FFA5A5FF;
-        background-image: linear-gradient(45deg,rgb(252, 173, 173),rgb(255, 195, 195));
+        background-color:#2196f3;
+        background-image: linear-gradient(45deg,#2196f3,#4ba6f1);
         width: 100%;
         border: 0;
         padding: 15px;
@@ -385,7 +385,7 @@ hr{
     }
 
     .form .message a {
-        color: #FFA5A5FF;
+        color: #2196f3;
         text-decoration: none;
     }
 
@@ -398,7 +398,7 @@ hr{
     }
     
     .social-login .login-text{
-        color:  #FFA5A5FF;
+        color:  #2196f3;
         font-size: 20px;
     }
     
@@ -408,7 +408,7 @@ hr{
     }
     
     .social-login i:hover{
-        color: #FFA5A5FF;
+        color: #2196f3;
     }
 
     .login-form span{
@@ -422,7 +422,7 @@ hr{
     }
 
     .login-form .forget-text a:hover{
-        color:#FFA5A5FF;
+        color:#2196f3;
         text-decoration: underline;
     }
 
@@ -443,7 +443,7 @@ hr{
     /* Start User Profil Felírat*/
     .user-profile-container .input-error{
         font-weight: bold;
-        color: #FFA5A5FF;
+        color: #2196f3;
     }
 
     .user-profile-container .message{

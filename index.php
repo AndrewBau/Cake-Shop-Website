@@ -86,19 +86,19 @@
             <div class="row">
 
                 <div class="column">
-                    <i class="fas fa-cookie"  style="color: black;"></i>
+                    <i class="fas fa-solid fa-record-vinyl"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle buy-our-cake">Eredeti lemezek</span>
                     <span class="what-you-can-do-text">Válogass eredeti bakelit relikviáinkból és rendeld meg online!</span>
                 </div>
 
                 <div class="column">
-                    <i class="fas fa-mitten"  style="color: black;"></i>
+                    <i class="fas fa-solid fa-industry"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle customize-cake">Készíts saját lemezt</span>
                     <span class="what-you-can-do-text">Küldd el nekünk a digitális zenei listádat és borítóterved, és mi elkészítjük a saját, egyedi bakelit lemezedet</span>
                 </div>
                 
                 <div class="column">
-                    <i class="fas fa-boxes"  style="color: black;"></i>
+                    <i class="fas fa-solid fa-star"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle create-box">Új kiadású lemezek</span>
                     <span class="what-you-can-do-text">Találd meg korunk előadóinak limitált kiadású példányait</span>
                 </div>
@@ -135,7 +135,7 @@
             </div>
             <div class="row" style="color: #1a73e8;">
                 <div class="column">
-                  <i class="fas fa-birthday-cake"></i>
+                  <i class="fas fa-solid fa-record-vinyl"></i>
                   <p><b>Válaszd ki a lemezt</b></p>
                 </div>
                 <div class="column">
