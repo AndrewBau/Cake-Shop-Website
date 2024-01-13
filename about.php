@@ -79,7 +79,7 @@
         <!--End Mester Info-->
 
 
-        <!--Start Awards-->
+        <!--Start Kitüntetések-->
         <div class="award-section">
             <div class="award-title">
                 <span>Kitüntetéseink</span>
@@ -133,9 +133,9 @@
                 </div>
             </div>
         </div>
-        <!--End Awards-->
+        <!--End Kitüntetések-->
 
-        <!--Start Team Info-->
+        <!--Start Csapatinfó-->
         <div class="team-section">
             <div class="team-title">
                 <span>Aranykezű Mestereink</span>
@@ -210,7 +210,7 @@
                 </div>
             </div>
         </div>
-        <!--End Team Info-->
+        <!--End Csapatinfó-->
 
 
         <!-- Start Google Map-->
