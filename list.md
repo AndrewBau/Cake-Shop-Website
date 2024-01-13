@@ -3,9 +3,11 @@ accountInvalidPage.php
 accountVerifiedPAge.php
 AdditionalPHP
 adminPanel.php
+ajax_test.php
 checkout
 Includes
 Javascript
 login.php
 logout.php
+makeYourCake.php
 passwordResetPage.php
