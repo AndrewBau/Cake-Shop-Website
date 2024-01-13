@@ -12,5 +12,7 @@ Javascript
 login.php
 logout.php
 makeYourCake.php
+numOfItemsInCart.php
 passwordResetPage.php
 product.php
+registration.php
