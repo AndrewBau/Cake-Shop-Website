@@ -4,6 +4,7 @@ accountVerifiedPAge.php
 AdditionalPHP
 adminPanel.php
 ajax_test.php
+cart.php
 checkout
 Includes
 Javascript

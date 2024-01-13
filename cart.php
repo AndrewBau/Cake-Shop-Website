@@ -4,31 +4,30 @@
     //SESSION START
     include "./AdditionalPHP/startSession.php";
 
-    //DATABASE CONNECTION  cakeshop
+    //KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER
     include_once 'connection.php';
 ?>
 
 <?php
-//Remove button
-//The remove button loads the same page but carries some additional info in url
+//Törlés gomb
+//A törlés gomb ugyanazt az oldalt tölti be, de további információt ad az URL-ben
 //cart.php?action=delete&product_id=<?php echo ...
-//checks if url contains action=delete
+//leellenőrzi, hogy az URL tartalmaz-e action=delete
 if(filter_input(INPUT_GET, 'action') == 'delete'){
-    //loops through all products in shopping cart session array until id matches url
+    //loop az összes termék a bevásárló kosárban session-tömbben amíg az id nem egyezik a url-vel
     foreach($_SESSION['shopping_cart'] as $key => $product){
 
-        //checks if product_id in url (when remove button clicked) matches the one
-        //in the shopping cart session array
+        //Ellenőrzi, hogy az URL-ben található termék azonosítója (amikor a törlés gombra kattintanak) egyezik-e eggyel a bevásárló kosár session tömbjéből
         if($product['id'] == filter_input(INPUT_GET, 'product_id')){
-            //remove product from shopping cart session array
+            //törli az elemet a session tömbből
             unset($_SESSION['shopping_cart'][$key]);
-        }//end if
-    }//end foreach
+        }// if vége
+    }// foreach vége
 
-    //reset session array keys so they match with $product_ids numeric array
+    //session tömb kulcsainak visszaállítása, hogy egyezzenek a $product_ids számokat tartalmazó tömb kulcsaival
     $_SESSION['shopping_cart'] = array_values($_SESSION['shopping_cart']);
 
-    //DELETE ROW FROM CARTITEM TABLE
+    //SOR TÖRLÉSE A CARTITEM TÁBLÁBÓL
     $Q_delete_cartitem = 'DELETE FROM cartitem WHERE productID = '.filter_input(INPUT_GET, 'product_id');
     $run_delete_cartitem = mysqli_query($conn, $Q_delete_cartitem);
 
@@ -39,10 +38,10 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 <html>
     <head>
     <meta charset="utf-8">
-    <title>MALAKO | Details</title>
+    <title>VINYLMASTER | Részletek</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
+    <!--========== PHP KAPCSOLAT LÉTREHOZÁSA AZ ADATBÁZIOSSAL: VINYLMASTER ==========-->
     <?php 
         
         include_once 'numOfItemsInCart.php';
@@ -75,16 +74,16 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-    <!-- Animate CSS -->
+    <!-- Animált CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!--========== BOXICONS ==========-->
+    <!--========== BOXICONOK ==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     </head>
 
     <body>
-          <!--========== PHP QUERIES ==========-->
+          <!--========== PHP QUERIK ==========-->
         <?php 
             
             $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
@@ -108,67 +107,67 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
         <!--End Navigation Bar @media 1200px-->
           
 
-        <!--========== CART STRUCTURE ==========-->
+        <!--========== KOSÁR STRUKTÚRÁJA ==========-->
         <div class="row mx-auto">
-            <!-- Cart items -->
+            <!-- Kosárban az elemek -->
             <div class="col-lg">
 
-                <!-- title -->
+                <!-- cím -->
                 <div class="row-md  title-cart">
-                    <!-- <h1>M Y &nbsp C A R T</h1> -->
-                    <h1 text-center>MY CART &nbsp</h1>
+                    <!-- <h1>M Y &nbsp K O S Á R</h1> -->
+                    <h1 text-center>KOSARAM &nbsp</h1>
                     <i class='bx bxs-cart-download bx-tada-hover'></i>
                 </div>
-                <!-- header of order details -->
+                <!-- megrendelési adatok header -->
                 <div class="cart_title_bar mx-1 ">
                     <div class="cart-title-1">
                         <h2 class="section-title hide-wave"> </h2>
                     </div>
                     <div class="cart-title-2">
-                        <h4 class="section-all my-0 py-0 hide-wave">Item Details</h4>
+                        <h4 class="section-all my-0 py-0 hide-wave">Termék adatai</h4>
                     </div>
                     <div class="cart-title-3">
-                        <h4 class="section-all my-0 py-0 hide-wave">Quantity</h4>
+                        <h4 class="section-all my-0 py-0 hide-wave">Mennyiség</h4>
                     </div>
                    
                     <div class="cart-title-4">
-                        <h4 class="section-all my-0 py-0 hide-wave">Total Price (Rs)</h4>
+                        <h4 class="section-all my-0 py-0 hide-wave">Végösszeg (HUF)</h4>
                     </div>
                     <div class="cart-title-5">
-                        <h4 class="section-all my-0 py-0 hide-wave">Remove</h4>
+                        <h4 class="section-all my-0 py-0 hide-wave">Törlés</h4>
                     </div>
                     
                 </div>
-                <!-- Loop through session shopping cart -->
+                <!-- Loop a bevásárló kosáron keresztül -->
                 <?php
-                //if shopping cart not empty
+                //ha a bevásárló kosár nem üres
                 if(!empty($_SESSION['shopping_cart'])){
-                    //create total variable 
+                    //összeg változó létrehozása 
                     $total = 0;
                     $_SESSION['total_quantity'] = 0;
-                    //loop through each item in shopping cart
+                    //loop az összes elemen keresztül ami a bevásárló kosárban található
                     foreach($_SESSION['shopping_cart'] as $key => $product){ 
                 
                 ?>
 
-                <!-- Receipt item card -->
+                <!-- nyugtára vonatkozó tételkártya -->
                 <div class="receipt-card mt-2 mb-3 mx-1 py-3">
 
-                    <!-- product image -->
+                    <!-- termék image -->
                     <?php
                     
                     $result_product = mysqli_query($conn, $Q_fetch__all_products);
                     $check = mysqli_num_rows($result_product);
 
-                    if($check>0){ //checks if $result empty in database
-                          //loops through all items in products table in database
+                    if($check>0){ //ellenőrzi, hogy a $result üres-e az adatbázisban
+                          //loop az összes elemen a termék táblában 
                         while($product_row = mysqli_fetch_assoc($result_product)){
 
-                              //compare if id in database in current loop is equal to  
-                              //id in current session shopping cart foreach loop
+                              //Összehasonlítás, hogy az adatbázisban az aktuális loopban lévő azonosító (id) egyenlő-e az aktuális seesionbe 
+                              //tartozó bevásárlókosár azonosítójával a foreach loopban
                             if($product_row['productID'] == $product['id']){
                                 ?>
-                                <!-- prints image from database of corresponding id -->
+                                <!-- Megjelenít egy képet az adatbázisból azonosító alapján -->
                                 <div class="cart_img">
                                     <img src="<?php  echo $product_row['p_img']; ?>" class="img-fluid">
                                 </div>
@@ -176,38 +175,38 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                                 <?php
                             }//end if
                         }//end while
-                    }//end if check
+                    }//end if ellenőzés
                     ?>
 
                     <!-- <div class="cart_img">
                         <img src="Assets\images\products\Cake_2.jpg" class="img-fluid">
                     </div> -->
 
-                    <!-- product details -->
+                    <!-- termék adatai -->
                     <div class="">
                         <!-- product name -->
                         <div class="product-name">
                             <div class="product-name-det">
                                 <h6><?php echo $product['name'];?></h6>
-                                <h6>Rs <?php echo number_format($product['price'], 2);?> / unit</h6>
+                                <h6>HUF <?php echo number_format($product['price'], 2);?> / db</h6>
                             </div>
                         </div>
                     </div>
 
-                        <!-- quantity -->
+                        <!-- mennyiség -->
                         <div class="quantity-value">
                              <h6><?php echo $product['quantity'];?></h6>
                         </div>
 
 
-                    <!-- product total price -->
+                    <!-- termék összár -->
                     <div class="tot-price-per-item ">
-                        <h6>Rs <?php echo number_format($product['quantity'] * $product['price'], 2); ?></h6>
+                        <h6>HUF <?php echo number_format($product['quantity'] * $product['price'], 2); ?></h6>
                     </div>
 
-                      <!-- Remove -->
+                      <!-- Törlés -->
                     <div class="remove-button">
-                        <!-- product['id'] is fetching id from session shopping cart array -->
+                        <!-- termék['id'] fetchelés, id a bevásárló kosár sessionből -->
                         <a href="cart.php?action=delete&product_id=<?php echo $product['id'];?>"> 
                         <button type="button" class="btn btn-primary btn-lg my-4 button rem-but"><i class='bx bx-x rem-but-x' style='color:#ffffff; font-size: 1.3rem ;'></i></button>
                         </a>
@@ -216,77 +215,77 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
                 <?php
 
-                    //CALCULATING TOTAL PRICE
+                    //VÉGÖSSZEG SZÁMOLÁSA
                     $total = $total + ($product['quantity'] * $product['price']);
 
-                    //CREATE SESSION FOR TOTAL PRICE
+                    //SESSION LÉTREHOZÁSA A VÉGÖSSZEGNEK
                     $_SESSION['total_price'] = $total;
 
                 }//end foreach
                 ?>
             </div>
 
-            <!-- Receipt -->
+            <!-- Nyugta -->
             <div class="col-md container receipt-area mx-auto">
-                <!-- Summary -->
+                <!-- Összefoglalás -->
                 <div class="row summary-area">
-                    <h1 class="subtitle">SUMMARY</h1>
+                    <h1 class="subtitle">ÖSSZEFOGLALÁS</h1>
                 </div>
                 <div class="row container receipt-data mx-auto pt-3">
-                    <!-- subtotal -->
+                    <!-- részösszeg -->
                     <div class="row container subtotal-area my-1">
                         <div class="col">
-                            <h4 class="subtitle title-checkout">SUBTOTAL: </h4>
+                            <h4 class="subtitle title-checkout">RÉSZÖSSZEG: </h4>
                         </div>
                         
                         <div class="col">
-                            <h4 class="subtitle">Rs <?php echo number_format($total, 2); ?></h4>
+                            <h4 class="subtitle">HUF <?php echo number_format($total, 2); ?></h4>
                         </div>
                     </div>
                     <!-- delivery -->
                     <div class="row container delivery-area my-1">
                         <div class="col">
-                            <h4 class="subtitle title-checkout">DELIVERY: </h4>
+                            <h4 class="subtitle title-checkout">KISZÁLLÍTÁS: </h4>
                         </div>
                         
                         <div class="col">
-                            <h4 class="subtitle">Rs 0.00</h4>
+                            <h4 class="subtitle">HUF 0.00</h4>
                         </div>
                     </div>
                     <!-- total -->
                     <div class="row container total-area my-1 pt-2">
                         <div class="col">
-                            <h4 class="subtitle title-checkout">TOTAL: </h4>
+                            <h4 class="subtitle title-checkout">VÉGÖSSZEG: </h4>
                         </div>
                         
                         <div class="col">
-                           <h4 class="subtitle">Rs <?php echo number_format($total, 2); ?></h4>
+                           <h4 class="subtitle">HUF <?php echo number_format($total, 2); ?></h4>
                         </div>
                     </div>
                     
                     
-                    <!-- checkout -->
-                    <!-- show checkout if shopping cart array not empty -->
+                    <!-- pénztár -->
+                    <!-- mutassa a pénztárat, ha a bevásárlókosár tömb nem üres -->
                     <?php
-                    //check if shopping cart not empty
+                    //ellenőrzi, hogy a bevásárlókosár nem üres
                     if(isset($_SESSION['shopping_cart']));{
-                        //check if shopping cart contains more than 0 products
+                        //ellenőrizze, hogy a bevásárlókosárban több, mint 0 termék található
                         if(count($_SESSION['shopping_cart'])>0){
                     
                     ?>
                     <div class="row checkout-area">
                         <a href="checkout.php">
-                            <button type="button" class="btn btn-primary btn-lg my-4 button">Checkout</button>
+                            <button type="button" class="btn btn-primary btn-lg my-4 button">Pénztár</button>
                         </a>
                     </div>
                     <?php
                      }//end count if
                      if(count($_SESSION['shopping_cart']) == 0) {
-                        echo('<h1 class="subtitle">Your cart is empty!</h1>');
+                        echo('<h1 class="subtitle">Üres a kosár!</h1>');
                      }
                     }//end isset if
                     if(!isset($_SESSION['shopping_cart'])) {
-                        echo('<h1 class="subtitle">Your cart is empty!</h1>');
+                        echo('<h1 class="subtitle">Üres a kosár!</h1>');
                      }
                     
                     ?>
@@ -294,19 +293,19 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
             </div>
             <?php  
                 }//end if at start
-                //Displays msg if cart is emty
+                //Üzenetet jelenít meg, ha a kosár üres
                 if(isset($_SESSION['shopping_cart'])) {
                     if(count($_SESSION['shopping_cart']) == 0) {
                         
-                        echo('<h1 class="text-center my-3">Your cart is empty!</h1>');
+                        echo('<h1 class="text-center my-3">Üres a kosár!</h1>');
                         echo('<div class="text-center py-3"><img src="Assets\images\cart\sad.png" class="img-fluid" style="max-width:17%;"></div>');
-                        echo('<div class="text-center py-3"><a href="products.php" class="button button__round">SHOP NOW</a></div>');
-                     }//end if session shopping cart == 0
+                        echo('<div class="text-center py-3"><a href="products.php" class="button button__round">VÁSÁRLÁS MOST</a></div>');
+                     }//end ha a bevásárló kosár == 0
                  }//end if isset
-                 else { //if shopping cart is not set
-                    echo('<h1 class="text-center my-3">Your cart is empty!</h1>');
+                 else { //ha a kosár üres
+                    echo('<h1 class="text-center my-3">A kosár üres!</h1>');
                     echo('<div class="text-center py-3"><img src="Assets\images\cart\sad.png" class="img-fluid" style="max-width:17%;"></div>');
-                    echo('<div class="text-center py-3"><a href="products.php" class="button button__round">SHOP NOW</a></div>');
+                    echo('<div class="text-center py-3"><a href="products.php" class="button button__round">VÁSÁRLÁS MOST</a></div>');
                  }
                 
             ?>
