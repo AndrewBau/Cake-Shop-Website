@@ -9,6 +9,7 @@ category_search.php
 checkout_test.php
 checkout.php
 checkout
+forgetPassword.php
 Includes
 Javascript
 login.php
