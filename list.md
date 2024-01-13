@@ -44,7 +44,7 @@
 [Sanjana.css](Sanjana.css)
 [sortby_search.php](sortby_search.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [ThankYouCheckout.php](ThankYouCheckout.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
-[thankYouRegistration.php](thankYouRegistration.php) * !
+[thankYouRegistration.php](thankYouRegistration.php) * ! (munka alatt)
 [userAccount.php](userAccount.php) *
 [validateContactInput.js](validateContactInput.js) *
 [validateContactInput.php](validateContactInput.php) * ?
