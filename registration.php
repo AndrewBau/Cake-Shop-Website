@@ -25,14 +25,14 @@
         $confirmPasswordOK = false;
 
         if(empty($_POST["uname"])){
-            $unameCriteria = "Username is required";
+            $unameCriteria = "A felhasználónév megadása kötelező!";
         } else {
             $uname = test_input($_POST["uname"]);
 
             // check for english chars + numbers only
             // and alphanumeric & longer than or equals 5 chars
             if(!preg_match('/^[a-zA-Z0-9]{5,}$/', $uname)) { 
-                $unameCriteria = "Username must have only alphanumeric characters and must be minimum 5 characters long.";
+                $unameCriteria = "A felhasználónév csak betűket és számokat tartalmazhat és legalább 5 karakter hosszúnak kell lennie!";
             }
             else {
                 // check if username already in database
@@ -41,7 +41,7 @@
                 $result = mysqli_query($conn, $sql);
 
                 if(mysqli_num_rows($result) === 1){
-                    $unameCriteria = "Username Already Exist";
+                    $unameCriteria = "Ez a felhasználónév már foglalt!";
                 }
                 else
                 {
@@ -51,12 +51,12 @@
         }
 
         if (empty($_POST["fname"])) {
-            $fnameCriteria = "First name is required";
+            $fnameCriteria = "A keresztnév megadása kötelező!";
         } else {
             $fname = test_input($_POST["fname"]);
             // check if name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
-                $fnameCriteria = "Only letters and white space allowed";
+                $fnameCriteria = "Csak betű és szóköz használata megengedett!";
             }
             else
             {
@@ -65,12 +65,12 @@
         }
 
         if (empty($_POST["lname"])) {
-            $lnameCriteria = "Last name is required";
+            $lnameCriteria = "A vezetéknév megadása kötelező!";
         } else {
             $lname = test_input($_POST["lname"]);
             // check if name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
-                $lnameCriteria = "Only letters and white space allowed";
+                $lnameCriteria = "Csak betű és szóköz használata megengedett!";
             }
             else
             {
@@ -79,12 +79,12 @@
         }
 
         if (empty($_POST["email"])) {
-            $emailCriteria = "Email is required";
+            $emailCriteria = "Az e-mail cím megadása kötelező!";
         } else {
             $email = test_input($_POST["email"]);
             // check if name only contains letters and whitespace
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailCriteria = "Invalid email format";
+                $emailCriteria = "Helytelen e-mail formátum!";
             }
             else
             {
@@ -94,7 +94,7 @@
                 $result = mysqli_query($conn, $sql);
 
                 if(mysqli_num_rows($result) === 1){
-                    $emailCriteria = "Email Already Exist!";
+                    $emailCriteria = "Ez az e-mail cím már regisztrálva van!";
                 }
                 else
                 {
@@ -104,7 +104,7 @@
         }
 
         if (empty($_POST["password"])) {
-            $passwordCriteria = "Password is required";
+            $passwordCriteria = "Jelszó megadása kötelező!";
         } else {
             $password = test_input($_POST["password"]);
             // password must meet the following criterias:
@@ -113,20 +113,20 @@
             // has to be a number, a letter or one of the following: !@#$%
             // there have to be between 8 to 20 characters
             if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $password)) {
-                $passwordCriteria = 'Password must have at least <b>one number</b>, at least <b>one capital letter</b>, at least of the following <b>!@#$%</b> and must be between <b>8</b> to <b>20</b> characters long!';
+                $passwordCriteria = 'A jelszónak tartalmaznia kell legalább <b>egy számot</b>, legalább <b>egy nagybetűt</b>, legalább egy speciális karaktert <b>!@#$%</b> valamint <b>8</b> és <b>20</b> közötti karakter hosszúságúnak kell lennie!';
             }
             else {
                 $passwordOK = true;
             }
             
             if (empty($_POST["confirmPassword"])) {
-                $confirmPasswordCriteria = "Please confirm your password.";
+                $confirmPasswordCriteria = "Kérlek erősítsd meg a jelszavadat!";
             }
             else if (($_POST["confirmPassword"]) == $password){
                 $confirmPasswordOK = true;
             }
             else {
-                $confirmPasswordCriteria = "Passwords do not match!";
+                $confirmPasswordCriteria = "A két megadott jelszó nem egyezik!";
             }
         }
 
@@ -187,7 +187,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | JOIN</title>
+        <title>VINYLMASTER | REGISZTRÁCIÓ</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
@@ -227,8 +227,8 @@
             <div class="form">
                 <div class="login">
                     <div class="login-header">
-                        <h3>JOIN</h3>
-                        <p>Please enter the required fields below to join.</p>
+                        <h3>REGISZTRÁCIÓ</h3>
+                        <p>Kérlek add meg a szükséges adatokat a regisztrációhoz!</p>
                     </div>
                 </div>
 

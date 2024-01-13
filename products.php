@@ -7,7 +7,7 @@
 <html lang="en-MU">
 <head>
     <meta charset="utf-8">
-    <title>MALAKO | Products</title>
+    <title>VINYLMASTER | Termékek</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
@@ -126,17 +126,17 @@
 
                 <!--========== SORT BY BUTTON ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Sort by &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Rendezés &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
-                        <a href="#" onclick="sortby_products(1)">price low to high</a>
-                        <a href="#" onclick="sortby_products(2)">price high to low</a>
+                        <a href="#" onclick="sortby_products(1)">Ár alacsonytól magasig</a>
+                        <a href="#" onclick="sortby_products(2)">Ár magastól alacsonyig</a>
                          
                     </div>
                 </div>
 
                 <!--========== CATEGORIES BUTTON ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Kategóriák &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
@@ -169,10 +169,10 @@
         <section class="offer section">
             <div class="offer__bg">
                 <div class="offer__data">
-                    <h2 class="offer__title">Special Offer</h2>
-                    <p class="offer__description">Extreme Christmas Sales this month only!</p>
+                    <h2 class="offer__title">Akció!</h2>
+                    <p class="offer__description">Különleges ajánlat csak ebben a hónapban!</p>
 
-                    <a href="#" class="button button__round">SHOP NOW</a>
+                    <a href="#" class="button button__round">VÁSÁRLÁS</a>
                 </div>
             </div>
         </section>

@@ -24,20 +24,6 @@
 
 
                     <div class="form-group">
-                        <span class="input-error"><?php echo $fnameCriteria;?></span>
-                        <label class="col-md-4 control-label" for="First Name">Keresztnév</label>  
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <input value = "<?php echo $fname;?>" id="First Name" name="fname" type="text" placeholder="Keresztnév" class="form-control input-md">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
                         <span class="input-error"><?php echo $lnameCriteria;?></span>
                         <label class="col-md-4 control-label" for="Last Name ">Vezetéknév </label>  
                         <div class="col-md-4">
@@ -46,6 +32,20 @@
                                     <i class="fa fa-user"></i>
                                 </div>
                                 <input value = "<?php echo $lname;?>" id="Last Name " name="lname" type="text" placeholder="Vezetéknév " class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <span class="input-error"><?php echo $fnameCriteria;?></span>
+                        <label class="col-md-4 control-label" for="First Name">Keresztnév</label>  
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <input value = "<?php echo $fname;?>" id="First Name" name="fname" type="text" placeholder="Keresztnév" class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -63,6 +63,7 @@
                             </div>
                         </div>
                     </div>
+                    
 
                     <div class="form-group">
                         <span class="input-error"><?php echo $phoneCriteria;?></span>

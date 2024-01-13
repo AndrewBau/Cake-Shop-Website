@@ -7,7 +7,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | MAKE YOUR CAKE</title>
+        <title>VINYLMASTER | KÉSZÍTS SAJÁT BAKELITET</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
@@ -48,7 +48,7 @@
             <div class="footer">
 
                 <div class="logo">
-                    <span class="logo-name">MALAKO</span>
+                    <span class="logo-name">VINYLMASTER</span>
                 </div>
             
                 <div class="social-media">
@@ -70,17 +70,17 @@
                 <hr size="2px" width="80%" color="white">
 
                 <div class="contact-links">
-                    <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
-                    <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
+                    <span class="phone"><i class="fas fa-phone-square-alt"></i> +36 36 1234 XXXX</span>
+                    <span class="address">Eger, Eszterházy tér 1, 3300 Magyarország</span>
                 </div>
 
                 <div class="legal-links">
-                    <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
-                    <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
+                    <span class="privacy-policy"><b><a href=#>ADATKEZELÉSI TÁJÉKOZTATÓ</a></b></span>
+                    <span class="term-of-use"><b><a href=#>FELHASZNÁLÓI FELTÉTELEK</a></b></span>
                 </div>
 
                 <div class="copyright">
-                    <span class="copyright-text">&#169; 2020 Design by Atish & Sanjana</span>
+                    <span class="copyright-text">&#169; 2024 Design by András & Erik & Levente & Tamás</span>
                 </div>
 
             </div>  

@@ -1,5 +1,5 @@
 // Beállítjuk a dátumot a visszaszámoláshoz
-var countDownDate = new Date("Jan 1, 2021 00:00:00").getTime();
+var countDownDate = new Date("Jan 20, 2024 00:00:00").getTime();
 
 // Minden másodperben frissíti a visszaszámolást
 var x = setInterval(function() {

@@ -7,7 +7,7 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <title>MALAKO | Sort By</title>
+    <title>VINYLMASTER | Sorbarendezés</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
@@ -121,7 +121,7 @@
             ?>
             <div class="row category-title">
                 <div class="col">
-                    <h2 class="category">SORT BY PRICE</h2>
+                    <h2 class="category">Rendezés ár szerint</h2>
                     <?php
                     if($_GET['sortby']==1){
                         echo '<h2 class="category-name ">low to high</h2>';
@@ -135,17 +135,17 @@
 
                 <!--========== SORT BY BUTTON ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Sort by &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Rendezés &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
-                        <a href="products_sortby.php?sortby=1">price low to high</a>
-                        <a href="products_sortby.php?sortby=2">price high to low</a>
+                        <a href="products_sortby.php?sortby=1">Ár alacsonytól magasig</a>
+                        <a href="products_sortby.php?sortby=2">Ár magastól alacsonyig</a>
                          
                     </div>
                 </div>
 
                 <!--========== CATEGORIES BUTTON ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Kategóriák &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
@@ -173,7 +173,7 @@
 
                                 <div class="featured__products" id="product__card">
                                     <div class="featured__box">
-                                        <div class="featured__new">NEW</div>
+                                        <div class="featured__new">ÚJ</div>
                                         <div class=""><a href="product.php?product_id=<?php echo $product_id; ?>"><i class='bx bxs-cart-add bx-tada-hover featured__new_cart'></i></a></div>
                                         <a href="product.php?product_id=<?php echo $product_id; ?>" >
                                             <img src="<?php echo $row_product['p_img']; ?>" alt="" class="featured__img avoid__clicks"

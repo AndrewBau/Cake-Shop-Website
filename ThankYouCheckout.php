@@ -81,7 +81,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         
-        <title>MALAKO | Thank you!</title>
+        <title>VINYLMASTER | Köszönjük!</title>
 
 
         <!-- BOOTSTRAP CORE CSS -->
@@ -105,22 +105,22 @@
 
         <!-- TITLE -->
         <div class="py-5 text-center">
-            <h1 class="business-name">MALAKO</h1>
+            <h1 class="business-name">VINYLMASTER</h1>
             
             <img class="thankYouImageHead my-5" src="Assets/images/cart/circleHead.png" />
             <img class="thankYouImage  my-5 rotate" src="Assets/images/cart/sun.png" />
         
-            <h1 style="font-size:3vw;">Thank You for shopping with us!</h1>
-            <a href="index.php" class=" btn btn-primary btn-lg button" style="font-size:1.5vw;">Home</a>
+            <h1 style="font-size:3vw;">Köszönjük, hogy nálunk vásároltál!</h1>
+            <a href="index.php" class=" btn btn-primary btn-lg button" style="font-size:1.5vw;">Kezdőoldal</a>
         </div>
     
          <!-- FOOTER  -->
         <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">&copy; 2020 MALAKO</p>
+            <p class="mb-1">&copy; 2024 VINYLMASTER</p>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Support</a></li>
+                <li class="list-inline-item"><a href="#">Adatkezelési szabályzat</a></li>
+                <li class="list-inline-item"><a href="#">ÁSZF</a></li>
+                <li class="list-inline-item"><a href="#">Támogatás</a></li>
             </ul>
         </footer>
       

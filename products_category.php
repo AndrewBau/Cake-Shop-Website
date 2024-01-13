@@ -7,7 +7,7 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <title>MALAKO | Category</title>
+    <title>VINYLMASTER | Kategóriák</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
@@ -93,23 +93,23 @@
             ?>
             <div class="row category-title">
                 <div class="col">
-                    <h2 class="category">CATEGORY</h2>
+                    <h2 class="category">KATEGÓRIA</h2>
                     <h2 class="category-name "><?php echo $row_cat['p_cat_name']; ?></h2>
                 </div>
 
                 <!--========== SORT BY BUTTON ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Sort by &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Rendezés &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
-                        <a href="products_sortby.php?sortby=1">price low to high</a>
-                        <a href="products_sortby.php?sortby=2">price high to low</a>
+                        <a href="products_sortby.php?sortby=1">Ár alacsonytól magasig</a>
+                        <a href="products_sortby.php?sortby=2">Ár magastól alacsonyig</a>
                          
                     </div>
                 </div>
 
                 <!--========== CATEGORIES BUTTON ==========-->
                 <div class="dropdown col-auto">
-                    <button class="dropbtn button" id="cat-but">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <button class="dropbtn button" id="cat-but">Kategóriák &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
