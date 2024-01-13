@@ -41,7 +41,7 @@
 [products_sortby.php](products_sortby.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [README.md](README.md) has to be recreated
 [registration.php](registration.php) * ?
-[Sanjana.css](Sanjana.css)
+[Sanjana.css](Sanjana.css) (munka alatt)
 [sortby_search.php](sortby_search.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [ThankYouCheckout.php](ThankYouCheckout.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [thankYouRegistration.php](thankYouRegistration.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
