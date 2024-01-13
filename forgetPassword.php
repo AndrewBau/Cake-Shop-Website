@@ -92,7 +92,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | RESET PASSWORD</title>
+        <title>VINYLMASTER | JELSZÓ VISSZAÁLLÍTÁSA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">

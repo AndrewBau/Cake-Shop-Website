@@ -41,6 +41,6 @@
         }
 
     } else {
-        die("Something went wrong!");
+        die("Váratlan hiba történt!");
     }
 ?>

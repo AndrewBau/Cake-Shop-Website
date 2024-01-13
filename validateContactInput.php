@@ -39,8 +39,8 @@
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
         mail($to, $subject, $note, $headers);
-        echo "Message Sent";
+        echo "Üzenet elküldve";
     } else {
-        echo "Message Not Sent!";
+        echo "Üzenet küldése sikertelen!";
     }
 ?>
