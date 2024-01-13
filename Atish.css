@@ -721,15 +721,15 @@
     }
 
     .badge1 .badge-photo{
-        background-image: url("./Assets/images/4.aboutus/Badge1.png");
+        background-image: url("./Assets/images/4.aboutus/Badge1.jpg");
     }
 
     .badge2 .badge-photo{
-        background-image: url("./Assets/images/4.aboutus/Badge2.png");
+        background-image: url("./Assets/images/4.aboutus/Badge2.jpg");
     }
 
     .badge3 .badge-photo{
-        background-image: url("./Assets/images/4.aboutus/Badge3.png");
+        background-image: url("./Assets/images/4.aboutus/Badge3.jpg");
     }
 
     .badge-photo{
