@@ -30,7 +30,7 @@
 [list.md](list.md) *
 [login.php](login.php) *
 [logout.php](logout.php) *
-[makeYourCake.php](makeYourCake.php) * !
+[makeYourCake.php](makeYourCake.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [numOfItemsInCart.php](numOfItemsInCart.php) *
 [offer.css](offer.css)
 [passwordResetPage.php](passwordResetPage.php) * ?
