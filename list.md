@@ -24,13 +24,13 @@
 [contact.php](contact.php) *
 [debug.log](debug.log) *
 [forgetPassword.php](forgetPassword.php) *
-[index.php](index.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
+[index.php](index.php) *
 [jquery.nice-number.css](jquery.nice-number.css)
 [jquery.nice-number.js](jquery.nice-number.js)
 [list.md](list.md) *
 [login.php](login.php) *
 [logout.php](logout.php) *
-[makeYourCake.php](makeYourCake.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
+[makeYourCake.php](makeYourCake.php) *
 [numOfItemsInCart.php](numOfItemsInCart.php) *
 [offer.css](offer.css)
 [passwordResetPage.php](passwordResetPage.php) * ?
