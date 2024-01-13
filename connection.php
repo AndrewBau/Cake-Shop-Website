@@ -2,10 +2,10 @@
 //<!--========== PHP CONNECTION TO DATABASE ==========-->
     $host = "localhost";
     $username = "root";
-    // $pass = "malako123";
+    // $pass = "vinylmaster123";
     $pass = "";
 
-    $dbname = "cakeshop";
+    $dbname = "vinylmasterdb";
     //create connection
     $conn = mysqli_connect($host, $username, $pass, $dbname);
     //check connection
