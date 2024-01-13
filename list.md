@@ -26,7 +26,7 @@
 [forgetPassword.php](forgetPassword.php) *
 [index.php](index.php) *
 [jquery.nice-number.css](jquery.nice-number.css)
-[jquery.nice-number.js](jquery.nice-number.js)
+[jquery.nice-number.js](jquery.nice-number.js) *
 [list.md](list.md) *
 [login.php](login.php) *
 [logout.php](logout.php) *
