@@ -65,7 +65,7 @@
                 <div class="admin-subtitle">
                     <span><i class="fas fa-user-cog"></i></span>
                     <span>&nbspHELLO <?php echo $titleName;?></span>
-                    <span class="user-logout"><a href="logout.php"><button type="button" title="Logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-in"></span></button></a></span>
+                    <span class="user-logout"><a href="logout.php"><button type="button" title="Kilépés" class="btn btn-danger"><span class="glyphicon glyphicon-log-in"></span></button></a></span>
                 </div>
             </div>
         </div>

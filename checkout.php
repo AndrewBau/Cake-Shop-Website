@@ -206,7 +206,7 @@
       <!-- CÍM -->
       <div class="py-5 text-center">
         <h1 class="business-name">VINYLMASTER</h1>
-        <h2>Pénztár form</h2>
+        <h2>Rendelési összesítő</h2>
       </div>
 
 
@@ -240,7 +240,7 @@
                   <h6 class="my-0"><?php echo $product_row['albumcim']; ?></h6>
                   <small class="text-muted">x <?php echo $product['quantity']; ?> db</small>
                 </div>
-                <span class="text-muted price-tag">HUF <?php echo number_format(($product['quantity']  * $product_row['p_price']),2); ?></span>
+                <span class="text-muted price-tag">HUF <?php echo number_format(($product['quantity'] * $product_row['ar']),2); ?></span>
               </li>
             
             <?php
@@ -285,7 +285,7 @@
           <div class="row g-3">
 
 
-              <!--  KERESZTNÉN MEGADÁSA  -->
+              <!--  KERESZTNÉV MEGADÁSA  -->
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">Keresztnév</label>
                 <input type="text" class="form-control" name="fname" id="firstName" placeholder="" value="<?php echo $fname; ?>" required>
@@ -307,7 +307,7 @@
               </div>
 
 
-              <!-- EMAIL MEGADÁSA  -->
+              <!-- EMAIL MEGADÁSA  
               <div class="col-12">
                 <label for="email" class="form-label">Email <span class="text-muted">(Opcionális)</span></label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="név@cím.com" value="<?php echo $email; ?>">
@@ -316,7 +316,7 @@
                 </div>
                 <span class="error"><?php echo $emailErr;?></span>
               </div>
-
+              -->
 
               <!-- CÍM MEGADÁSA -->
               <div class="col-12">
@@ -333,7 +333,7 @@
               <div class="col-md-5">
                 <label for="country" class="form-label">Ország</label>
                 <select class="form-select" name="country" id="country" required>
-                  <option value="Mauritius">Mauritius</option>
+                  <option value="Magyarország">Magyarország</option>
                 </select>
                 <!-- <div class="invalid-feedback">
                   Érvényes ország szükséges.
@@ -346,14 +346,14 @@
               <div class="col-md-4">
                 <label for="state" class="form-label">Város</label>
                 <select class="form-select" name="city" id="state" required>
-                  <option value="Port Louis">Port Louis</option>
-                  <option value="Curepipe">Curepipe</option>
-                  <option value="Quatre Bornes">Quatre Bornes</option>
-                  <option value="Vacoas">Vacoas</option>
-                  <option value="Rose Hill">Rose Hill</option>
-                  <option value="Flic En Flac">Flic En Flac</option>
-                  <option value="Phoenix">Phoenix</option>
-
+                  <option value="Eger">Eger</option>
+                  <option value="Budapest">Budapest</option>
+                  <option value="Veresegyház">Veresegyház</option>
+                  <option value="Biatorbágy">Biatorbágy</option>
+                  <option value="Concó">Concó</option>
+                  <option value="Bugyi">Bugyi</option>
+                  <option value="Piripócs">Piripócs</option>
+                  <option value="Szabadka">Szabadka</option>
                 </select>
                 <div class="invalid-feedback">
                   Érvényes város szükséges.
@@ -394,14 +394,15 @@
             <div class="my-3">
               <div class="form-check">
                 <input id="credit" name="paymentMethod" type="radio" class="form-check-input" value="creditCard" <?php if ($paymentMethod == "creditCard"){ echo "checked";} ?> >
-                <label class="form-check-label" for="credit">Kredit kártya</label>
+                <label class="form-check-label" for="credit">Bankkártya</label>
               </div>
 
-              <!-- MCB JUICE  -->
+              <!-- MCB JUICE  --
               <div class="form-check">
                 <input id="mcbjuice" name="paymentMethod" type="radio" class="form-check-input" value="JuiceByMCB" <?php if ($paymentMethod == "JuiceByMCB"){ echo "checked";} ?> >
                 <label class="form-check-label" for="mcbjuice">Juice by MCB</label>
               </div>
+              -->
 
               <!-- PAYPAL  -->
               <div class="form-check">
@@ -434,7 +435,7 @@
                 <label for="cc-number" class="form-label">Kredit kártya szám</label>
                 <input type="text" class="form-control" name="ccnum" id="cc-number" placeholder="" value="<?php echo $ccnum; ?>" required>
                 <div class="invalid-feedback">
-                Hitelkártyaszám szükséges
+                Bankkártyaszám megadása szükséges
                 </div>
                 <span class="error"><?php echo $ccnumErr;?></span>
               </div>

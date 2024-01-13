@@ -31,8 +31,8 @@
             } else {
                 $fname = test_input($_POST["fname"]);
                 // leellenőrzi, hogy csak betűket és space-t tartalmaz
-                if (!preg_match("/^[a-zA-Z-' ]*$/", $fname)) {
-                    $fnameCriteria = "Csak betűk és szóközök engedélyezettek";
+                if (!preg_match("/^[a-z A-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ]*$/", $fname)) {
+                    $fnameCriteria = "Csak betű és szóköz használata megengedett!";
                 }
                 else
                 {
@@ -45,8 +45,8 @@
             } else {
                 $lname = test_input($_POST["lname"]);
                 // leellenőrzi, hogy csak betűket és space-t tartalmaz
-                if (!preg_match("/^[a-zA-Z-' ]*$/", $lname)) {
-                    $lnameCriteria = "Csak betűk és szóközök engedélyezettek";
+                if (!preg_match("/^[a-z A-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ]*$/", $lname)) {
+                    $lnameCriteria = "Csak betű és szóköz használata megengedett!";
                 }
                 else
                 {
@@ -62,12 +62,12 @@
             }
 
             if (empty($_POST["phone"])) {
-                $phoneCriteria = "Add meg a telefonszámod!";
+                $phoneCriteria = "Add meg a telefonszámod szóközök nélkül, például: 06201234567!";
             } else {
                 $phone = test_input($_POST["phone"]);
 
-                if (!preg_match("/^([0-9]{8}|[0-9]{7})*$/", $phone)) {
-                    $phoneCriteria = "Kérem, adjon meg egy érvényes telefonszámot";
+                if (!preg_match("/^06(20|30|70|1[0-7])\d{7}$/", $phone)) {
+                    $phoneCriteria = "Kérem, adjon meg egy érvényes telefonszámot szóközök nélkül, például: 06201234567!";
                 }
                 else
                 {

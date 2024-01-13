@@ -188,7 +188,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                         <div class="product-name">
                             <div class="product-name-det">
                                 <h6><?php echo $product['name'];?></h6>
-                                <h6>Ft <?php echo number_format($product['price'], 2);?> / unit</h6>
+                                <h6>Ft <?php echo number_format($product['price'], 2);?> / db</h6>
                             </div>
                         </div>
                     </div>

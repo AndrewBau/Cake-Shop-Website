@@ -178,8 +178,8 @@
                         <div class="danger-zone-inside">
                             <div class="change-password-container">
                                 <div class="change-password-subtitle">
-                                    <h3>Delete Account</h3>
-                                    <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspFigyelmeztetés: A fiókod <b>véglegesen törölve</b> lesz. Kérjük, legyél biztos benne.</p>
+                                    <h3>Regisztráció törlése</h3>
+                                    <p><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspFigyelmeztetés: A fiókod <b>véglegesen törölve</b> lesz. Biztos vagy benne?</p>
                                 </div>
                             </div>
 

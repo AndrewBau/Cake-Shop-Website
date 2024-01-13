@@ -55,7 +55,7 @@
         } else {
             $fname = test_input($_POST["fname"]);
             // név csak betűket és whitespace-t tartalmazhaz
-            if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
+            if (!preg_match("/^[a-z A-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ]*$/",$fname)) {
                 $fnameCriteria = "Csak betű és szóköz használata megengedett!";
             }
             else
@@ -69,7 +69,7 @@
         } else {
             $lname = test_input($_POST["lname"]);
             // név csak betűket és whitespace-t tartalmazhaz
-            if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
+            if (!preg_match("/^[a-z A-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ]*$/",$lname)) {
                 $lnameCriteria = "Csak betű és szóköz használata megengedett!";
             }
             else
@@ -152,8 +152,8 @@
                     //send mail
                     $to = $email;
                     $subject = "Email megerősítése - VINYLMASTER";
-                    $message = "<a href='http://localhost/MyFiles/CakeShop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
-                    $headers = "From: malako.cakeshop@gmail.com \r\n";
+                    $message = "<a href='http://localhost/Cake-Shop-Website/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                    $headers = "From: vinylmasters@gmail.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
@@ -247,7 +247,7 @@
                     <input type="password" name="confirmPassword" placeholder="Jelszó újra"/>
                     <span class=recaptcha-Error"><?php echo $recaptchaCriteria;?></span>
                     <div name="g-recaptcha-response" class="g-recaptcha" data-sitekey="6Ld1nA0aAAAAAA7F7eJOY7CMwg7aaQAfg3WZy6P0"></div>
-                    <button>Join</button>
+                    <button>Regisztráció</button>
                     <p class="message">Már van fiókod? <a href="login.php">Lépj be!</a></p>
                     <!-- <p class="or-message"><b>OR</b></p> -->
                 </form>

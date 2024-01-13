@@ -2,7 +2,7 @@
     $host = "localhost";
     $username = "root";
     $pass = "";
-    $dbname = "cakeshop";
+    $dbname = "vinylmasterdb";
     $conn = mysqli_connect($host, $username, $pass, $dbname);
     if(!$conn){
         die("Probléma a kapcsolat kiépítésével: " . mysqli_connect_error());
