@@ -94,7 +94,7 @@
                 <div class="column">
                     <i class="fas fa-mitten"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle customize-cake">Készíts saját lemezt</span>
-                    <span class="what-you-can-do-text">Küldd el nekünk a digitális zenei listádad és a borítóterved, és mi elkészítjük a saját, egyedi bakelit lemezedet</span>
+                    <span class="what-you-can-do-text">Küldd el nekünk a digitális zenei listádat és borítóterved, és mi elkészítjük a saját, egyedi bakelit lemezedet</span>
                 </div>
                 
                 <div class="column">
