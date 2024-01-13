@@ -14,23 +14,23 @@
         <link rel="stylesheet" type="text/css" href="Atish.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-        <!--BOXICONS-->
+        <!--BOXIKONOK-->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Animate CSS -->
+        <!-- Animált CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
 
     <body>
         <?php $page = 'makeyourcake';?>
 
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
         
         <!--Start Wave Image-->
@@ -89,23 +89,23 @@
         <!--End Footer-->
 
         
-        <!-- Start Bottom Nav -->
+        <!-- Start Alsó Nav -->
         <div class="bottom-nav-group">
             <nav class="bottom-nav">
                 <a href="login.html" class="bottom-nav-link">
                     <i class="fas fa-user bottom-nav-icon" ></i>
-                    <span class="bottom-nav-text">Account</span>
+                    <span class="bottom-nav-text">Fiók</span>
                 </a>
                 <a href="#" class="bottom-nav-link">
                     <i class="fas fa-search"></i>
-                    <span class="bottom-nav-text">Search</span>
+                    <span class="bottom-nav-text">Keresés</span>
                 </a>
                 <a href="#" class="bottom-nav-link">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="bottom-nav-text">My Cart</span>
+                    <span class="bottom-nav-text">Kosaram</span>
                 </a> 
             </nav>
         </div>
-        <!-- End Bottom Nav -->
+        <!-- End Alsó Nav -->
     </body>
 </html>
