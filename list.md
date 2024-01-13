@@ -9,7 +9,9 @@ category_search.php
 checkout_test.php
 checkout.php
 checkout
+forgetPassword.php
 Includes
+index.php
 Javascript
 login.php
 logout.php
@@ -17,4 +19,5 @@ makeYourCake.php
 numOfItemsInCart.php
 passwordResetPage.php
 product.php
+products_sortby.php
 registration.php

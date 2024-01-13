@@ -118,7 +118,7 @@
                         <h2>KÜLÖNLEGES AJÁNLAT</h2>
                     </div>
                     <p class="offer-description">Különleges Újévi Ajánlatunk véget ér: </p>
-                    <p class="offer-description" id="countdown" style="font-family: Old Standard TT; font-size: 2rem;">END OF SALES</p>
+                    <p class="offer-description" id="countdown" style="font-family: Old Standard TT; font-size: 2rem;">AJÁNLAT VÉGE</p>
 
                     <div class="subscribe-button-container">
                         <a href="products.php"><button class="subscribe-button" name="subscribe">VÁSÁROLJ MOST</button></a>
