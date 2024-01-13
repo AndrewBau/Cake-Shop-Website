@@ -88,7 +88,7 @@
                 <div class="column">
                     <i class="fas fa-cookie"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle buy-our-cake">Eredeti lemezek</span>
-                    <span class="what-you-can-do-text">Válogass eredeti bakelit relikviáinkból és rendeljd meg online!</span>
+                    <span class="what-you-can-do-text">Válogass eredeti bakelit relikviáinkból és rendeld meg online!</span>
                 </div>
 
                 <div class="column">
@@ -117,7 +117,7 @@
                     <div class="subtitle">
                         <h2>KÜLÖNLEGES AJÁNLAT</h2>
                     </div>
-                    <p class="offer-description">Különleges Újévi Ajánlatunk véget ér: </p>
+                    <p class="offer-description">Újévi Ajánlatunk véget ér: </p>
                     <p class="offer-description" id="countdown" style="font-family: Old Standard TT; font-size: 2rem;">AJÁNLAT VÉGE</p>
 
                     <div class="subscribe-button-container">
