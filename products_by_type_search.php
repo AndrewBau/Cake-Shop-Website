@@ -5,7 +5,7 @@
 
 
 
-    // <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
+    // <!--========== PHP KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER ==========-->
     
         include_once 'connection.php';
         include_once 'numOfItemsInCart.php';
@@ -13,17 +13,17 @@
 
 
 
-        // <!--========== PHP FETCH PRODUCT DETAILS ==========-->
+        // <!--========== PHP FETCHELÉS TERMÉKEK ADATAIVAL ==========-->
 
         
         
         $p_type= $_REQUEST['p_type'];
-        // $Q_fetch_by_type = "SELECT * FROM products WHERE typeID = $p_type; ";//selects products by type
-        $Q_fetch_by_type= "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = '$p_type' "; //selects products by type
+        // $Q_fetch_by_type = "SELECT * FROM products WHERE typeID = $p_type; ";// termék típus szerint
+        $Q_fetch_by_type= "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = '$p_type' "; //teméket ad vissza a típis szerint
 
 
-        // $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//selects new products
-        $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
+        // $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//új termék kiválasztása
+        $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //új terméket ad vissza
 
 
 
@@ -62,7 +62,7 @@
                            <h4 class="product__name" id="product__name">'.$row['p_name'].'</h4>
                            </a> ';
                            
-                        echo '<span class="featured__price">Rs '.$row['p_price'].'</span>
+                        echo '<span class="featured__price">HUF '.$row['p_price'].'</span>
                            
                        </div>
                    </div> ';
@@ -71,7 +71,7 @@
            }
         }
 
-        //FOR NEW PRODUCTS ONLY
+        //CSAK ÚJ TERMÉKEKNEK
         else if($p_type ==1){
             $result_new = mysqli_query($conn, $Q_fetch_new);
             $check = mysqli_num_rows($result_new);
@@ -82,7 +82,7 @@
                         <img src=" '.$new_row['p_img'] .' " class="new__img" />
 
                         <div class="new__link">
-                            <a href="product.php?product_id='.$new_row['productID'] .'" class="button"> VIEW PRODUCT</a>
+                            <a href="product.php?product_id='.$new_row['productID'] .'" class="button"> TERMÉK MEGTEKINTÉSE</a>
                         </div>
                     </div> ';
                 }
