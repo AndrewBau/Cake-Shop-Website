@@ -313,7 +313,7 @@ html, body{
 /* End Kapcsolatfelvétel Form */
 
 
-/* Start Newsletter */
+/* Start Hírfolyam */
 .newsletter-section .input-error{
     font-size: 13pt;
     color: red;
@@ -380,7 +380,7 @@ html, body{
 .subscribe-button-container{
     width: 150px;
 }
-/* End Newsletter */
+/* End Hírfolyam */
 
 
 /* Start Footer */
@@ -458,7 +458,7 @@ html, body{
 /* End Footer */
 
 
-/* Start Bottom Navbar */
+/* Start Alsó Navbar */
 .bottom-nav{
     position: fixed;
     bottom: 0;
@@ -494,7 +494,7 @@ html, body{
 .bottom-nav-icon{
     font-size: 18px;
 }
-/* End Bottom Navbar */
+/* End Alsó Navbar */
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -511,7 +511,7 @@ html, body{
         display:none;
     }
 
-    /*Start Navigation Bar*/
+    /*Start Navigációs Sáv*/
     .main-header-media1200{
         display: contents;
     }
@@ -573,7 +573,7 @@ html, body{
     .indexNav ul{
         padding-bottom: 0px;
     }
-    /*End Navigation Bar*/
+    /*End Navigációs Sáv*/
 
 
     /* Start Wave Image */
@@ -609,14 +609,14 @@ html, body{
     }
     /* End Wave Image */
 
-    /* Start Locate Us */
+    /* Start Helyszín */
     .map .subtitle h2{
         color: black;
     }
-    /* End Locate Us */
+    /* End Helyszín */
 
 
-    /* Start Contact Us Form */
+    /* Start Kapcsolatfelvétel Form */
     .contact-section h2{
         padding-top: 40px;
         font-size: 40px;
@@ -638,10 +638,10 @@ html, body{
         padding: 0px 300px;
         padding-bottom: 50px;
     }
-    /* End Contact Us Form */
+    /* End Kapcsolatfelvétel Form */
 
 
-    /* Start Newsletter */
+    /* Start Hírfolyam */
     .newsletter{
 
         padding-left: 400px; 
@@ -651,14 +651,14 @@ html, body{
     .subscribe-button-container{
         width: 150px;
     }
-    /* End Newsletter */
+    /* End Hírfolyam */
 
 
-    /* Start Bottom Navbar */
+    /* Start Alsó Navbar */
     .bottom-nav{
         display: none;
     }
-    /* End Bottom Navbar */
+    /* End Alsó Navbar */
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR COMMON ELEMENTS*/
