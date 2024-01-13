@@ -41,13 +41,13 @@
 [products_sortby.php](products_sortby.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [README.md](README.md) has to be recreated
 [registration.php](registration.php) * ?
-[Sanjana.css](Sanjana.css) (munka alatt)
+[Sanjana.css](Sanjana.css) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)*
 [sortby_search.php](sortby_search.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [ThankYouCheckout.php](ThankYouCheckout.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [thankYouRegistration.php](thankYouRegistration.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [userAccount.php](userAccount.php) *
 [validateContactInput.js](validateContactInput.js) *
 [validateContactInput.php](validateContactInput.php) * ?
-[validateNewsletterInput.js](validateNewsletterInput.js)
+[validateNewsletterInput.js](validateNewsletterInput.js) (munka alatt)
 [validateNewsletterInput.php](validateNewsletterInput.php) *
 [verifyEmail.php](verifyEmail.php) *
