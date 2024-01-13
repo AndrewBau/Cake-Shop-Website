@@ -270,7 +270,7 @@ function pre_r($array){
                                 <input type="hidden" name="name" value="<?php echo $p_name;?>" />
                                 <input type="hidden" class="show_id" name="productID_id" value="<?php echo $product_id;?>" />
                                 <input type="hidden" name="price" value="<?php echo $p_price;?>" /> <br>
-                                <input type="submit" name="add-to-cart" id="add-to-cart-btn" value="Add to Cart" class="btn btn-primary btn-lg my-4 button" />
+                                <input type="submit" name="add-to-cart" id="add-to-cart-btn" value="Kosárba" class="btn btn-primary btn-lg my-4 button" />
 
                             </div>
                         </form>
