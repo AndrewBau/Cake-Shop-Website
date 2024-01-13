@@ -55,7 +55,7 @@
                     </div>
         
                     <div class="baker-name">
-                        <span>Sára Konner</span>
+                        <span>KONNER SÁRA</span>
                     </div>
         
                     <div class="baker-description">
@@ -154,7 +154,7 @@
                         </div>
 
                         <div class = "helper-more-about">
-                            <p class="name"><b>LAKATOS OLAJOS</b></p>
+                            <p class="name"><b>LAKATOS ALAJOS</b></p>
                             <p class="hierarchy">TÁRSALAPÍTÓ</p>
                             <p class="description">A Rolling Stones albumai mindig ámulatba ejtenek...</p>
                         </div>
@@ -186,7 +186,7 @@
 
                         <div class = "helper-more-about">
                             <p class="name"><b>BANÁNOS ÁGNES</b></p>
-                            <p class="hierarchy">Lemezkészítő</p>
+                            <p class="hierarchy">ÍRÓ ÉS ARCHIVÁLÓ</p>
                             <p class="description">Amikor megszólal Elvis Presley a lemezen, megszűnika világ.</p>
                         </div>
         
