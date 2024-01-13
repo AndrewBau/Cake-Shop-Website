@@ -84,7 +84,7 @@
                     }
 
                     //NAGY CÍM
-                    document.getElementById('big_title').innerHTML = 'PRODUCTS';
+                    document.getElementById('big_title').innerHTML = 'TERMÉKEK';
                     
                 }
 
