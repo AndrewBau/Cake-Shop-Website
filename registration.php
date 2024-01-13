@@ -29,8 +29,8 @@
         } else {
             $uname = test_input($_POST["uname"]);
 
-            // check for english chars + numbers only
-            // and alphanumeric & longer than or equals 5 chars
+            // név csak betűket és whitespace-t tartalmazaz + számok
+            // alfanumerikus és legalább 5 hosszú
             if(!preg_match('/^[a-zA-Z0-9]{5,}$/', $uname)) { 
                 $unameCriteria = "A felhasználónév csak betűket és számokat tartalmazhat és legalább 5 karakter hosszúnak kell lennie!";
             }
@@ -54,7 +54,7 @@
             $fnameCriteria = "A keresztnév megadása kötelező!";
         } else {
             $fname = test_input($_POST["fname"]);
-            // check if name only contains letters and whitespace
+            // név csak betűket és whitespace-t tartalmazhaz
             if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
                 $fnameCriteria = "Csak betű és szóköz használata megengedett!";
             }
@@ -68,7 +68,7 @@
             $lnameCriteria = "A vezetéknév megadása kötelező!";
         } else {
             $lname = test_input($_POST["lname"]);
-            // check if name only contains letters and whitespace
+            // név csak betűket és whitespace-t tartalmazhaz
             if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
                 $lnameCriteria = "Csak betű és szóköz használata megengedett!";
             }
@@ -82,13 +82,13 @@
             $emailCriteria = "Az e-mail cím megadása kötelező!";
         } else {
             $email = test_input($_POST["email"]);
-            // check if name only contains letters and whitespace
+            // név csak betűket és whitespace-t tartalmazhaz
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $emailCriteria = "Helytelen e-mail formátum!";
             }
             else
             {
-                // check if username already in database
+                // nézzük meg, regisztráltak-e már az email címmel
                 $sql = "SELECT * FROM user WHERE email='$email'";
 
                 $result = mysqli_query($conn, $sql);
@@ -107,11 +107,11 @@
             $passwordCriteria = "Jelszó megadása kötelező!";
         } else {
             $password = test_input($_POST["password"]);
-            // password must meet the following criterias:
-            // has to contain at least one number
-            // has to contain at least one capital letter
-            // has to be a number, a letter or one of the following: !@#$%
-            // there have to be between 8 to 20 characters
+            // Jelszónak az alábbi kritériumoknak kell megfelelnie
+            // tartalmazzon egy számot
+            // egy nagybetűt
+            // speciális karaktert az alábbiak közül: !@#$%
+            // 8 és 20 karakter hosszúnak kell lennie
             if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $password)) {
                 $passwordCriteria = 'A jelszónak tartalmaznia kell legalább <b>egy számot</b>, legalább <b>egy nagybetűt</b>, legalább egy speciális karaktert <b>!@#$%</b> valamint <b>8</b> és <b>20</b> közötti karakter hosszúságúnak kell lennie!';
             }
@@ -151,7 +151,7 @@
                 if(mysqli_query($conn, $sql)){
                     //send mail
                     $to = $email;
-                    $subject = "Email Verification";
+                    $subject = "Email megerősítése - VINYLMASTER";
                     $message = "<a href='http://localhost/MyFiles/CakeShop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
                     $headers = "From: malako.cakeshop@gmail.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
@@ -234,30 +234,23 @@
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <span class="Uname-Error"><?php echo $unameCriteria;?></span>  
-                    <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
+                    <input type="text" name="uname" placeholder="Felhasználónév" value="<?php echo $uname;?>"/>
                     <span class="FirstName-Error"><?php echo $fnameCriteria;?></span>
-                    <input type="text" name="fname" placeholder="First Name" value="<?php echo $fname;?>"/>
+                    <input type="text" name="fname" placeholder="Keresztnév" value="<?php echo $fname;?>"/>
                     <span class="LastName-Error"><?php echo $lnameCriteria;?></span>
-                    <input type="text" name="lname" placeholder="Last Name" value="<?php echo $lname;?>"/>
+                    <input type="text" name="lname" placeholder="Vezetéknév" value="<?php echo $lname;?>"/>
                     <span class="Email-Error"><?php echo $emailCriteria;?></span>
                     <input type="text" name="email" placeholder="Email" value="<?php echo $email;?>"/>
                     <span class="Password-Error"><?php echo $passwordCriteria;?></span>
-                    <input type="password" name="password" placeholder="Password"/>
+                    <input type="password" name="password" placeholder="Jelszó"/>
                     <span class="Password-Error"><?php echo $confirmPasswordCriteria;?></span>
-                    <input type="password" name="confirmPassword" placeholder="Confirm Password"/>
+                    <input type="password" name="confirmPassword" placeholder="Jelszó újra"/>
                     <span class=recaptcha-Error"><?php echo $recaptchaCriteria;?></span>
                     <div name="g-recaptcha-response" class="g-recaptcha" data-sitekey="6Ld1nA0aAAAAAA7F7eJOY7CMwg7aaQAfg3WZy6P0"></div>
                     <button>Join</button>
-                    <p class="message">Already have an account? <a href="login.php">Sign In</a></p>
+                    <p class="message">Már van fiókod? <a href="login.php">Lépj be!</a></p>
                     <!-- <p class="or-message"><b>OR</b></p> -->
                 </form>
-
-                <!-- <div class="social-login">
-                    <span class="login-text">Login with: </span>
-                    <span><a><i class="fab fa-facebook-f"></i></a></span>
-                    <span><a><i class="fab fa-twitter"></i></a></span>
-                    <span><a><i class="fab fa-google-plus-g"></i></a></span>
-                </div> -->
             </div>
         </div>
         <!--End Login Panel-->
