@@ -17,7 +17,7 @@
                     console.log('sent');
 
                     //CIM VÁLTOZTATÁSA
-                    document.getElementById('small_title').innerHTML = 'CATEGORY';
+                    document.getElementById('small_title').innerHTML = 'KATEGÓRIA';
                     document.getElementById('big_title').innerHTML = cat_name;
                     
                 }
