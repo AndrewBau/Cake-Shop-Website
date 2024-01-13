@@ -7,6 +7,7 @@ ajax_test.php
 cart.php
 category_search.php
 checkout_test.php
+checkout.php
 checkout
 Includes
 Javascript
