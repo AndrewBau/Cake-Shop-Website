@@ -11,3 +11,4 @@ login.php
 logout.php
 makeYourCake.php
 passwordResetPage.php
+product.php
