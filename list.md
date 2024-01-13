@@ -35,7 +35,7 @@
 [offer.css](offer.css)
 [passwordResetPage.php](passwordResetPage.php) * ?
 [product.php](product.php) *
-[products.php](products.php) * !
+[products.php](products.php) * ! (munka alatt)
 [products_by_type_search.php](products_by_type_search.php) * !
 [products_category.php](products_category.php) * !
 [products_sortby.php](products_sortby.php) * !
