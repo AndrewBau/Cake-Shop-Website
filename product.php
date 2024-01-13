@@ -67,7 +67,7 @@ if(isset($_SESSION['uname'])){
 
 
 
-//Ellenőrzi, hogy az 'Add to Cart' gomb elküldésre került-e
+//Ellenőrzi, hogy az 'Kosárba helyezés' gomb elküldésre került-e
 if(filter_input(INPUT_POST, 'add-to-cart')){
     if(isset($_SESSION['shopping_cart'])){
 
@@ -122,7 +122,7 @@ if(filter_input(INPUT_POST, 'add-to-cart')){
         );
 
 
-        //BEILLSZTI A CART ELEM ADATAIT A cartitem TÁBLÁBA
+        //BEILLESZTI A KOSÁR ELEMÉNEK ADATAIT A cartitem TÁBLÁBA
         $Q_insert_into_cartitem = 'INSERT INTO cartitem (productID, cartID, price, quantity) 
         VALUES ('.$_GET['product_id'].','.$_SESSION['cartID'].','.filter_input(INPUT_POST, 'price').','.filter_input(INPUT_POST, 'input_quantity').' )';
         $run_insert_into_cartitem = mysqli_query($conn, $Q_insert_into_cartitem);
@@ -148,7 +148,7 @@ function pre_r($array){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <!--========== CSS FILES ==========-->
+    <!--========== CSS FÁJLOK ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="Sanjana.css">
     <link href="jquery.nice-number.css" rel="stylesheet">
@@ -174,7 +174,7 @@ function pre_r($array){
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
-    <!-- Animate CSS -->
+    <!-- Animált CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!--========== BOXIKONOK==========-->
@@ -186,23 +186,23 @@ function pre_r($array){
           <!--========== PHP QUERIK ==========-->
         <?php 
                 
-            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
-            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
-            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects product with id =1
+            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //Kiemelt termékek kiválasztása 
+            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //Új termékek kiválasztása
+            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //Kiválasztja a terméket, ahol id =1
 
         ?>
 
 
         <!--========== HEADER ==========-->
         <?php $page = 'product'?>
-        <!--Start Navigation Bar-->
+        <!--Start Navigációs Sáv-->
         <?php include './Includes/MobileNavBar.php';?>
-        <!--End Navigation Bar-->
+        <!--End Navigációs Sáv-->
 
 
-        <!--Start Navigation Bar @media 1200px-->
+        <!--Start Navigációs Sáv @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
-        <!--End Navigation Bar @media 1200px-->
+        <!--End Navigációs Sáv @media 1200px-->
 
 
         <!--========== PHP FETCHELT TERMÉKEK ADATAI ==========-->
@@ -275,9 +275,9 @@ function pre_r($array){
                             </div>
                         </form>
                         <!-- <div>
-                            <a href="products.php" class="continue-shop">Continue shopping</a>
+                            <a href="products.php" class="continue-shop">Vásárlás folytatása</a>
                         </div> -->
-                        <!-- <button type="button" class="btn btn-primary btn-lg my-4 button">Add to cart</button> -->
+                        <!-- <button type="button" class="btn btn-primary btn-lg my-4 button">Kosárba tesz</button> -->
                     </div>
                 </div>
                 <div class="row">
