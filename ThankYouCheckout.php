@@ -4,36 +4,36 @@
     //START SESSION
     include "./AdditionalPHP/startSession.php";
 
-    //CONNECTION TO DATABASE : cakeshop
+    //KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER
     include_once 'connection.php';
     
 
-    //USER COMPLETED PAYMENT
-    //CREATE ORDER ID FOR USER
+    //FELHASZNÁLÓ TELJESÍTETT FIZETÉS
+    //ID LÉTREHOZÁSA A USER RENDELÉSÉNEK
 
-    //FIRST -- FIND PHONE NUMBER
+    //ELSŐ -- TELEFONSZÁM KERESÉSE
     $Q_select_user_phone = 'SELECT phone FROM user WHERE userID = '.$_SESSION['userID'];
     $run_select_user_phone = mysqli_query($conn,  $Q_select_user_phone);
 
-    //IF USER HAS NO PHONE NUM --> SET SESSION TO NULL
+    //HA NINCS TELEFONSZÁMA A USERNAK --> SESSION NULLA LESZ
     if(mysqli_num_rows($run_select_user_phone)==0){
         $_SESSION['phone'] = null;
     }
-    //ELSE SET SESSION TO CURRENT PHONE NUM
+    //KÜLÖNBEN A SESSION BE LESZ ÁLLÍTVA A JELENLEGI TELEFONSZÁMRA
     else{
         $result_phone = mysqli_fetch_array($run_select_user_phone);
         $_SESSION['phone'] = $result_phone[0];
     }
 
 
-    //ADD DATA TO USERORDER
+    //ADAT HOZZÁADÁSA A USER RENDELÉSÉHEZ
     $Q_insert_userorder ='INSERT INTO userorder (userID, total, address, phone, status) 
     VALUES ('.$_SESSION['userID'].','.$_SESSION['total_price'].',"'.$_POST['address_checkout'].'","'.$_SESSION['phone'].'", "successful")';
     $run_insert_userorder = mysqli_query($conn, $Q_insert_userorder);
 
-    //INSERT INTO ORDERITEM
+    //BEILLESZT AZ ORDERITEMBE
 
-    //SELECT DATA NEEDED FIRST
+    //ELŐSZÖR KIVÁLASZTJUK A SZÜKSÉGES ADATOKAT
     $Q_select_all_cartitem = 'SELECT * FROM cartitem WHERE cartID ='.$_SESSION['cartID'];
     $run_select_all_cartitem = mysqli_query($conn, $Q_select_all_cartitem);
 
@@ -43,23 +43,23 @@
 
     $_SESSION['orderID'] = $result3[0];
 
-    //LOOP THROUGH EVERY CART ITEM
+    //VÉGIGLOOPOL A KOSÁR ELEMEIN
     while($row = mysqli_fetch_assoc($run_select_all_cartitem)){
 
-        //INSERT EACH CART ITEM AS ORDER ITEM IN ORDERITEM TABLE
+        //BELETESZI AZ ÖSSZES ELEMET A MEGRENDELT TÁBLÁBA
         $Q_insert_orderitem = 'INSERT INTO orderitem (productID, orderID, price, quantity) 
         VALUES ('.$row['productID'].', '.$_SESSION['orderID'].','.$row['price'].','.$row['quantity'].')';
         $run_insert_orderitem = mysqli_query($conn,  $Q_insert_orderitem);
     }
     
 
-    //INSERT INTO TRANSACTION
+    //TRANZAKCIÓBA INSERTEL
     $Q_insert_into_transaction = 'INSERT INTO transaction (userID, orderID, paymentMethod, status)
     VALUES ( '.$_SESSION['userID'].', '.$_SESSION['orderID'].',"'.$_POST['paymentMethod'] .'","successful" )';
     $run_insert_into_transaction = mysqli_query($conn, $Q_insert_into_transaction);
     
 
-    //AFTER INSERTING DATA TO TABLES, WE HAVE TO UNSET SHOPPING CART SESSION
+    //AZ ADATOK INSERTELÉSE UTÁN TÖRÖLJÜK A BEVÁSÁRLÓKOSÁR TARTALMÁT
     foreach($_SESSION['shopping_cart'] as $key => $product){
         unset($_SESSION['shopping_cart'][$key]);
         // unset($product_ids[$key]);
@@ -67,7 +67,7 @@
     }//end foreach
 
 
-    //DELETE CARTITEM VALUES AFTER CHECKOUT
+    //FIZETÉS UTÁN TÖRÖLNI KELL AZ ÉRTÉKEKET A KOSÁRBAN
     $Q_delete_cartitem = 'DELETE FROM cartitem WHERE cartID ='.$_SESSION['cartID'];
     $run_delete_cartitem = mysqli_query($conn, $Q_delete_cartitem);
 
@@ -91,7 +91,7 @@
         <!-- CSS -->
         <link href="checkout/form-validation.css" rel="stylesheet">
 
-        <!-- ANIMATE.CSS  -->
+        <!-- ANIMÁLT.CSS  -->
         <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -103,7 +103,7 @@
 
     <body >
 
-        <!-- TITLE -->
+        <!-- CÍM -->
         <div class="py-5 text-center">
             <h1 class="business-name">VINYLMASTER</h1>
             

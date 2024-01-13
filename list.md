@@ -43,7 +43,7 @@
 [registration.php](registration.php) * ?
 [Sanjana.css](Sanjana.css)
 [sortby_search.php](sortby_search.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
-[ThankYouCheckout.php](ThankYouCheckout.php) * (munka alatt)
+[ThankYouCheckout.php](ThankYouCheckout.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [thankYouRegistration.php](thankYouRegistration.php) * !
 [userAccount.php](userAccount.php) *
 [validateContactInput.js](validateContactInput.js) *
