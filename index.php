@@ -47,7 +47,7 @@
         <!--Start Slideshow-->
         <div class="slideshow-container">
 
-            <!-- Full-width images with number and caption text -->
+            <!-- Full-width képek számmal és felirat szöveggel -->
             <div class="mySlides fade">
             <img src="Assets/images/1.index/Cake_1.jpg" style="width:100%">
             <div class="text">"MERT ZENE NÉLKÜL MIT ÉREK ÉN?"</div>
@@ -77,7 +77,7 @@
         </div>
         <!--End Wave Image-->
 
-        <!--Start What You Can Do-->
+        <!--Start Mit tudunk adni-->
         <div class="what-you-can-do">
             <div class="subtitle">
                 <h2>AJÁNLATAINK</h2>
@@ -107,7 +107,7 @@
          </div>
 
         </div>
-        <!--End What You Can Do-->
+        <!--End Mit tudunk adni-->
        
         
         <!--Különleges ajánlat-->
@@ -128,7 +128,7 @@
         </section>
         <!--Különleges ajánlat vége-->
 
-        <!--Start How to Order-->
+        <!--Start Rendelés lépései-->
         <div class="how-to-order">
             <div class="subtitle">
                 <h2 class="order-subtitle">MEGRENDELÉS MENETE</h2>
@@ -156,7 +156,7 @@
                 </div>
             </div>
          </div>
-        <!--End How to Order-->
+        <!--End Rendelés lépései-->
 
 
         <!--Start Wave Image Flip-->
@@ -168,7 +168,7 @@
         <!--End Wave Image Flip-->
 
 
-        <!-- Start Our Baker-->
+        <!-- Start Mesterünk-->
         <div class="our-baker">
 
             <div class="subtitle">
@@ -216,7 +216,7 @@
                         <div class = "helper-more-about">
                             <p class="name"><b>LAKATOS ALAJOS</b></p>
                             <p class="hierarchy">TÁRSALAPÍTÓ</p>
-                            <p class="description">Zene nélkül mit ér e kén?</p>
+                            <p class="description">Zene nélkül mit érek én?</p>
                         </div>
         
                         <div class="helper-social-media">
@@ -270,7 +270,7 @@
                 </div>
             </div>
         </div>
-        <!-- End Our Baker-->
+        <!-- End Mesterünk-->
 
 
         <!-- Start Google Map-->
@@ -278,14 +278,14 @@
         <!-- End Google Map-->
 
 
-        <!-- Start Contact Us -->
+        <!-- Start Kapcsolatfelvétel -->
         <?php include './Includes/ContactUsForm.php';?>
-        <!-- End Contact Us-->
+        <!-- End Kapcsolatfelvétel-->
         
 
-        <!--Start Newsletter-->
+        <!--Start Hírfolyam-->
         <?php include './Includes/NewsLetter.php';?>
-        <!--End Newsletter-->
+        <!--End Hírfolyam-->
 
 
         <!--Start Footer-->
@@ -293,9 +293,9 @@
         <!--End Footer-->
 
         
-        <!-- Start Bottom Nav -->
+        <!-- Start Alsó Nav -->
         <?php include './Includes/MobileBottomNav.php';?>
-        <!-- End Bottom Nav -->
+        <!-- End Alsó Nav -->
 
     </body>
 </html>

@@ -7,7 +7,7 @@
 [Includes](Includes) *
 [Javascript](Javascript) *
 
-[about.php](about.php) * 
+[about.php](about.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [Account.css](Account.css)
 [accountInvalidPage.php](accountInvalidPage.php) *
 [accountVerifiedPage.php](accountVerifiedPage.php) *
@@ -24,7 +24,7 @@
 [contact.php](contact.php) *
 [debug.log](debug.log) *
 [forgetPassword.php](forgetPassword.php) *
-[index.php](index.php) * !
+[index.php](index.php) * ! (javítva. Ellenőrizd Levi, majd töröld ezt és a felkiáltó jelet ha okés.)
 [jquery.nice-number.css](jquery.nice-number.css)
 [jquery.nice-number.js](jquery.nice-number.js)
 [list.md](list.md) *
