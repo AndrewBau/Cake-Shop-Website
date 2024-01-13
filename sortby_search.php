@@ -12,8 +12,8 @@
 
 
         // QUERIES:
-        $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //minden terméket növekvő sorrendbe tesz ár szerint
-        $Q_sortby_price_desc = "SELECT * FROM products ORDER BY p_price DESC; "; //minden terméket csökkenő sorrendbe tesz ár szerint
+        $Q_sortby_price_asc = "SELECT * FROM products ORDER BY ar ASC; "; //minden terméket növekvő sorrendbe tesz ár szerint
+        $Q_sortby_price_desc = "SELECT * FROM products ORDER BY ar DESC; "; //minden terméket csökkenő sorrendbe tesz ár szerint
         
 
         //ÁR SZERINTI SORRENDBE IGAZÍTÁS TÍPUSA:

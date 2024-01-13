@@ -46,8 +46,8 @@
             $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//Kiválasztja az új termékeket
             $Q_fetch_product_details =  "SELECT * FROM products WHERE productID = 1 ; ";//Kiválasztja a terméket, melynél id=1
             $Q_fetch_categories = "SELECT * FROM product_categories;"; //Kiválasztja az összes kategóriát
-            $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //Termékeket növekvő sorrendbe teszi
-            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //Termékeket csökkenő sorrendbe teszi
+            $Q_sortby_price_asc = "SELECT * FROM products ORDER BY ar ASC; "; //Termékeket növekvő sorrendbe teszi
+            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY ar DESC; "; //Termékeket csökkenő sorrendbe teszi
             
             
         
