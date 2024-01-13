@@ -50,7 +50,7 @@
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
             <img src="Assets/images/1.index/Cake_1.jpg" style="width:100%">
-            <div class="text">"Mert zene nélkül mit érek én?"</div>
+            <div class="text">"MERT ZENE NÉLKÜL MIT ÉREK ÉN?"</div>
             </div>
         
             <div class="mySlides fade">
