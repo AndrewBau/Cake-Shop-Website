@@ -48,6 +48,6 @@
 [userAccount.php](userAccount.php) *
 [validateContactInput.js](validateContactInput.js) *
 [validateContactInput.php](validateContactInput.php) * ?
-[validateNewsletterInput.js](validateNewsletterInput.js) (munka alatt)
+[validateNewsletterInput.js](validateNewsletterInput.js) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [validateNewsletterInput.php](validateNewsletterInput.php) *
 [verifyEmail.php](verifyEmail.php) *
