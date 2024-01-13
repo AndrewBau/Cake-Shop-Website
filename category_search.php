@@ -5,7 +5,7 @@
 
 
 
-    // <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
+    // <!--========== PHP KAPCSOLÓDÁS AZ ADATBÁZISHOZ : VINYLMASTER ==========-->
     
         include_once 'connection.php';
         include_once 'numOfItemsInCart.php';
@@ -13,7 +13,7 @@
 
 
 
-        // <!--========== PHP FETCH PRODUCT DETAILS ==========-->
+        // <!--========== PHP FETCHELÉS TERMÉKEK ADATAIVAL ==========-->
 
         
         

@@ -5,6 +5,7 @@ AdditionalPHP
 adminPanel.php
 ajax_test.php
 cart.php
+category_search.php
 checkout
 Includes
 Javascript
