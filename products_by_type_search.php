@@ -42,7 +42,7 @@
 
             echo' <div class="featured__products" id="product__card">
                        <div class="featured__box">
-                           <div class="featured__new">NEW</div>
+                           <div class="featured__new">ÚJ</div>
                            <a href="product.php?product_id='.$product_id.'">
                            <a href="product.php?product_id='.$product_id.'" class=""><i class="bx bxs-cart-add bx-tada-hover featured__new_cart"></i></a>
                            <a href="product.php?product_id='.$product_id.'">
