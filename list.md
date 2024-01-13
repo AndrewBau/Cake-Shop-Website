@@ -42,7 +42,7 @@
 [README.md](README.md) has to be recreated
 [registration.php](registration.php) * ?
 [Sanjana.css](Sanjana.css)
-[sortby_search.php](sortby_search.php) (munka alatt)
+[sortby_search.php](sortby_search.php) * (Elvégezve. Ellenőrizd Levi, majd töröld ezt ha okés.)
 [ThankYouCheckout.php](ThankYouCheckout.php) *
 [thankYouRegistration.php](thankYouRegistration.php) * !
 [userAccount.php](userAccount.php) *
