@@ -133,7 +133,7 @@
             <div class="subtitle">
                 <h2 class="order-subtitle">MEGRENDELÉS MENETE</h2>
             </div>
-            <div class="row" style="color: #FF7380FF;">
+            <div class="row" style="color: #1a73e8;">
                 <div class="column">
                   <i class="fas fa-birthday-cake"></i>
                   <p><b>Válaszd ki a lemezt</b></p>
