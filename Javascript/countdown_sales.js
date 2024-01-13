@@ -23,6 +23,6 @@ var x = setInterval(function() {
   // Ha lejárt az idő kiír valamit
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "END OF SALES";
+    document.getElementById("countdown").innerHTML = "Lejárt az árúsítás!";
   }
 }, 1000);
