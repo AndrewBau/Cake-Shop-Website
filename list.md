@@ -19,4 +19,5 @@ makeYourCake.php
 numOfItemsInCart.php
 passwordResetPage.php
 product.php
+products_sortby.php
 registration.php
