@@ -9,7 +9,7 @@
             <i class="fas fa-bars animate__animated animate__backInDown"></i>
         </label>
 
-        <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
+        <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">VINYLMASTER</a></h1>
 
         <ul>
             <li><a href="index.php" class="<?php if($page == 'index'){echo 'active';}?>" href="index.php">KEZDŐOLDAL</a></li>
